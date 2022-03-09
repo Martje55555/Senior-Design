@@ -19,7 +19,7 @@ let database = firebase.database();
 let tempRef = database.ref("temperature");
 
 // Get all temperatures sensors
-app.get("/temperature", async (req, res, next) => {
+app.get("/temperature/all", async (req, res, next) => {
     let value;
     await tempRef.once('value', async (snapshot) => {
         value = await snapshot.val();
@@ -58,7 +58,4 @@ app.get("/humidity/:num", async (req, res, next) => {
     res.json([value[`sensor_${req.params.num}`]]);
 });
 
-
-app.listen(3001, () => {
-    console.log("Server running on port 3001");
-});
+module.exports = app;
