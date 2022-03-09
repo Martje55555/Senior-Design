@@ -18,14 +18,46 @@ let database = firebase.database();
 
 let tempRef = database.ref("temperature");
 
+// Get all temperatures sensors
 app.get("/temperature", async (req, res, next) => {
     let value;
     await tempRef.once('value', async (snapshot) => {
         value = await snapshot.val();
         console.log(snapshot.val());
-    })
+    });
     res.json([value]);
 });
+
+// Get one humidity sensor
+app.get("/humidity", async (req, res, next) => {
+    let value;
+    await tempRef.once('value', async (snapshot) => {
+        value = await snapshot.val();
+        console.log(snapshot.val());
+    });
+    res.json([value]);
+});
+
+// Get one temperature sensor
+app.get("/temperature/:num", async (req, res, next) => {
+    let value;
+    await tempRef.once('value', async (snapshot) => {
+        value = await snapshot.val();
+        console.log(value[`sensor_${req.params.num}`]);
+    });
+    res.json([value[`sensor_${req.params.num}`]]);
+});
+
+// Get one humidity sensor
+app.get("/humidity/:num", async (req, res, next) => {
+    let value;
+    await tempRef.once('value', async (snapshot) => {
+        value = await snapshot.val();
+        console.log(value[`sensor_${req.params.num}`]);
+    });
+    res.json([value[`sensor_${req.params.num}`]]);
+});
+
 
 app.listen(3001, () => {
     console.log("Server running on port 3001");
