@@ -1,0 +1,22 @@
+{
+    "temperature": {
+      "sensor_1": {
+        "1": {
+          "date": "",
+          "time": "",
+          "value": ""
+        }
+      }
+      
+    },
+    "humidity": {
+        "sensor_1": {
+          "1": {
+            "date": "",
+            "time": "",
+            "value": ""
+        }
+        }
+    }
+  }
+  
