@@ -11,6 +11,7 @@ const firebaseConfig = {
 };
 
 app.use(cors());
+
 firebase.initializeApp(firebaseConfig);
 
 let database = firebase.database();
