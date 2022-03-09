@@ -1,2 +1,2 @@
 # Senior-Design
-Senior Design - 2022 (StatesFarm)
+Senior Design - 2022
