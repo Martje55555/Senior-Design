@@ -15,7 +15,6 @@
     "firebase": "^9.6.8",
     "firebase-admin": "^10.0.2",
     "jest": "^27.5.1",
-    "mongoose": "^6.2.4",
     "supertest": "^6.2.2"
   }
 }
