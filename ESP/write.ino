@@ -17,25 +17,6 @@ dht DHT0, DHT1;
 // Define the Firebase Data object
 FirebaseData fbdo;
 
-// // Define the FirebaseAuth data for authentication data
-// FirebaseAuth auth;
-
-// // Define the FirebaseConfig data for config data
-// FirebaseConfig config;
-
-// Assign the project host and api key (required)
-// config.host = FIREBASE_HOST;
-
-// config.api_key = API_KEY;
-
-// Assign the user sign in credentials
-// auth.user.email = USER_EMAIL;
-
-// auth.user.password = USER_PASSWORD;
-
-// //Initialize the library with the Firebase authen and config.
-// Firebase.begin(&config, &auth);
-
 void setup()
 {
     Serial.begin(9600);
@@ -73,7 +54,7 @@ void loop()
     //     counter += 1;
     // }
 
-    Serial.print("temperature: ");
+    //Serial.print("temperature: ");
     // get value
     // if (Firebase.getJSON(fbdo, "/temperature/1")) {
     //     Serial.println(fbdo.jsonString());
@@ -100,22 +81,49 @@ void loop()
     // value	"60.0"
 
     // json2.set("child_of_002", 123.456);
-    json.set(2, "parent 001 text");
+
+    json.set(2);
+    Firebase.pushJson(fbdo, "/temperature/sensor_1", json);
+
     json.set("value", DHT0.temperature);
 
-    if (Firebase.pushJSON(fbdo, "/temperature/sensor_1/"+, json))
+    if (Firebase.pushJSON(fbdo, "/temperature/sensor_1/2"+, json))
     {
-
         Serial.println(fbdo.dataPath());
 
         Serial.println(fbdo.pushName());
-
-        Serial.println(fbdo.dataPath() + "/" + fbdo.pushName());
     }
     else
     {
         Serial.println(fbdo.errorReason());
     }
 
-    delay(1000);
+    json.set("date", "3/9/22");
+
+    if (Firebase.pushJSON(fbdo, "/temperature/sensor_1/2"+, json))
+    {
+        Serial.println(fbdo.dataPath());
+
+        Serial.println(fbdo.pushName());
+    }
+    else
+    {
+        Serial.println(fbdo.errorReason());
+    }
+
+    json.set("time", "1324");
+
+    if (Firebase.pushJSON(fbdo, "/temperature/sensor_1/2"+, json))
+    {
+        Serial.println(fbdo.dataPath());
+
+        Serial.println(fbdo.pushName());
+    }
+    else
+    {
+        Serial.println(fbdo.errorReason());
+    }
+
+    delay(10000);
+
 }
