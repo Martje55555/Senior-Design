@@ -12,7 +12,7 @@ const firebaseConfig = {
 };
 
 app.use(cors());
-app.use(express.json())
+app.use(express.json());
 
 firebase.initializeApp(firebaseConfig);
 
@@ -93,35 +93,37 @@ app.post("/sensor_1", async (req, res, next) => {
     let temp = req.body.temperature;
     let humidity = req.body.humidity;
 
+    // Temperature Object
     let tempObj = {
         time : time,
         date : date,
         value : temp
-    }
+    };
+    // Humidity Object
     let humidityObj = {
         time : time,
         date : date,
         value : humidity
-    }
+    };
 
     tempRef.child('sensor_1').push(tempObj, function(error) {
         if (error) {
           // The write failed...
-          console.log("Failed with error: " + error)
+          console.log("Failed with error: " + error);
         } else {
           // The write was successful...
-          console.log("success")
-        }
+          console.log("success");
+        };
     });
 
     humidityRef.child('sensor_1').push(humidityObj, function(error) {
         if (error) {
           // The write failed...
-          console.log("Failed with error: " + error)
+          console.log("Failed with error: " + error);
         } else {
           // The write was successful...
-          console.log("success")
-        }
+          console.log("success");
+        };
     });
 
     res.send({Succes : true});

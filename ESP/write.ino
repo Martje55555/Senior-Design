@@ -1,7 +1,10 @@
 #include <ESP8266WiFi.h>
 // #include <FirebaseArduino.h>
 #include <FirebaseESP8266.h>
+#include <WiFiClient.h>
+#include <ESP8266HTTPClient.h>
 #include <dht.h>
+#include <Arduino_JSON.h>
 
 #define dht_apin0 A0 // Analog Pin sensor is connected to
 #define dht_apin1 A1 // Analog Pin sensor is connected to
@@ -11,6 +14,8 @@
 #define FIREBASE_AUTH "bcvvq4F10J2mjV48FOB05iMZodjffUY9ypHiHAIU"
 #define WIFI_SSID "Alonso7"
 #define WIFI_PASSWORD "rayados10"
+
+const char *serverName = "http://129.113.58.182/";
 
 dht DHT0, DHT1;
 
@@ -38,41 +43,29 @@ void setup()
 
 void loop()
 {
-
     DHT0.read11(dht_apin0); // reads data for first sensor
 
-    Serial.print("DHT Temperature VALUE - ");
-    Serial.println(DHT0.temperature);
+    // Check WiFi connection status
+    if (WiFi.status() == WL_CONNECTED) {
+        WiFiClient client;
+        HTTPClient http;
 
-    // FirebaseData temp;
-    // if(Firebase.getJSON(temp, "/humidity/")) {
-    //     continue;
-    // }
+        http.begin(client, serverName);
 
-    // int counter = 0;
-    // for(auto i : temp["sensor_1"]) {
-    //     counter += 1;
-    // }
+        http.addHeader("Content-Type", "application/json");
+        int httpResponseCode = http.POST("{\"temperature\": \"DHT0.temperature\"}"); 
 
-    //Serial.print("temperature: ");
-    // get value
-    // if (Firebase.getJSON(fbdo, "/temperature/1")) {
-    //     Serial.println(fbdo.jsonString());
-    // }
-    // else {
-    //     Serial.println(fbdo.errorReason());
-    // }
+        Serial.print("Response Code: ");
+        Serial.println(httpResponseCode);
 
-    // Serial.print("humidity: ");
-    // // get value
-    // if (Firebase.getJSON(fbdo, "/humidity/1")) {
-    //     Serial.println(fbdo);
-    // }
-    // else {
-    //     Serial.println(fbdo.errorReason());
-    // }
+        Serial.print("DHT Temperature VALUE - ");
+        Serial.println(DHT0.temperature);
 
-    FirebaseJson json;
+        http.end();
+    } else {
+        Serial.println("Not connected");
+    }
+
     // FirebaseJson json2;
 
     //     1
@@ -82,48 +75,49 @@ void loop()
 
     // json2.set("child_of_002", 123.456);
 
-    json.set(2);
-    Firebase.pushJson(fbdo, "/temperature/sensor_1", json);
+    // json.set();
+    // Firebase.setJSON(fbdo, "/temperature/sensor_1", json);
 
-    json.set("value", DHT0.temperature);
+    // Firebase.pushJSON(fbdo, "/temperature/sensor_1", json);
 
-    if (Firebase.pushJSON(fbdo, "/temperature/sensor_1/2"+, json))
-    {
-        Serial.println(fbdo.dataPath());
+    // json.set("value", DHT0.temperature);
 
-        Serial.println(fbdo.pushName());
-    }
-    else
-    {
-        Serial.println(fbdo.errorReason());
-    }
+    // if (Firebase.pushJSON(fbdo, "/temperature/sensor_1/2", json))
+    // {
+    //     Serial.println(fbdo.dataPath());
 
-    json.set("date", "3/9/22");
+    //     Serial.println(fbdo.pushName());
+    // }
+    // else
+    // {
+    //     Serial.println(fbdo.errorReason());
+    // }
 
-    if (Firebase.pushJSON(fbdo, "/temperature/sensor_1/2"+, json))
-    {
-        Serial.println(fbdo.dataPath());
+    // json.set("date", "3/9/22");
 
-        Serial.println(fbdo.pushName());
-    }
-    else
-    {
-        Serial.println(fbdo.errorReason());
-    }
+    // if (Firebase.pushJSON(fbdo, "/temperature/sensor_1/2", json))
+    // {
+    //     Serial.println(fbdo.dataPath());
 
-    json.set("time", "1324");
+    //     Serial.println(fbdo.pushName());
+    // }
+    // else
+    // {
+    //     Serial.println(fbdo.errorReason());
+    // }
 
-    if (Firebase.pushJSON(fbdo, "/temperature/sensor_1/2"+, json))
-    {
-        Serial.println(fbdo.dataPath());
+    // json.set("time", "1324");
 
-        Serial.println(fbdo.pushName());
-    }
-    else
-    {
-        Serial.println(fbdo.errorReason());
-    }
+    // if (Firebase.pushJSON(fbdo, "/temperature/sensor_1/2", json))
+    // {
+    //     Serial.println(fbdo.dataPath());
+
+    //     Serial.println(fbdo.pushName());
+    // }
+    // else
+    // {
+    //     Serial.println(fbdo.errorReason());
+    // }
 
     delay(10000);
-
 }
