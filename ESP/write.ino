@@ -46,14 +46,23 @@ void loop()
     DHT0.read11(dht_apin0); // reads data for first sensor
 
     // Check WiFi connection status
-    if (WiFi.status() == WL_CONNECTED) {
+    if (WiFi.status() == WL_CONNECTED)
+    {
         WiFiClient client;
         HTTPClient http;
 
         http.begin(client, serverName);
 
+        StaticJsonBuffer<500> jsonBuffer;
+
+        // Create the root object
+        JsonObject &root = jsonBuffer.createObject();
+
+        root["temperature"] = DHT0.temperature; // Put Sensor value
+        root["humidity"] = DHT0.humidity; // Reads Flash Button Status
+
         http.addHeader("Content-Type", "application/json");
-        int httpResponseCode = http.POST("{\"temperature\": \"DHT0.temperature\"}"); 
+        int httpResponseCode = http.POST("{\"temperature\": \"DHT0.temperature\"}");
 
         Serial.print("Response Code: ");
         Serial.println(httpResponseCode);
@@ -62,62 +71,11 @@ void loop()
         Serial.println(DHT0.temperature);
 
         http.end();
-    } else {
+    }
+    else
+    {
         Serial.println("Not connected");
     }
-
-    // FirebaseJson json2;
-
-    //     1
-    // date	"3/6/22"
-    // time	"4:16:40 PM"
-    // value	"60.0"
-
-    // json2.set("child_of_002", 123.456);
-
-    // json.set();
-    // Firebase.setJSON(fbdo, "/temperature/sensor_1", json);
-
-    // Firebase.pushJSON(fbdo, "/temperature/sensor_1", json);
-
-    // json.set("value", DHT0.temperature);
-
-    // if (Firebase.pushJSON(fbdo, "/temperature/sensor_1/2", json))
-    // {
-    //     Serial.println(fbdo.dataPath());
-
-    //     Serial.println(fbdo.pushName());
-    // }
-    // else
-    // {
-    //     Serial.println(fbdo.errorReason());
-    // }
-
-    // json.set("date", "3/9/22");
-
-    // if (Firebase.pushJSON(fbdo, "/temperature/sensor_1/2", json))
-    // {
-    //     Serial.println(fbdo.dataPath());
-
-    //     Serial.println(fbdo.pushName());
-    // }
-    // else
-    // {
-    //     Serial.println(fbdo.errorReason());
-    // }
-
-    // json.set("time", "1324");
-
-    // if (Firebase.pushJSON(fbdo, "/temperature/sensor_1/2", json))
-    // {
-    //     Serial.println(fbdo.dataPath());
-
-    //     Serial.println(fbdo.pushName());
-    // }
-    // else
-    // {
-    //     Serial.println(fbdo.errorReason());
-    // }
 
     delay(10000);
 }
