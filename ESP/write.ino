@@ -15,7 +15,7 @@
 #define WIFI_SSID "Alonso7"
 #define WIFI_PASSWORD "rayados10"
 
-const char *serverName = "http://129.113.58.182/";
+const char *serverName = "http://129...../sensor_1";
 
 dht DHT0, DHT1;
 
@@ -59,14 +59,15 @@ void loop()
         JsonObject &root = jsonBuffer.createObject();
 
         root["temperature"] = DHT0.temperature; // Put Sensor value
-        root["humidity"] = DHT0.humidity; // Reads Flash Button Status
+        root["humidity"] = DHT0.humidity;
 
         http.addHeader("Content-Type", "application/json");
-        int httpResponseCode = http.POST("{\"temperature\": \"DHT0.temperature\"}");
+        int httpResponseCode = http.POST(root);
 
         Serial.print("Response Code: ");
         Serial.println(httpResponseCode);
 
+        // TEST SENSOR OUTPUT
         Serial.print("DHT Temperature VALUE - ");
         Serial.println(DHT0.temperature);
 
