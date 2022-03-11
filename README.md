@@ -1,3 +1,3 @@
 # Senior-Design
-Senior Design - 2022
+Senior Design - Spring 2022 - Fall 2022
 
