@@ -62,6 +62,7 @@ void loop()
         root["humidity"] = DHT0.humidity;
 
         http.addHeader("Content-Type", "application/json");
+        
         int httpResponseCode = http.POST(root);
 
         Serial.print("Response Code: ");
