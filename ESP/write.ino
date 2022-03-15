@@ -15,7 +15,7 @@
 #define WIFI_SSID "Alonso7"
 #define WIFI_PASSWORD "rayados10"
 
-const char *serverName = "http://129...../sensor_1";
+const char *serverName = "http://129.113.58.182/sensor_1";
 
 dht DHT0, DHT1;
 
@@ -78,6 +78,6 @@ void loop()
     {
         Serial.println("Not connected");
     }
-
+    
     delay(10000);
 }
