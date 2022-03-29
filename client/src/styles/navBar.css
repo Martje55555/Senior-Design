@@ -5,3 +5,7 @@ html {
 * {
     box-sizing: border-box;
 }
+
+#ar {
+    background-color: rgb(117, 14, 14);
+}
