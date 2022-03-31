@@ -19,9 +19,9 @@ firebase.initializeApp(firebaseConfig);
 let database = firebase.database();
 
 
-let tempRef = database.ref("/dht_sensors/temperature");
-let humidityRef = database.ref("/dht_sensors/humidity");
-let dhtRef = database.ref("/dht_sensors");
+let tempRef = database.ref("/dht_sensors/temperature/");
+let humidityRef = database.ref("/dht_sensors/humidity/");
+let dhtRef = database.ref("/dht_sensors/");
 let otherRef = database.ref("/other_sensors/");
 
 // HELPER FUNCTIONS
@@ -130,7 +130,7 @@ app.post("/:sensor_num/add", async (req, res, next) => {
         value : humidity
     };
 
-    tempRef.child(`${req.params.sensor_num}`).push(tempObj, function(error) {
+    await tempRef.child(`${req.params.sensor_num}`).push(tempObj, (error) => {
         if (error) {
           // The write failed...
           console.log("Failed with error: " + error);
@@ -140,7 +140,7 @@ app.post("/:sensor_num/add", async (req, res, next) => {
         };
     });
 
-    humidityRef.child(`${req.params.sensor_num}`).push(humidityObj, function(error) {
+    await humidityRef.child(`${req.params.sensor_num}`).push(humidityObj, (error) => {
         if (error) {
           // The write failed...
           console.log("Failed with error: " + error);
@@ -185,7 +185,7 @@ app.post("/other_sensors/add", async (req, res, next) => {
             bodyObj.value = req.body.sensor_8;
         }
 
-        await otherRef.child(`sensor_${i}`).push(bodyObj, function(error) {
+        await otherRef.child(`sensor_${i}`).push(bodyObj, (error) => {
             if (error) {
               // The write failed...
               console.log("Failed with error: " + error);
