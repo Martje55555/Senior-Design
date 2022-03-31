@@ -6,20 +6,22 @@ const serviceAccount = require("./admin.json");
 const { json } = require('express');
 const app = express();
 
+app.use(cors());
+app.use(express.json());
+
 const firebaseConfig = {
     credential: firebase.credential.cert(serviceAccount),
     databaseURL: "https://sdtest-849e7-default-rtdb.firebaseio.com"
 };
 
-app.use(cors());
-app.use(express.json());
-
 firebase.initializeApp(firebaseConfig);
 
 let database = firebase.database();
 
-let tempRef = database.ref("temperature");
-let humidityRef = database.ref("humidity");
+let tempRef = database.ref("/dht_sensors/");
+let humidityRef = database.ref("/dht_sensors/");
+
+let otherRef = database.ref("/other_sensors/");
 
 // HELPER FUNCTIONS
 
@@ -84,10 +86,21 @@ app.get("/temperature/:num/amount", async (req, res, next) => {
     res.send({'amount': `${response.numChildren()}`});
 });
 
+// Get all values for other sensors
+app.get("/other_sensors/all", async (req, res, next) => {
+    let value;
+    await otherRef.once('value', async (snapshot) => {
+        value = await snapshot.val();
+        console.log(snapshot.val());
+    });
+    res.json([value]);
+});
+
+
 // POST REQUESTS
 
-// POSTS new data from sensor_1
-app.post("/sensor_1", async (req, res, next) => {
+// POSTS new data from sensor_num for DHT SENSORS
+app.post("/:sensor_num", async (req, res, next) => {
     let time = new Date().toLocaleTimeString();
     let date = new Date().toLocaleDateString();
     let temp = req.body.temperature;
@@ -106,7 +119,7 @@ app.post("/sensor_1", async (req, res, next) => {
         value : humidity
     };
 
-    tempRef.child('sensor_1').push(tempObj, function(error) {
+    tempRef.child(`temperature/${req.params.sensor_num}`).push(tempObj, function(error) {
         if (error) {
           // The write failed...
           console.log("Failed with error: " + error);
@@ -116,7 +129,7 @@ app.post("/sensor_1", async (req, res, next) => {
         };
     });
 
-    humidityRef.child('sensor_1').push(humidityObj, function(error) {
+    humidityRef.child(`humidity/${req.params.sensor_num}`).push(humidityObj, function(error) {
         if (error) {
           // The write failed...
           console.log("Failed with error: " + error);
@@ -127,7 +140,52 @@ app.post("/sensor_1", async (req, res, next) => {
     });
 
     res.send({Succes : true});
+});
 
+// POSTS new data for non DHT SENSORS
+app.post("/other_sensors/add", async (req, res, next) => {
+    let time = new Date().toLocaleTimeString();
+    let date = new Date().toLocaleDateString();
+    let val = req.body.sensor_1;
+
+    // Temperature Object
+    let bodyObj = {
+        time : time,
+        date : date,
+        value : val
+    };
+
+    for(let i = 1; i <= 8; i++) {
+        if(i == 1) {
+            bodyObj.value = req.body.sensor_1;
+        } else if(i == 2) {
+            bodyObj.value = req.body.sensor_2;
+        } else if(i == 3) {
+            bodyObj.value = req.body.sensor_3;
+        } else if(i == 4) {
+            bodyObj.value = req.body.sensor_4;
+        } else if(i == 5) {
+            bodyObj.value = req.body.sensor_5;
+        } else if(i == 6) {
+            bodyObj.value = req.body.sensor_6;
+        } else if(i == 7) {
+            bodyObj.value = req.body.sensor_7;
+        } else if(i == 8) {
+            bodyObj.value = req.body.sensor_8;
+        }
+
+        await otherRef.child(`sensor_${i}`).push(bodyObj, function(error) {
+            if (error) {
+              // The write failed...
+              console.log("Failed with error: " + error);
+            } else {
+              // The write was successful...
+              console.log("success");
+            };
+        });
+    }
+
+    res.send({Succes : true});
 });
 
 module.exports = app;
