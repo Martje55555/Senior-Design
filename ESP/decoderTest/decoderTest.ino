@@ -7,7 +7,7 @@
 #define WIFI_SSID "HERNANDEZ WIFI"
 #define WIFI_PASSWORD "25000429"
 
-const char *serverName = "http://f4f9438a395c2c.lhrtunnel.link/sendData";
+const char *serverName = "http://f4f9438a395c2c.lhrtunnel.link/other_sensors/add";
 
 #define D0 16
 #define D1 5
