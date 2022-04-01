@@ -1,0 +1,44 @@
+.sample{
+    margin-left: 50px;
+    margin-top: 50px;
+    font-size: 35px;
+    
+}
+
+.airHumidity{
+    margin-left: 50px;
+    font-size: 35px;
+    padding-top: 150px;
+}
+
+.container{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    float: left;
+    justify-content: space-evenly;
+    display: flex;
+    border: 6px solid black;
+       
+}
+
+.box1{
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(-45deg, #788cff, #b4c8ff);
+
+}
+
+.box2{
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(-45deg, #788cff, #b4c8ff);
+
+}
+
+.box3{
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(-45deg, #788cff, #b4c8ff);
+
+}
