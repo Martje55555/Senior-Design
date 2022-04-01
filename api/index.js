@@ -4,6 +4,7 @@ const firebase = require('firebase-admin');
 
 const serviceAccount = require("./admin.json");
 const { json } = require('express');
+
 const app = express();
 
 app.use(cors());
@@ -16,16 +17,14 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-let database = firebase.database();
+const database = firebase.database();
 
-let tempRef = database.ref("/dht_sensors/");
-let humidityRef = database.ref("/dht_sensors/");
-
-let otherRef = database.ref("/other_sensors/");
+const dhtRef = database.ref("/dht_sensors/");
+const otherRef = database.ref("/other_sensors/");
 
 // HELPER FUNCTIONS
 
-let getNumberOfChildren = async ( sensor ) => {
+const getNumberOfChildren = async ( sensor ) => {
     let value;
     let pathRef = database.ref(`temperature/sensor_${sensor}`);
     let response = await pathRef.once('value', async (snapshot) => {
@@ -36,9 +35,20 @@ let getNumberOfChildren = async ( sensor ) => {
 
 // GET REQUESTS
 
-// Get all temperatures sensors
+// Get all dht-sensors
+app.get("/dht_sensors/all", async (req, res, next) => {
+    let value;
+    await dhtRef.once('value', async (snapshot) => {
+        value = await snapshot.val();
+        console.log(snapshot.val());
+    });
+    res.json([value]);
+});
+
+// Get all temp sensors
 app.get("/temperature/all", async (req, res, next) => {
     let value;
+    let tempRef = database.ref("/dht_sensors/temperature/")
     await tempRef.once('value', async (snapshot) => {
         value = await snapshot.val();
         console.log(snapshot.val());
@@ -46,10 +56,11 @@ app.get("/temperature/all", async (req, res, next) => {
     res.json([value]);
 });
 
-// Get one humidity sensor
+// Get all humidity sensors
 app.get("/humidity/all", async (req, res, next) => {
     let value;
-    await tempRef.once('value', async (snapshot) => {
+    let humidityRef = database.ref("/dht_sensors/humidity/");
+    await humidityRef.once('value', async (snapshot) => {
         value = await snapshot.val();
         console.log(snapshot.val());
     });
@@ -59,6 +70,7 @@ app.get("/humidity/all", async (req, res, next) => {
 // Get one temperature sensor
 app.get("/temperature/:num", async (req, res, next) => {
     let value;
+    let tempRef = database.ref("/dht_sensors/temperature/")
     await tempRef.once('value', async (snapshot) => {
         value = await snapshot.val();
         console.log(value[`sensor_${req.params.num}`]);
@@ -69,17 +81,18 @@ app.get("/temperature/:num", async (req, res, next) => {
 // Get one humidity sensor
 app.get("/humidity/:num", async (req, res, next) => {
     let value;
-    await tempRef.once('value', async (snapshot) => {
+    let humidityRef = database.ref("/dht_sensors/humidity/");
+    await humidityRef.once('value', async (snapshot) => {
         value = await snapshot.val();
         console.log(value[`sensor_${req.params.num}`]);
     });
     res.json([value[`sensor_${req.params.num}`]]);
 });
 
-// Get number of reads for sensor_1
-app.get("/temperature/:num/amount", async (req, res, next) => {
+// Get number of reads for a dht_sensor
+app.get("/:num/amount", async (req, res, next) => {
     let value;
-    let pathRef = database.ref(`temperature/sensor_${req.params.num}`);
+    let pathRef = database.ref(`dht_sensors/temperature/sensor_${req.params.num}`);
     let response = await pathRef.once('value', async (snapshot) => {
         value = await snapshot.val();
     });
@@ -96,7 +109,6 @@ app.get("/other_sensors/all", async (req, res, next) => {
     res.json([value]);
 });
 
-
 // POST REQUESTS
 
 // POSTS new data from sensor_num for DHT SENSORS
@@ -112,6 +124,7 @@ app.post("/:sensor_num", async (req, res, next) => {
         date : date,
         value : temp
     };
+    
     // Humidity Object
     let humidityObj = {
         time : time,
@@ -119,7 +132,7 @@ app.post("/:sensor_num", async (req, res, next) => {
         value : humidity
     };
 
-    tempRef.child(`temperature/${req.params.sensor_num}`).push(tempObj, function(error) {
+    await dhtRef.child(`/temperature/${req.params.sensor_num}`).push(tempObj, (error) => {
         if (error) {
           // The write failed...
           console.log("Failed with error: " + error);
@@ -129,7 +142,7 @@ app.post("/:sensor_num", async (req, res, next) => {
         };
     });
 
-    humidityRef.child(`humidity/${req.params.sensor_num}`).push(humidityObj, function(error) {
+    await dhtRef.child(`/humidity/${req.params.sensor_num}`).push(humidityObj, (error) => {
         if (error) {
           // The write failed...
           console.log("Failed with error: " + error);
@@ -174,7 +187,7 @@ app.post("/other_sensors/add", async (req, res, next) => {
             bodyObj.value = req.body.sensor_8;
         }
 
-        await otherRef.child(`sensor_${i}`).push(bodyObj, function(error) {
+        await database.ref("/other_sensors/").child(`sensor_${i}`).push(bodyObj, (error) => {
             if (error) {
               // The write failed...
               console.log("Failed with error: " + error);
