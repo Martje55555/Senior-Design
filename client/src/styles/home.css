@@ -12,33 +12,24 @@
 }
 
 .container{
-    width: 100px;
-    height: 100px;
-    background-color: blue;
-    float: left;
-    justify-content: space-evenly;
+    margin-left: 500px;
     display: flex;
-    border: 6px solid black;
        
 }
 
-.box1{
-    width: 100px;
-    height: 100px;
-    background: linear-gradient(-45deg, #788cff, #b4c8ff);
+.outerContainer{
+    display: flex;
+}
+
+.innerContainer{
+    justify-content: space-evenly;
+    
 
 }
 
-.box2{
+.box{
     width: 100px;
     height: 100px;
+    padding: 20px;
     background: linear-gradient(-45deg, #788cff, #b4c8ff);
-
-}
-
-.box3{
-    width: 100px;
-    height: 100px;
-    background: linear-gradient(-45deg, #788cff, #b4c8ff);
-
-}
+}   
