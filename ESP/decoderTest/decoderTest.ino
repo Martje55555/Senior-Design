@@ -3,11 +3,12 @@
 #include <ESP8266HTTPClient.h>
 #include <dht.h>
 #include <Arduino_JSON.h>
+#include <ESP8266WiFi.h>
 
-#define WIFI_SSID "HERNANDEZ WIFI"
-#define WIFI_PASSWORD "25000429"
+#define WIFI_SSID "Alonso7"
+#define WIFI_PASSWORD "rayados10"
 
-const char *serverName = "http://f4f9438a395c2c.lhrtunnel.link/other_sensors/add";
+const char *serverName = "http://0030e32a333f97.lhrtunnel.link/other_sensors/add";
 
 #define D0 16
 #define D1 5
@@ -44,6 +45,7 @@ void setup()
   pinMode(D0, OUTPUT); // sensor 0
   pinMode(D1, OUTPUT); //
   pinMode(D2, OUTPUT); // MSB
+  
 }
 
 void printStorage(float arr[])
@@ -122,10 +124,12 @@ void dataToServer()
 
     // char json_string[100];
     // root.prettyPrintTo(json_string, sizeof(json_string));
-
+    String jsonOutput;
     serializeJson(doc, jsonOutput);
 
-    int httpResponseCode = http.POST(jsonOutput);
+    
+
+    int httpResponseCode = http.POST(String(jsonOutput));
 
     Serial.print("Response Code: ");
     Serial.println(httpResponseCode);
