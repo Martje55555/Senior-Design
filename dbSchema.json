@@ -2,109 +2,99 @@
     "dht_sensors" : {
       "humidity" : {
         "sensor_1" : {
-          "1" : {
-            "date" : "",
-            "time" : "",
-            "value" : ""
-          },
-          "-MyECZ3alOXICYyuWhyI" : {
-            "date" : "3/15/2022",
-            "time" : "3:12:51 PM",
-            "value" : 0
-          },
-          "-MyswqkfJAELdUdzUp1O" : {
-            "date" : "3/23/2022",
-            "time" : "5:43:55 PM",
-            "value" : 7.12
-          },
-          "-MzVqzrQDC6nQ3W-ka_3" : {
-            "date" : "3/31/2022",
-            "time" : "11:43:08 AM",
-            "value" : 7.12
+          "4-2-2022" : {
+            "-MyECZ3ZVstNbXhE-SzJ" : {
+              "date" : "3/15/2022",
+              "time" : "3:12:51 PM",
+              "value" : 0
+            }
           }
         }
       },
       "temperature" : {
         "sensor_1" : {
-          "1" : {
-            "date" : "",
-            "time" : "",
-            "value" : ""
-          },
-          "-MyECZ3ZVstNbXhE-SzJ" : {
-            "date" : "3/15/2022",
-            "time" : "3:12:51 PM",
-            "value" : 0
-          },
-          "-MyswqkeSqX3MWq0Cqvv" : {
-            "date" : "3/23/2022",
-            "time" : "5:43:55 PM",
-            "value" : 4.5
-          },
-          "-MzVqzrO66UQTsp1hTsO" : {
-            "date" : "3/31/2022",
-            "time" : "11:43:08 AM",
-            "value" : 4.5
+          "4-2-2022" : {
+            "-MyECZ3ZVstNbXhE-SzJ" : {
+              "date" : "3/15/2022",
+              "time" : "3:12:51 PM",
+              "value" : 0
+            }
           }
         }
       }
     },
     "other_sensors" : {
       "sensor_1" : {
-        "-MyswqkeSqX3MWq0Cqvv" : {
-          "date" : "3/23/2022",
-          "time" : "5:43:55 PM",
-          "value" : 4.5
+        "4-2-2022" : {
+          "-MyECZ3ZVstNbXhE-SzJ" : {
+            "date" : "3/15/2022",
+            "time" : "3:12:51 PM",
+            "value" : 0
+          }
         }
       },
       "sensor_2" : {
-        "-MyswqkeSqX3MWq0Cqvv" : {
-            "date" : "3/23/2022",
-            "time" : "5:43:55 PM",
-            "value" : 4.5
+        "4-2-2022" : {
+          "-MyECZ3ZVstNbXhE-SzJ" : {
+            "date" : "3/15/2022",
+            "time" : "3:12:51 PM",
+            "value" : 0
           }
+        }
       },
       "sensor_3" : {
-        "-MyswqkeSqX3MWq0Cqvv" : {
-            "date" : "3/23/2022",
-            "time" : "5:43:55 PM",
-            "value" : 4.5
+        "4-2-2022" : {
+          "-MyECZ3ZVstNbXhE-SzJ" : {
+            "date" : "3/15/2022",
+            "time" : "3:12:51 PM",
+            "value" : 0
           }
+        }
       },
       "sensor_4" : {
-        "-MyswqkeSqX3MWq0Cqvv" : {
-            "date" : "3/23/2022",
-            "time" : "5:43:55 PM",
-            "value" : 4.5
+        "4-2-2022" : {
+          "-MyECZ3ZVstNbXhE-SzJ" : {
+            "date" : "3/15/2022",
+            "time" : "3:12:51 PM",
+            "value" : 0
           }
+        }
       },
       "sensor_5" : {
-        "-MyswqkeSqX3MWq0Cqvv" : {
-            "date" : "3/23/2022",
-            "time" : "5:43:55 PM",
-            "value" : 4.5
+        "4-2-2022" : {
+          "-MyECZ3ZVstNbXhE-SzJ" : {
+            "date" : "3/15/2022",
+            "time" : "3:12:51 PM",
+            "value" : 0
           }
+        }
       },
       "sensor_6" : {
-        "-MyswqkeSqX3MWq0Cqvv" : {
-            "date" : "3/23/2022",
-            "time" : "5:43:55 PM",
-            "value" : 4.5
+        "4-2-2022" : {
+          "-MyECZ3ZVstNbXhE-SzJ" : {
+            "date" : "3/15/2022",
+            "time" : "3:12:51 PM",
+            "value" : 0
           }
+        }
       },
       "sensor_7" : {
-        "-MyswqkeSqX3MWq0Cqvv" : {
-            "date" : "3/23/2022",
-            "time" : "5:43:55 PM",
-            "value" : 4.5
+        "4-2-2022" : {
+          "-MyECZ3ZVstNbXhE-SzJ" : {
+            "date" : "3/15/2022",
+            "time" : "3:12:51 PM",
+            "value" : 0
           }
+        }
       },
       "sensor_8" : {
-        "-MyswqkeSqX3MWq0Cqvv" : {
-            "date" : "3/23/2022",
-            "time" : "5:43:55 PM",
-            "value" : 4.5
+        "4-2-2022" : {
+          "-MyECZ3ZVstNbXhE-SzJ" : {
+            "date" : "3/15/2022",
+            "time" : "3:12:51 PM",
+            "value" : 0
           }
+        }
       }
     }
   }
