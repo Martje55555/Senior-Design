@@ -10,7 +10,7 @@ let month = new Date().getMonth() + 1;
 month = month.toString();
 let year = new Date().getFullYear().toString();
 
-let today = month+'-'+day+'-'+year;
+let today = month + '-' + day + '-' + year;
 
 const app = express();
 
@@ -31,7 +31,7 @@ const otherRef = database.ref("/other_sensors/");
 
 // HELPER FUNCTIONS
 
-const getNumberOfChildren = async ( sensor ) => {
+const getNumberOfChildren = async (sensor) => {
     let value;
     let pathRef = database.ref(`temperature/sensor_${sensor}`);
     let response = await pathRef.once('value', async (snapshot) => {
@@ -79,15 +79,31 @@ app.get("/humidity/all", async (req, res, next) => {
 });
 
 // Get one temperature sensor
-app.get("/temperature/:num", async (req, res, next) => {
-    let value;
-    let tempRef = database.ref("/dht_sensors/temperature/")
-    await tempRef.once('value', async (snapshot) => {
-        value = await snapshot.val();
-        console.log(value[`sensor_${req.params.num}`]);
-    });
+app.get("/temperature/:sensor/", async (req, res, next) => {
+    let amount = req.query.amount ? req.query.amount : null;
 
-    res.json([value[`sensor_${req.params.num}`]]);
+    if (amount == null) {
+        let value;
+        let tempRef = database.ref("/dht_sensors/temperature/")
+        await tempRef.once('value', async (snapshot) => {
+            value = await snapshot.val();
+            console.log(value[`${req.params.sensor}`]);
+        });
+
+        res.json([value[`${req.params.sensor}`]]);
+
+    } else {
+        amount = Number(amount);
+        let value;
+        await database.ref(`/dht_sensors/temperature/${req.params.sensor}`)
+        .orderByKey()
+        .limitToLast(amount)
+        .on("value", async (snapshot) => {
+            value = await snapshot.val();
+            console.log(value);
+            res.json([value]);
+        });
+    }
 });
 
 // Get one humidity sensor
@@ -134,7 +150,7 @@ app.get("/:type/:sensor/:date/amount", async (req, res, next) => {
         value = await snapshot.val();
     });
 
-    res.send({'amount': `${response.numChildren()}`});
+    res.send({ 'amount': `${response.numChildren()}` });
 });
 
 // Get all values for other sensors
@@ -171,39 +187,39 @@ app.post("/:sensor_num", async (req, res, next) => {
 
     // Temperature Object
     let tempObj = {
-        time : time,
-        date : date,
-        value : temp
+        time: time,
+        date: date,
+        value: temp
     };
-    
+
     // Humidity Object
     let humidityObj = {
-        time : time,
-        date : date,
-        value : humidity
+        time: time,
+        date: date,
+        value: humidity
     };
 
     await dhtRef.child(`/temperature/${req.params.sensor_num}/${today}`).push(tempObj, (error) => {
         if (error) {
-          // The write failed...
-          console.log("Failed with error: " + error);
+            // The write failed...
+            console.log("Failed with error: " + error);
         } else {
-          // The write was successful...
-          console.log("success");
+            // The write was successful...
+            console.log("success");
         };
     });
 
     await dhtRef.child(`/humidity/${req.params.sensor_num}/${today}`).push(humidityObj, (error) => {
         if (error) {
-          // The write failed...
-          console.log("Failed with error: " + error);
+            // The write failed...
+            console.log("Failed with error: " + error);
         } else {
-          // The write was successful...
-          console.log("success");
+            // The write was successful...
+            console.log("success");
         };
     });
 
-    res.send({Succes : true});
+    res.send({ Succes: true });
 });
 
 // POSTS new data for non DHT SENSORS
@@ -214,42 +230,42 @@ app.post("/other_sensors/add", async (req, res, next) => {
 
     // Temperature Object
     let bodyObj = {
-        time : time,
-        date : date,
-        value : val
+        time: time,
+        date: date,
+        value: val
     };
 
-    for(let i = 1; i <= 8; i++) {
-        if(i == 1) {
+    for (let i = 1; i <= 8; i++) {
+        if (i == 1) {
             bodyObj.value = req.body.sensor_1;
-        } else if(i == 2) {
+        } else if (i == 2) {
             bodyObj.value = req.body.sensor_2;
-        } else if(i == 3) {
+        } else if (i == 3) {
             bodyObj.value = req.body.sensor_3;
-        } else if(i == 4) {
+        } else if (i == 4) {
             bodyObj.value = req.body.sensor_4;
-        } else if(i == 5) {
+        } else if (i == 5) {
             bodyObj.value = req.body.sensor_5;
-        } else if(i == 6) {
+        } else if (i == 6) {
             bodyObj.value = req.body.sensor_6;
-        } else if(i == 7) {
+        } else if (i == 7) {
             bodyObj.value = req.body.sensor_7;
-        } else if(i == 8) {
+        } else if (i == 8) {
             bodyObj.value = req.body.sensor_8;
         }
 
         await database.ref("/other_sensors/").child(`sensor_${i}/${today}`).push(bodyObj, (error) => {
             if (error) {
-              // The write failed...
-              console.log("Failed with error: " + error);
+                // The write failed...
+                console.log("Failed with error: " + error);
             } else {
-              // The write was successful...
-              console.log("success");
+                // The write was successful...
+                console.log("success");
             };
         });
     }
 
-    res.send({Succes : true});
+    res.send({ Succes: true });
 });
 
 module.exports = app;
