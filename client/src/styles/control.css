@@ -1,0 +1,17 @@
+.outerContainer{
+    display: inline-block;
+    display: flex;
+}
+
+ .container{
+     justify-content: center;
+ }
+
+ .container1{
+     justify-content: center;
+     vertical-align: baseline;
+ }
+
+ .containerPadding{
+    padding: 75px;
+}

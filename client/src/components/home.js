@@ -6,10 +6,14 @@ const Home = () => {
 
     return (
         <div className="outerContainer">
-            <h1 className="sample">Status: On/Off</h1>
-            <h2 className="sample">Gathering data: Yes/No</h2>
-            <h3 className="airHumidity">Air Humidity: 40%</h3>
-            <div className="container">
+            <div className="container1">
+                <h1 className="sample">Status: On/Off</h1>
+                <h1 className="sample">Gathering data: Yes/No</h1>
+                <h1 className="sample">Weather: 85°F</h1>
+                <h1 className="airHumidity">Air Humidity: 40%</h1>
+            </div>
+            <div className="container3"></div>
+            <div className="container2">
                 <div className="innerContainer">
                     <div className="box"> 1</div>
                     <div className="box"> 2</div>
