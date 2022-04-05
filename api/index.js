@@ -128,7 +128,7 @@ app.get("/temperature/:sensor/latest", async (req, res, next) => {
 });
 
 // Get one humidity sensor with an optional parameter of limiting the amount of results
-app.get("/humidity/:num", async (req, res, next) => {
+app.get("/humidity/:sensor", async (req, res, next) => {
     let amount = req.query.amount ? req.query.amount : null;
 
     if (amount == null) {
@@ -136,10 +136,10 @@ app.get("/humidity/:num", async (req, res, next) => {
         let humidityRef = database.ref("/dht_sensors/humidity/");
         await humidityRef.once('value', async (snapshot) => {
             value = await snapshot.val();
-            console.log(value[`${req.params.num}`]);
+            console.log(value[`${req.params.sensor}`]);
         });
 
-        res.json([value[`${req.params.num}`]]);
+        res.json([value[`${req.params.sensor}`]]);
     } else {
         amount = Number(amount);
         let value;
