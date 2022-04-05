@@ -114,12 +114,12 @@ app.get("/temperature/:sensor/latest", async (req, res, next) => {
         .orderByKey()
         .limitToLast(1)
         .once("value", async (snapshot) => {
-            value = await snapshot.forEach( (childSnapshot) => {
+            value = await snapshot.forEach((childSnapshot) => {
                 data = childSnapshot.val();
             });
         })
-    
-    for(var att in data) {
+
+    for (var att in data) {
         key = att;
     }
 
@@ -162,12 +162,12 @@ app.get("/humidity/:sensor/latest", async (req, res, next) => {
         .orderByKey()
         .limitToLast(1)
         .once("value", async (snapshot) => {
-            value = await snapshot.forEach( (childSnapshot) => {
+            value = await snapshot.forEach((childSnapshot) => {
                 data = childSnapshot.val();
             });
         })
-    
-    for(var att in data) {
+
+    for (var att in data) {
         key = att;
     }
 
@@ -258,12 +258,12 @@ app.get("/other_sensors/:sensor/latest", async (req, res, next) => {
         .orderByKey()
         .limitToLast(1)
         .once("value", async (snapshot) => {
-            value = await snapshot.forEach( (childSnapshot) => {
+            value = await snapshot.forEach((childSnapshot) => {
                 data = childSnapshot.val();
             });
         })
-    
-    for(var att in data) {
+
+    for (var att in data) {
         key = att;
     }
 
