@@ -1,17 +1,64 @@
-.outerContainer{
+/* .outerContainer{
     display: inline-block;
     display: flex;
+    
 }
 
  .container{
      justify-content: center;
+     
+ } */
+
+ .container{
+     margin-top: 40px;
+     margin-left: 50px;
+     
+     
  }
 
- .container1{
+ .buttons{
+    margin-top: 100px;
+    
+   
+ }
+
+ .btn1{
+ 
+     background-color: green;
+     width: 200px;
+     height: 100px;
+     display: block;
+     margin: auto;
+     font-size: 50px;
+     color: white;
+    
+     
+ }
+
+ .btn2{
+     background-color: red;
+     width: 200px;
+     height: 100px;
+     display: block;
+     margin: auto;
+     margin-top: 25px;
+     font-size: 50px;
+     color: white;
+     
+ }
+
+
+
+ /* .container1{
      justify-content: center;
      vertical-align: baseline;
+     align-items: center;
+     margin-top: 30%;
+     margin-right: 50%;
+
+
  }
 
  .containerPadding{
     padding: 75px;
-}
+} */
