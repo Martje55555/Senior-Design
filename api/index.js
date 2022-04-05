@@ -291,12 +291,14 @@ app.post("/:sensor_num", async (req, res, next) => {
     let date = new Date().toLocaleDateString();
     let temp = req.body.temperature;
     let humidity = req.body.humidity;
+    let description = `This is ${req.params.sensor_num}, at location xyz.`
 
     // Temperature Object
     let tempObj = {
         time: time,
         date: date,
-        value: temp
+        value: temp,
+        description: description
     };
 
     // Humidity Object
@@ -334,31 +336,41 @@ app.post("/other_sensors/add", async (req, res, next) => {
     let time = new Date().toLocaleTimeString();
     let date = new Date().toLocaleDateString();
     let val = req.body.sensor_1;
+    let description;
 
     // Temperature Object
     let bodyObj = {
         time: time,
         date: date,
-        value: val
+        value: val,
+        description: description
     };
 
     for (let i = 1; i <= 8; i++) {
         if (i == 1) {
             bodyObj.value = req.body.sensor_1;
+            bodyObj.description = `This is sensor_1, at location xyz.`
         } else if (i == 2) {
             bodyObj.value = req.body.sensor_2;
+            bodyObj.description = `This is sensor_2, at location xyz.`
         } else if (i == 3) {
             bodyObj.value = req.body.sensor_3;
+            bodyObj.description = `This is sensor_3, at location xyz.`
         } else if (i == 4) {
             bodyObj.value = req.body.sensor_4;
+            bodyObj.description = `This is sensor_4, at location xyz.`
         } else if (i == 5) {
             bodyObj.value = req.body.sensor_5;
+            bodyObj.description = `This is sensor_5, at location xyz.`
         } else if (i == 6) {
             bodyObj.value = req.body.sensor_6;
+            bodyObj.description = `This is sensor_6, at location xyz.`
         } else if (i == 7) {
             bodyObj.value = req.body.sensor_7;
+            bodyObj.description = `This is sensor_7, at location xyz.`
         } else if (i == 8) {
             bodyObj.value = req.body.sensor_8;
+            bodyObj.description = `This is sensor_8, at location xyz.`
         }
 
         await database.ref("/other_sensors/").child(`sensor_${i}/${today}`).push(bodyObj, (error) => {
