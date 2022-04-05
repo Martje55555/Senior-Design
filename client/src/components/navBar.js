@@ -30,7 +30,7 @@ const NavBar = () => {
     }
 
     return (
-        <div className="ui fluid four item menu ar">
+        <div className="ui fluid three item menu ar">
             <a onClick={() => home()}
                 className={homeActive ? "item active" : "item"}>
                 Home
