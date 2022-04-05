@@ -78,8 +78,8 @@ app.get("/humidity/all", async (req, res, next) => {
     res.json([value]);
 });
 
-// Get one temperature sensor
-app.get("/temperature/:sensor/", async (req, res, next) => {
+// Get one temperature sensor with an optional parameter of limiting the amount of results
+app.get("/temperature/:sensor", async (req, res, next) => {
     let amount = req.query.amount ? req.query.amount : null;
 
     if (amount == null) {
@@ -96,26 +96,83 @@ app.get("/temperature/:sensor/", async (req, res, next) => {
         amount = Number(amount);
         let value;
         await database.ref(`/dht_sensors/temperature/${req.params.sensor}`)
-        .orderByKey()
-        .limitToLast(amount)
-        .on("value", async (snapshot) => {
-            value = await snapshot.val();
-            console.log(value);
-            res.json([value]);
-        });
+            .orderByKey()
+            .limitToLast(amount)
+            .on("value", async (snapshot) => {
+                value = await snapshot.val();
+                console.log(value);
+                res.json([value]);
+            });
     }
 });
 
-// Get one humidity sensor
-app.get("/humidity/:num", async (req, res, next) => {
+app.get("/temperature/:sensor/latest", async (req, res, next) => {
     let value;
-    let humidityRef = database.ref("/dht_sensors/humidity/");
-    await humidityRef.once('value', async (snapshot) => {
-        value = await snapshot.val();
-        console.log(value[`sensor_${req.params.num}`]);
-    });
+    let key;
+    let data;
+    await database.ref(`/dht_sensors/temperature/${req.params.sensor}`)
+        .orderByKey()
+        .limitToLast(1)
+        .once("value", async (snapshot) => {
+            value = await snapshot.forEach( (childSnapshot) => {
+                data = childSnapshot.val();
+            });
+        })
+    
+    for(var att in data) {
+        key = att;
+    }
 
-    res.json([value[`sensor_${req.params.num}`]]);
+    console.log(data[key]);
+    res.json(data[key]);
+});
+
+// Get one humidity sensor with an optional parameter of limiting the amount of results
+app.get("/humidity/:num", async (req, res, next) => {
+    let amount = req.query.amount ? req.query.amount : null;
+
+    if (amount == null) {
+        let value;
+        let humidityRef = database.ref("/dht_sensors/humidity/");
+        await humidityRef.once('value', async (snapshot) => {
+            value = await snapshot.val();
+            console.log(value[`${req.params.num}`]);
+        });
+
+        res.json([value[`${req.params.num}`]]);
+    } else {
+        amount = Number(amount);
+        let value;
+        await database.ref(`/dht_sensors/humidity/${req.params.sensor}`)
+            .orderByKey()
+            .limitToLast(amount)
+            .on("value", async (snapshot) => {
+                value = await snapshot.val();
+                console.log(value);
+                res.json([value]);
+            });
+    }
+});
+
+app.get("/humidity/:sensor/latest", async (req, res, next) => {
+    let value;
+    let key;
+    let data;
+    await database.ref(`/dht_sensors/humidity/${req.params.sensor}`)
+        .orderByKey()
+        .limitToLast(1)
+        .once("value", async (snapshot) => {
+            value = await snapshot.forEach( (childSnapshot) => {
+                data = childSnapshot.val();
+            });
+        })
+    
+    for(var att in data) {
+        key = att;
+    }
+
+    console.log(data[key]);
+    res.json(data[key]);
 });
 
 // Get values for a certain day for a dht temp sensor
@@ -162,6 +219,56 @@ app.get("/other_sensors/all", async (req, res, next) => {
     });
 
     res.json([value]);
+});
+
+// Get values for a specifc other sensor with an optional amount parameter that limits the most recent data
+app.get("/other_sensors/:sensor", async (req, res, next) => {
+    let amount = req.query.amount ? req.query.amount : null;
+
+    if (amount == null) {
+        let value;
+        let pathRef = database.ref(`other_sensors/${req.params.sensor}/`);
+        let response = await pathRef.once('value', async (snapshot) => {
+            value = await snapshot.val();
+        });
+
+        console.log(response);
+        res.json([value]);
+    } else {
+        amount = Number(amount);
+        let value;
+
+        await database.ref(`/other_sensors/${req.params.sensor}`)
+            .orderByKey()
+            .limitToLast(amount)
+            .once("value", async (snapshot) => {
+                value = snapshot.val();
+            });
+
+        console.log(value);
+        res.json(value);
+    }
+});
+
+app.get("/other_sensors/:sensor/latest", async (req, res, next) => {
+    let value;
+    let key;
+    let data;
+    await database.ref(`/other_sensors/${req.params.sensor}`)
+        .orderByKey()
+        .limitToLast(1)
+        .once("value", async (snapshot) => {
+            value = await snapshot.forEach( (childSnapshot) => {
+                data = childSnapshot.val();
+            });
+        })
+    
+    for(var att in data) {
+        key = att;
+    }
+
+    console.log(data[key]);
+    res.json(data[key]);
 });
 
 // Get values for a certain day for a specific other sensor
