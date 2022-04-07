@@ -1,11 +1,14 @@
-import React from "react";
+import React from 'react';
 
 import NavBar from "./navBar";
 
 const Historical = () => {
 
-    return(
-        <h1>This is the Historical Page</h1>
+    return (
+        <>
+            <NavBar />
+            <h1>This is the Historical Page</h1>
+        </>
     )
 }
 
