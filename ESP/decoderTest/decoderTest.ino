@@ -6,7 +6,7 @@
 #include <ESP8266WiFi.h>
 
 #define WIFI_SSID "Alonso7"
-#define WIFI_PASSWORD "rayados10"
+#define WIFI_PASSWORD "figmaEngineer69"
 
 const char *serverName = "http://0030e32a333f97.lhrtunnel.link/other_sensors/add";
 
@@ -186,7 +186,6 @@ void sensorLoop()
       digitalWrite(D2, LOW);
     }
 
-    delay(2000);
     for (int index = 2; index >= 0; index--)
     {
       Serial.print(bitArray[index]);
@@ -195,10 +194,11 @@ void sensorLoop()
     output_value0 = map(output_value0, 550, 0, 0, 100);
     dataStorage[i] = output_value0;
     Serial.println();
-    Serial.println();
     printStorage(dataStorage);
     Serial.println();
-
+    Serial.println();
+    
+    delay(2000);
     delay(20);
   }
 }
