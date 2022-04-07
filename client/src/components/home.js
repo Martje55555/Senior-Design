@@ -4,28 +4,7 @@ import NavBar from "./navBar";
 
 import '../styles/home.css'
 
-const Home = ({handleLogout, user}) => {
-    // const Navigate = useNavigate();
-    // const login = () => {
-    //     Navigate('/login', { replace: true });
-    // }
-    
-    // useEffect(() => {
-    //     console.log(user);
-    //     if (user === "") {
-    //         login();
-    //     }
-    // }, []);
-
-    if(!user) {
-        return (
-            <div>
-                <p>PLEASE LOG IN FIRST</p>
-                <br />
-                <button>Click here to log in / sign up</button>
-            </div>
-        )
-    }
+const Home = ({ handleLogout }) => {
 
     if (window.screen.width > 1280) {
         return (

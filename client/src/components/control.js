@@ -1,21 +1,9 @@
-import React, {useEffect} from 'react';
-import { useNavigate } from 'react-router-dom';
-
+import React from 'react';
 
 import '../styles/control.css'
 import NavBar from "./navBar";
 
-const Control = ({user}) => {
-    // const Navigate = useNavigate();
-    // const login = () => {
-    //     Navigate('/login', { replace: true });
-    // }
-
-    // useEffect(() => {
-    //     if(user == null || user == undefined || user == '') {
-    //         login();
-    //     }
-    // }, []);
+const Control = () => {
 
     return (
         <>

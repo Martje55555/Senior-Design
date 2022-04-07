@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, HashRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Navigate, Route, Routes, useLocation, Outlet } from 'react-router-dom';
 
 
 import Home from './components/home.js';
@@ -11,11 +11,7 @@ import fire from './fire.js';
 import Login from './components/Login.js';
 
 const App = () => {
-
-    const home = () => {
-        Navigate('/home', { replace: true });
-    }
-
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [user, setUser] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -52,7 +48,7 @@ const App = () => {
             });
 
         if (user) {
-            Navigate('/home', { replace: true });
+            setIsLoggedIn(true);
         }
     };
 
@@ -83,9 +79,11 @@ const App = () => {
             if (user) {
                 clearInputs();
                 setUser(user);
-                home();
+                setIsLoggedIn(true);
+
             } else {
                 setUser('');
+                setIsLoggedIn(false);
             }
         });
     };
@@ -94,93 +92,58 @@ const App = () => {
         authListener();
     }, []);
 
-    if (user) {
-        return (
-            <Router>
-                <Routes>
-                    <Route path="/home" element={<Home handleLogout={handleLogout} user={user} />} />
-                    <Route path="/historical" element={<Historical />} />
-                    <Route path="/control" element={<Control />} />
-                </Routes>
-            </Router>
-        )
-    } else {
-        return (
-            <Router>
-                <Routes>
-                    <Route exact path="/" element={<Login
-                        user={user}
-                        email={email}
-                        setEmail={setEmail}
-                        password={password}
-                        setPassword={setPassword}
-                        handleLogin={handleLogin}
-                        handleSignup={handleSignup}
-                        hasAccount={hasAccount}
-                        setHasAccount={setHasAccount}
-                        emailError={emailError}
-                        passwordError={passwordError} />}
-                    />
-                </Routes>
-            </Router>
-        )
-    }
+    return (
+        <div>
+            {user ? (
+                <Router>
+                    <Routes>
+                        <Route exact path="/" element={isLoggedIn ? <Home handleLogout={handleLogout} user={user} />
+                            :
+                            <Login
+                                user={user}
+                                email={email}
+                                setEmail={setEmail}
+                                password={password}
+                                setPassword={setPassword}
+                                handleLogin={handleLogin}
+                                handleSignup={handleSignup}
+                                hasAccount={hasAccount}
+                                setHasAccount={setHasAccount}
+                                emailError={emailError}
+                                passwordError={passwordError} />}
+                        />
+                        <Route path="/home" element={isLoggedIn ? <Home handleLogout={handleLogout} user={user} /> : <Login />} />
+                        <Route path="/historical" element={<Historical />} />
+                        <Route path="/control" element={<Control />} />
+                        <Route path="*" element={ <Navigate to="/home" />} />
+                    </Routes>
+                </Router>
+            ) : (
+                <Router>
+                    <Routes>
+                        <Route path="/login" element={isLoggedIn ? <Home handleLogout={handleLogout} user={user} />
+                            :
+                            <Login
+                                user={user}
+                                email={email}
+                                setEmail={setEmail}
+                                password={password}
+                                setPassword={setPassword}
+                                handleLogin={handleLogin}
+                                handleSignup={handleSignup}
+                                hasAccount={hasAccount}
+                                setHasAccount={setHasAccount}
+                                emailError={emailError}
+                                passwordError={passwordError} />}
+                        />
+
+                        <Route path="*" element={<Navigate to="/login" />} />
+                    </Routes>
+                </Router>
+            )}
+        </div>
+    );
+
 };
 
 export default App;
-
-
-{/* <Route path="/home" element={<Home />} />
-<Route path="/historical" element={<Historical />} />
-<Route path="/control" element={<Control />} /> */}
-
-{/* <Route path="/home" render={() => user ? <Home handleLogout={handleLogout}/> : <Navigate to="/login" />}/>
-<Route path="/historical" element={<Historical user={user}/>} />
-<Route path="/control" element={<Control user={user}/>} /> */}
-
-
-
-
-
-// THIS ONE WORKS KIND OF ISH
-
-// <Router>
-// {user ? (
-
-//     <Routes>
-//         <Route path="/home" element={<Home handleLogout={handleLogout} user={user} />} />
-//         <Route path="/historical" element={<Historical />} />
-//         <Route path="/control" element={<Control />} />
-//     </Routes>
-
-// ) : (
-//     <Routes>
-//         <Route exact path="/" element={<Login
-//             user={user}
-//             email={email}
-//             setEmail={setEmail}
-//             password={password}
-//             setPassword={setPassword}
-//             handleLogin={handleLogin}
-//             handleSignup={handleSignup}
-//             hasAccount={hasAccount}
-//             setHasAccount={setHasAccount}
-//             emailError={emailError}
-//             passwordError={passwordError} />}
-//         />
-//         <Route path="/login" element={<Login
-//             user={user}
-//             email={email}
-//             setEmail={setEmail}
-//             password={password}
-//             setPassword={setPassword}
-//             handleLogin={handleLogin}
-//             handleSignup={handleSignup}
-//             hasAccount={hasAccount}
-//             setHasAccount={setHasAccount}
-//             emailError={emailError}
-//             passwordError={passwordError} />}
-//         />
-//     </Routes>
-// )}
-// </Router>
