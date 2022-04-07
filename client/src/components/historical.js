@@ -1,11 +1,27 @@
-import React from "react";
+import React, {useEffect} from 'react';
+import { useNavigate } from 'react-router-dom';
+import {Redirect} from 'react-router';
 
 import NavBar from "./navBar";
 
-const Historical = () => {
+const Historical = ({user}) => {
+    // const Navigate = useNavigate();
+    // const login = () => {
+    //     <Redirect to="/login" />
+    // }
 
-    return(
-        <h1>This is the Historical Page</h1>
+    // useEffect(() => {
+    //     login();
+    //     // if(user === "") {
+    //     //     login();
+    //     // }
+    // }, []);
+
+    return (
+        <>
+            <NavBar />
+            <h1>This is the Historical Page</h1>
+        </>
     )
 }
 

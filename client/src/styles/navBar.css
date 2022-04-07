@@ -3,5 +3,7 @@ html {
 }
 
 * {
+    margin-top: auto;
     box-sizing: border-box;
 }
+
