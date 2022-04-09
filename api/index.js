@@ -54,86 +54,14 @@ app.get("/dht_sensors/all", async (req, res, next) => {
     res.json([value]);
 });
 
-// Get all temp sensors
-app.get("/temperature/all", async (req, res, next) => {
-    let value;
-    let tempRef = database.ref("/dht_sensors/temperature/")
-    await tempRef.once('value', async (snapshot) => {
-        value = await snapshot.val();
-        console.log(snapshot.val());
-    });
 
-    res.json([value]);
-});
-
-// Get all humidity sensors
-app.get("/humidity/all", async (req, res, next) => {
-    let value;
-    let humidityRef = database.ref("/dht_sensors/humidity/");
-    await humidityRef.once('value', async (snapshot) => {
-        value = await snapshot.val();
-        console.log(snapshot.val());
-    });
-
-    res.json([value]);
-});
-
-// Get one temperature sensor with an optional parameter of limiting the amount of results
-app.get("/temperature/:sensor", async (req, res, next) => {
+// Get one dht sensor with an optional parameter of limiting the amount of results
+app.get("/:sensor", async (req, res, next) => {
     let amount = req.query.amount ? req.query.amount : null;
 
     if (amount == null) {
         let value;
-        let tempRef = database.ref("/dht_sensors/temperature/")
-        await tempRef.once('value', async (snapshot) => {
-            value = await snapshot.val();
-            console.log(value[`${req.params.sensor}`]);
-        });
-
-        res.json([value[`${req.params.sensor}`]]);
-
-    } else {
-        amount = Number(amount);
-        let value;
-        await database.ref(`/dht_sensors/temperature/${req.params.sensor}`)
-            .orderByKey()
-            .limitToLast(amount)
-            .on("value", async (snapshot) => {
-                value = await snapshot.val();
-                console.log(value);
-                res.json([value]);
-            });
-    }
-});
-
-app.get("/temperature/:sensor/latest", async (req, res, next) => {
-    let value;
-    let key;
-    let data;
-    await database.ref(`/dht_sensors/temperature/${req.params.sensor}`)
-        .orderByKey()
-        .limitToLast(1)
-        .once("value", async (snapshot) => {
-            value = await snapshot.forEach((childSnapshot) => {
-                data = childSnapshot.val();
-            });
-        })
-
-    for (var att in data) {
-        key = att;
-    }
-
-    console.log(data[key]);
-    res.json(data[key]);
-});
-
-// Get one humidity sensor with an optional parameter of limiting the amount of results
-app.get("/humidity/:sensor", async (req, res, next) => {
-    let amount = req.query.amount ? req.query.amount : null;
-
-    if (amount == null) {
-        let value;
-        let humidityRef = database.ref("/dht_sensors/humidity/");
+        let humidityRef = database.ref("/dht_sensors/");
         await humidityRef.once('value', async (snapshot) => {
             value = await snapshot.val();
             console.log(value[`${req.params.sensor}`]);
@@ -143,7 +71,7 @@ app.get("/humidity/:sensor", async (req, res, next) => {
     } else {
         amount = Number(amount);
         let value;
-        await database.ref(`/dht_sensors/humidity/${req.params.sensor}`)
+        await database.ref(`/dht_sensors/${req.params.sensor}`)
             .orderByKey()
             .limitToLast(amount)
             .on("value", async (snapshot) => {
@@ -154,11 +82,11 @@ app.get("/humidity/:sensor", async (req, res, next) => {
     }
 });
 
-app.get("/humidity/:sensor/latest", async (req, res, next) => {
+app.get("/:sensor/latest", async (req, res, next) => {
     let value;
     let key;
     let data;
-    await database.ref(`/dht_sensors/humidity/${req.params.sensor}`)
+    await database.ref(`/dht_sensors/${req.params.sensor}`)
         .orderByKey()
         .limitToLast(1)
         .once("value", async (snapshot) => {
@@ -175,22 +103,10 @@ app.get("/humidity/:sensor/latest", async (req, res, next) => {
     res.json(data[key]);
 });
 
-// Get values for a certain day for a dht temp sensor
-app.get("/temperature/:sensor/:date", async (req, res, next) => {
+// Get values for a certain day for a dht sensor
+app.get("/:sensor/:date", async (req, res, next) => {
     let value;
-    let pathRef = database.ref(`dht_sensors/temperature/${req.params.sensor}/${req.params.date}`);
-    let response = await pathRef.once('value', async (snapshot) => {
-        value = await snapshot.val();
-    });
-
-    console.log(response);
-    res.json([value]);
-});
-
-// Get values for a certain day for a dht humidity sensor
-app.get("/humidity/:sensor/:date", async (req, res, next) => {
-    let value;
-    let pathRef = database.ref(`dht_sensors/humidity/${req.params.sensor}/${req.params.date}`);
+    let pathRef = database.ref(`dht_sensors/${req.params.sensor}/${req.params.date}`);
     let response = await pathRef.once('value', async (snapshot) => {
         value = await snapshot.val();
     });
@@ -200,9 +116,9 @@ app.get("/humidity/:sensor/:date", async (req, res, next) => {
 });
 
 // Get number of reads for a dht_sensor
-app.get("/:type/:sensor/:date/amount", async (req, res, next) => {
+app.get("/:sensor/:date/amount", async (req, res, next) => {
     let value;
-    let pathRef = database.ref(`dht_sensors/${req.params.type}/${req.params.sensor}/${req.params.date}`);
+    let pathRef = database.ref(`dht_sensors/${req.params.sensor}/${req.params.date}`);
     let response = await pathRef.once('value', async (snapshot) => {
         value = await snapshot.val();
     });
@@ -293,32 +209,16 @@ app.post("/:sensor_num", async (req, res, next) => {
     let humidity = req.body.humidity;
     let description = `This is ${req.params.sensor_num}, at location xyz.`
 
-    // Temperature Object
-    let tempObj = {
+    // Temperature and humdity obj
+    let bodyObj = {
         time: time,
         date: date,
-        value: temp,
+        temperature: temp,
+        humidity : humidity,
         description: description
     };
 
-    // Humidity Object
-    let humidityObj = {
-        time: time,
-        date: date,
-        value: humidity
-    };
-
-    await dhtRef.child(`/temperature/${req.params.sensor_num}/${today}`).push(tempObj, (error) => {
-        if (error) {
-            // The write failed...
-            console.log("Failed with error: " + error);
-        } else {
-            // The write was successful...
-            console.log("success");
-        };
-    });
-
-    await dhtRef.child(`/humidity/${req.params.sensor_num}/${today}`).push(humidityObj, (error) => {
+    await dhtRef.child(`/${req.params.sensor_num}/${today}`).push(bodyObj, (error) => {
         if (error) {
             // The write failed...
             console.log("Failed with error: " + error);
