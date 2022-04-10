@@ -1,101 +1,634 @@
 {
-    "dht_sensors" : {
-      "humidity" : {
-        "sensor_1" : {
-          "4-2-2022" : {
-            "-MyECZ3ZVstNbXhE-SzJ" : {
-              "date" : "3/15/2022",
-              "time" : "3:12:51 PM",
-              "value" : 0
-            }
+  "dht_sensors" : {
+    "humidity" : {
+      "sensor_1" : {
+        "04-02-2022" : {
+          "-MyECZ3ZVstNbXhE-SzJ" : {
+            "date" : "3/15/2022",
+            "time" : "3:12:51 PM",
+            "value" : 0
           }
-        }
-      },
-      "temperature" : {
-        "sensor_1" : {
-          "4-2-2022" : {
-            "-MyECZ3ZVstNbXhE-SzJ" : {
-              "date" : "3/15/2022",
-              "time" : "3:12:51 PM",
-              "value" : 0
-            }
+        },
+        "04-03-2022" : {
+          "-MzhsDFqUJ8vX8SxQ9YB" : {
+            "date" : "4/3/2022",
+            "time" : "12:23:32 AM",
+            "value" : 7.12
+          },
+          "-Mzhw1CERW6z7xLjMwqn" : {
+            "date" : "4/3/2022",
+            "time" : "12:40:12 AM",
+            "value" : 7.12
+          }
+        },
+        "04-04-2022" : {
+          "-Mzmzhudp7oGnZak3eAH" : {
+            "date" : "4/4/2022",
+            "time" : "12:14:23 AM",
+            "value" : 7.12
+          }
+        },
+        "04-05-2022" : {
+          "-MzsN2XrvJXxS5FPChoJ" : {
+            "date" : "4/5/2022",
+            "time" : "1:18:49 AM",
+            "value" : 7.12
+          },
+          "-MzsNM8PK-fOMwFonRPi" : {
+            "date" : "4/5/2022",
+            "time" : "1:20:10 AM",
+            "value" : 7.12
+          },
+          "-MzuL5wp4OoCI-LdUDLu" : {
+            "date" : "4/5/2022",
+            "time" : "10:29:33 AM",
+            "value" : 7.12
+          },
+          "-MzuOCKzCSZavcVrnTTa" : {
+            "date" : "4/5/2022",
+            "time" : "10:43:06 AM",
+            "value" : 7.12
           }
         }
       }
     },
-    "other_sensors" : {
+    "sensor_1" : {
+      "04-09-2022" : {
+        "-MyECZ3ZVstNbXhE-SzJ" : {
+          "date" : "4-9-2022",
+          "description" : "this is sensor 1",
+          "humidity" : 33,
+          "temperature" : 55
+        }
+      }
+    },
+    "temperature" : {
       "sensor_1" : {
-        "4-2-2022" : {
+        "04-02-2022" : {
           "-MyECZ3ZVstNbXhE-SzJ" : {
             "date" : "3/15/2022",
             "time" : "3:12:51 PM",
             "value" : 0
           }
-        }
-      },
-      "sensor_2" : {
-        "4-2-2022" : {
-          "-MyECZ3ZVstNbXhE-SzJ" : {
-            "date" : "3/15/2022",
-            "time" : "3:12:51 PM",
-            "value" : 0
+        },
+        "04-03-2022" : {
+          "-MzhsDEm02j-3isZqtEx" : {
+            "date" : "4/3/2022",
+            "time" : "12:23:32 AM",
+            "value" : 4.59
+          },
+          "-Mzhw1AWNFI-Wm1mvtUA" : {
+            "date" : "4/3/2022",
+            "time" : "12:40:12 AM",
+            "value" : 4.59
           }
-        }
-      },
-      "sensor_3" : {
-        "4-2-2022" : {
-          "-MyECZ3ZVstNbXhE-SzJ" : {
-            "date" : "3/15/2022",
-            "time" : "3:12:51 PM",
-            "value" : 0
+        },
+        "04-04-2022" : {
+          "-MzmzhtjsH9l5ATAPCmH" : {
+            "date" : "4/4/2022",
+            "time" : "12:14:23 AM",
+            "value" : 4.59
           }
-        }
-      },
-      "sensor_4" : {
-        "4-2-2022" : {
-          "-MyECZ3ZVstNbXhE-SzJ" : {
-            "date" : "3/15/2022",
-            "time" : "3:12:51 PM",
-            "value" : 0
-          }
-        }
-      },
-      "sensor_5" : {
-        "4-2-2022" : {
-          "-MyECZ3ZVstNbXhE-SzJ" : {
-            "date" : "3/15/2022",
-            "time" : "3:12:51 PM",
-            "value" : 0
-          }
-        }
-      },
-      "sensor_6" : {
-        "4-2-2022" : {
-          "-MyECZ3ZVstNbXhE-SzJ" : {
-            "date" : "3/15/2022",
-            "time" : "3:12:51 PM",
-            "value" : 0
-          }
-        }
-      },
-      "sensor_7" : {
-        "4-2-2022" : {
-          "-MyECZ3ZVstNbXhE-SzJ" : {
-            "date" : "3/15/2022",
-            "time" : "3:12:51 PM",
-            "value" : 0
-          }
-        }
-      },
-      "sensor_8" : {
-        "4-2-2022" : {
-          "-MyECZ3ZVstNbXhE-SzJ" : {
-            "date" : "3/15/2022",
-            "time" : "3:12:51 PM",
-            "value" : 0
+        },
+        "04-05-2022" : {
+          "-MzsN2X39XBaZCCCNhvY" : {
+            "date" : "4/5/2022",
+            "time" : "1:18:49 AM",
+            "value" : 4.59
+          },
+          "-MzsNM7WJ46dVzWIFXMr" : {
+            "date" : "4/5/2022",
+            "time" : "1:20:10 AM",
+            "value" : 4.59
+          },
+          "-MzuL5t-Apv7ypYdcrQf" : {
+            "date" : "4/5/2022",
+            "description" : "This is sensor_1, at location xyz.",
+            "time" : "10:29:33 AM",
+            "value" : 4.59
+          },
+          "-MzuOCKIMWaY-irnTWWQ" : {
+            "date" : "4/5/2022",
+            "description" : "This is sensor_1, at location xyz.",
+            "time" : "10:43:06 AM",
+            "value" : 4.59
           }
         }
       }
     }
+  },
+  "other_sensors" : {
+    "sensor_1" : {
+      "04-10-2022" : {
+        "-N-HG1i3WJFiUXok3ERG" : {
+          "date" : "4/10/2022",
+          "description" : "This is sensor_1, at location xyz.",
+          "time" : "1:58:19 AM",
+          "value" : 21
+        },
+        "-N-HG9pVMHdRv1INWLOw" : {
+          "date" : "4/10/2022",
+          "description" : "This is sensor_1, at location xyz.",
+          "time" : "1:58:52 AM",
+          "value" : 21
+        }
+      },
+      "04-02-2022" : {
+        "-MyECZ3ZVstNbXhE-SzJ" : {
+          "date" : "3/15/2022",
+          "time" : "3:12:51 PM",
+          "value" : 0
+        }
+      },
+      "04-03-2022" : {
+        "-Mzhr9qV7mtc7e_o_OxW" : {
+          "date" : "4/3/2022",
+          "time" : "12:18:56 AM",
+          "value" : 1234
+        },
+        "-MzhrD4Sm_vO-cP_h7st" : {
+          "date" : "4/3/2022",
+          "time" : "12:19:10 AM",
+          "value" : 1234
+        },
+        "-Mzhw1jhNGnBtOYnu1La" : {
+          "date" : "4/3/2022",
+          "time" : "12:40:14 AM",
+          "value" : 1234
+        }
+      },
+      "04-05-2022" : {
+        "-MzsNJoZ99--eO9gmwa7" : {
+          "date" : "4/5/2022",
+          "time" : "1:20:00 AM",
+          "value" : 12234524534
+        },
+        "-MzsNMlI1NTUvzgGjkOH" : {
+          "date" : "4/5/2022",
+          "time" : "1:20:12 AM",
+          "value" : 12234524534
+        },
+        "-MzuL3Vi6Op3l3F10-3H" : {
+          "date" : "4/5/2022",
+          "description" : "This is 12234524534, at location xyz.",
+          "time" : "10:29:24 AM",
+          "value" : 12234524534
+        },
+        "-MzuLXM6-o0mZb56DxG2" : {
+          "date" : "4/5/2022",
+          "description" : "This is sensor_1, at location xyz.",
+          "time" : "10:31:26 AM",
+          "value" : 12234524534
+        }
+      }
+    },
+    "sensor_2" : {
+      "04-10-2022" : {
+        "-N-HG1jCLOrA4UObIGc7" : {
+          "date" : "4/10/2022",
+          "description" : "This is sensor_2, at location xyz.",
+          "time" : "1:58:19 AM",
+          "value" : 32
+        },
+        "-N-HG9qN4jS6-9mcVvMP" : {
+          "date" : "4/10/2022",
+          "description" : "This is sensor_2, at location xyz.",
+          "time" : "1:58:52 AM",
+          "value" : 32
+        }
+      },
+      "04-02-2022" : {
+        "-MyECZ3ZVstNbXhE-SzJ" : {
+          "date" : "3/15/2022",
+          "time" : "3:12:51 PM",
+          "value" : 0
+        }
+      },
+      "04-03-2022" : {
+        "-Mzhr9rWkm1BT396dfxt" : {
+          "date" : "4/3/2022",
+          "time" : "12:18:56 AM",
+          "value" : 1234
+        },
+        "-MzhrD5VbCQXkyC42aw9" : {
+          "date" : "4/3/2022",
+          "time" : "12:19:10 AM",
+          "value" : 1234
+        },
+        "-Mzhw1khimqoQuERIiuH" : {
+          "date" : "4/3/2022",
+          "time" : "12:40:14 AM",
+          "value" : 1234
+        }
+      },
+      "04-05-2022" : {
+        "-MzsNJpMWBTj49ntH1ln" : {
+          "date" : "4/5/2022",
+          "time" : "1:20:00 AM",
+          "value" : 123345
+        },
+        "-MzsNMm11x22pBe27Af9" : {
+          "date" : "4/5/2022",
+          "time" : "1:20:12 AM",
+          "value" : 123345
+        },
+        "-MzuL3aWX0qzZTV7btz4" : {
+          "date" : "4/5/2022",
+          "description" : "This is 123345, at location xyz.",
+          "time" : "10:29:24 AM",
+          "value" : 123345
+        },
+        "-MzuLXT8QY7g_o7MyzdB" : {
+          "date" : "4/5/2022",
+          "description" : "This is sensor_2, at location xyz.",
+          "time" : "10:31:26 AM",
+          "value" : 123345
+        }
+      }
+    },
+    "sensor_3" : {
+      "04-10-2022" : {
+        "-N-HG1kNBDKN-j6_qm_1" : {
+          "date" : "4/10/2022",
+          "description" : "This is sensor_3, at location xyz.",
+          "time" : "1:58:19 AM",
+          "value" : 12
+        },
+        "-N-HG9rQ7bAdk8ROCx9_" : {
+          "date" : "4/10/2022",
+          "description" : "This is sensor_3, at location xyz.",
+          "time" : "1:58:52 AM",
+          "value" : 12
+        }
+      },
+      "04-02-2022" : {
+        "-MyECZ3ZVstNbXhE-SzJ" : {
+          "date" : "3/15/2022",
+          "time" : "3:12:51 PM",
+          "value" : 0
+        }
+      },
+      "04-03-2022" : {
+        "-Mzhr9seJnvemfk7WFIS" : {
+          "date" : "4/3/2022",
+          "time" : "12:18:56 AM",
+          "value" : 412456345634655400
+        },
+        "-MzhrD6SuWCZ0fkwn033" : {
+          "date" : "4/3/2022",
+          "time" : "12:19:10 AM",
+          "value" : 412456345634655400
+        },
+        "-Mzhw1m8btxOyJi-YAl2" : {
+          "date" : "4/3/2022",
+          "time" : "12:40:14 AM",
+          "value" : 412456345634655400
+        }
+      },
+      "04-05-2022" : {
+        "-MzsNJqBFyI0Ds6YH7_8" : {
+          "date" : "4/5/2022",
+          "time" : "1:20:00 AM",
+          "value" : 412456345634655400
+        },
+        "-MzsNMmvqlX6dPO_aKuV" : {
+          "date" : "4/5/2022",
+          "time" : "1:20:12 AM",
+          "value" : 412456345634655400
+        },
+        "-MzuL3dIW4_kuCieX-Mi" : {
+          "date" : "4/5/2022",
+          "description" : "This is 412456345634655400, at location xyz.",
+          "time" : "10:29:24 AM",
+          "value" : 412456345634655400
+        },
+        "-MzuLXVvUTSiULdwN_DS" : {
+          "date" : "4/5/2022",
+          "description" : "This is sensor_3, at location xyz.",
+          "time" : "10:31:26 AM",
+          "value" : 412456345634655400
+        }
+      }
+    },
+    "sensor_4" : {
+      "04-10-2022" : {
+        "-N-HG1lRr8XCqFfhJ4WK" : {
+          "date" : "4/10/2022",
+          "description" : "This is sensor_4, at location xyz.",
+          "time" : "1:58:19 AM",
+          "value" : 15
+        },
+        "-N-HG9sWDnOvQWAdhsjP" : {
+          "date" : "4/10/2022",
+          "description" : "This is sensor_4, at location xyz.",
+          "time" : "1:58:52 AM",
+          "value" : 15
+        }
+      },
+      "04-02-2022" : {
+        "-MyECZ3ZVstNbXhE-SzJ" : {
+          "date" : "3/15/2022",
+          "time" : "3:12:51 PM",
+          "value" : 0
+        }
+      },
+      "04-03-2022" : {
+        "-Mzhr9tqwCeZdCqhSvmV" : {
+          "date" : "4/3/2022",
+          "time" : "12:18:56 AM",
+          "value" : 412341
+        },
+        "-MzhrD7mJLJ1Ed28aQSh" : {
+          "date" : "4/3/2022",
+          "time" : "12:19:10 AM",
+          "value" : 412341
+        },
+        "-Mzhw1pjFuPnzWlbppTb" : {
+          "date" : "4/3/2022",
+          "time" : "12:40:14 AM",
+          "value" : 412341
+        }
+      },
+      "04-05-2022" : {
+        "-MzsNJr6UDNrFIw_AVQp" : {
+          "date" : "4/5/2022",
+          "time" : "1:20:00 AM",
+          "value" : 4122435341
+        },
+        "-MzsNMnxCmhu3LTWrfUJ" : {
+          "date" : "4/5/2022",
+          "time" : "1:20:12 AM",
+          "value" : 4122435341
+        },
+        "-MzuL3iUSItjGRGSnfFg" : {
+          "date" : "4/5/2022",
+          "description" : "This is 4122435341, at location xyz.",
+          "time" : "10:29:24 AM",
+          "value" : 4122435341
+        },
+        "-MzuLXZ5_Exvlm1A2wwu" : {
+          "date" : "4/5/2022",
+          "description" : "This is sensor_4, at location xyz.",
+          "time" : "10:31:26 AM",
+          "value" : 4122435341
+        }
+      }
+    },
+    "sensor_5" : {
+      "04-10-2022" : {
+        "-N-HG1mMROw3zxDzUjBw" : {
+          "date" : "4/10/2022",
+          "description" : "This is sensor_5, at location xyz.",
+          "time" : "1:58:19 AM",
+          "value" : 20
+        },
+        "-N-HG9tdsiHiSTt41vXe" : {
+          "date" : "4/10/2022",
+          "description" : "This is sensor_5, at location xyz.",
+          "time" : "1:58:52 AM",
+          "value" : 20
+        }
+      },
+      "04-02-2022" : {
+        "-MyECZ3ZVstNbXhE-SzJ" : {
+          "date" : "3/15/2022",
+          "time" : "3:12:51 PM",
+          "value" : 0
+        }
+      },
+      "04-03-2022" : {
+        "-Mzhr9v8wcE1BphnY6ig" : {
+          "date" : "4/3/2022",
+          "time" : "12:18:56 AM",
+          "value" : 413143
+        },
+        "-MzhrD8pYzaiFVL9KPpF" : {
+          "date" : "4/3/2022",
+          "time" : "12:19:10 AM",
+          "value" : 413143
+        },
+        "-Mzhw1r60cyKonEHI4qr" : {
+          "date" : "4/3/2022",
+          "time" : "12:40:14 AM",
+          "value" : 413143
+        }
+      },
+      "04-05-2022" : {
+        "-MzsNJs0iZTsWkeCIcGW" : {
+          "date" : "4/5/2022",
+          "time" : "1:20:00 AM",
+          "value" : 4132345143
+        },
+        "-MzsNMp-_JXNssI0Dhl8" : {
+          "date" : "4/5/2022",
+          "time" : "1:20:12 AM",
+          "value" : 4132345143
+        },
+        "-MzuL3jplIjjl3Qy-PmQ" : {
+          "date" : "4/5/2022",
+          "description" : "This is 4132345143, at location xyz.",
+          "time" : "10:29:24 AM",
+          "value" : 4132345143
+        },
+        "-MzuLX_w6mYjKAZra5em" : {
+          "date" : "4/5/2022",
+          "description" : "This is sensor_5, at location xyz.",
+          "time" : "10:31:26 AM",
+          "value" : 4132345143
+        }
+      }
+    },
+    "sensor_6" : {
+      "04-10-2022" : {
+        "-N-HG1nb4hOLZRzKqQM1" : {
+          "date" : "4/10/2022",
+          "description" : "This is sensor_6, at location xyz.",
+          "time" : "1:58:19 AM",
+          "value" : 23
+        },
+        "-N-HG9ujwPapBwkP81xh" : {
+          "date" : "4/10/2022",
+          "description" : "This is sensor_6, at location xyz.",
+          "time" : "1:58:52 AM",
+          "value" : 23
+        }
+      },
+      "04-02-2022" : {
+        "-MyECZ3ZVstNbXhE-SzJ" : {
+          "date" : "3/15/2022",
+          "time" : "3:12:51 PM",
+          "value" : 0
+        }
+      },
+      "04-03-2022" : {
+        "-Mzhr9waVyA5eVjvsNam" : {
+          "date" : "4/3/2022",
+          "time" : "12:18:56 AM",
+          "value" : 23412
+        },
+        "-MzhrD9yDiQbNZ5JJ3vj" : {
+          "date" : "4/3/2022",
+          "time" : "12:19:10 AM",
+          "value" : 23412
+        },
+        "-Mzhw1sHCGK4x5LxN0cN" : {
+          "date" : "4/3/2022",
+          "time" : "12:40:14 AM",
+          "value" : 23412
+        }
+      },
+      "04-05-2022" : {
+        "-MzsNJsohUYpVC21piiu" : {
+          "date" : "4/5/2022",
+          "time" : "1:20:00 AM",
+          "value" : 234234512
+        },
+        "-MzsNMplkQFPZ2zhfZ1A" : {
+          "date" : "4/5/2022",
+          "time" : "1:20:12 AM",
+          "value" : 234234512
+        },
+        "-MzuL3lWIhyWKffgJbxX" : {
+          "date" : "4/5/2022",
+          "description" : "This is 234234512, at location xyz.",
+          "time" : "10:29:24 AM",
+          "value" : 234234512
+        },
+        "-MzuLXbekr2SmasLQksV" : {
+          "date" : "4/5/2022",
+          "description" : "This is sensor_6, at location xyz.",
+          "time" : "10:31:26 AM",
+          "value" : 234234512
+        }
+      }
+    },
+    "sensor_7" : {
+      "04-10-2022" : {
+        "-N-HG1okW0yU9nkWTa1h" : {
+          "date" : "4/10/2022",
+          "description" : "This is sensor_7, at location xyz.",
+          "time" : "1:58:19 AM",
+          "value" : 16
+        },
+        "-N-HG9vfLEem4L_iin8s" : {
+          "date" : "4/10/2022",
+          "description" : "This is sensor_7, at location xyz.",
+          "time" : "1:58:52 AM",
+          "value" : 16
+        }
+      },
+      "04-02-2022" : {
+        "-MyECZ3ZVstNbXhE-SzJ" : {
+          "date" : "3/15/2022",
+          "time" : "3:12:51 PM",
+          "value" : 0
+        }
+      },
+      "04-03-2022" : {
+        "-Mzhr9xunm6voPD5tcm6" : {
+          "date" : "4/3/2022",
+          "time" : "12:18:56 AM",
+          "value" : 142341
+        },
+        "-MzhrDAv41fPMxohX6B6" : {
+          "date" : "4/3/2022",
+          "time" : "12:19:10 AM",
+          "value" : 142341
+        },
+        "-Mzhw1tYyCiUISnbcM6e" : {
+          "date" : "4/3/2022",
+          "time" : "12:40:14 AM",
+          "value" : 142341
+        }
+      },
+      "04-05-2022" : {
+        "-MzsNJt_8gN-OoyuHmZ3" : {
+          "date" : "4/5/2022",
+          "time" : "1:20:00 AM",
+          "value" : 1422435341
+        },
+        "-MzsNMqc1RuqCKLKzL0l" : {
+          "date" : "4/5/2022",
+          "time" : "1:20:12 AM",
+          "value" : 1422435341
+        },
+        "-MzuL3tLSTTJyXnijMJL" : {
+          "date" : "4/5/2022",
+          "description" : "This is 1422435341, at location xyz.",
+          "time" : "10:29:24 AM",
+          "value" : 1422435341
+        },
+        "-MzuLXetZxQPoStLzJFQ" : {
+          "date" : "4/5/2022",
+          "description" : "This is sensor_7, at location xyz.",
+          "time" : "10:31:26 AM",
+          "value" : 1422435341
+        }
+      }
+    },
+    "sensor_8" : {
+      "04-10-2022" : {
+        "-N-HG1pvnK4QdIMuAkhZ" : {
+          "date" : "4/10/2022",
+          "description" : "This is sensor_8, at location xyz.",
+          "time" : "1:58:19 AM",
+          "value" : 19
+        },
+        "-N-HG9wfQbJtE78snKzQ" : {
+          "date" : "4/10/2022",
+          "description" : "This is sensor_8, at location xyz.",
+          "time" : "1:58:52 AM",
+          "value" : 19
+        }
+      },
+      "04-02-2022" : {
+        "-MyECZ3ZVstNbXhE-SzJ" : {
+          "date" : "3/15/2022",
+          "time" : "3:12:51 PM",
+          "value" : 0
+        }
+      },
+      "04-03-2022" : {
+        "-Mzhr9z8rswzN7tP2Ntt" : {
+          "date" : "4/3/2022",
+          "time" : "12:18:56 AM",
+          "value" : 2435
+        },
+        "-MzhrDBvu9-c7QAw_MJp" : {
+          "date" : "4/3/2022",
+          "time" : "12:19:10 AM",
+          "value" : 2435
+        },
+        "-Mzhw1ud4aQHJ7hcl-5q" : {
+          "date" : "4/3/2022",
+          "time" : "12:40:14 AM",
+          "value" : 2435
+        }
+      },
+      "04-05-2022" : {
+        "-MzsNJu_F0YvYVFZzas4" : {
+          "date" : "4/5/2022",
+          "time" : "1:20:00 AM",
+          "value" : 24234535
+        },
+        "-MzsNMrUzbmizse0E02U" : {
+          "date" : "4/5/2022",
+          "time" : "1:20:12 AM",
+          "value" : 24234535
+        },
+        "-MzuL40lkfoh91K61rXc" : {
+          "date" : "4/5/2022",
+          "description" : "This is 24234535, at location xyz.",
+          "time" : "10:29:24 AM",
+          "value" : 24234535
+        },
+        "-MzuLXi3ib-bXdVP5obP" : {
+          "date" : "4/5/2022",
+          "description" : "This is sensor_8, at location xyz.",
+          "time" : "10:31:26 AM",
+          "value" : 24234535
+        }
+      }
+    }
   }
-  
+}

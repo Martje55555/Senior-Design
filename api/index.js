@@ -6,8 +6,18 @@ const serviceAccount = require("./admin.json");
 const { json } = require('express');
 
 let day = new Date().getDate().toString();
+if(day - 10 != 0 || 10 - day < 0) {
+    day = '0' + day;
+}
+
 let month = new Date().getMonth() + 1;
-month = month.toString();
+if(month - 10 != 0 || 10 - month < 0) {
+    month = month.toString();
+    month = '0' + month;
+} else {
+    month = month.toString();
+}
+
 let year = new Date().getFullYear().toString();
 
 let today = month + '-' + day + '-' + year;
