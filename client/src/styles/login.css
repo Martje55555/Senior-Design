@@ -1,0 +1,121 @@
+/* .login{
+  
+  justify-content: center;
+  justify-items: center;
+  display: flex;
+  margin-top: 45px;
+
+}
+
+.username{
+    font-size: 25px;
+    padding: 15px;
+}
+
+.btnContainer{
+    margin-top: 150px;
+    border: 4px dotted blue;
+}
+.signin{
+    display: block;
+    margin: auto;
+    
+}
+
+.noaccount{
+    text-align: center;
+} */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .sign {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 15px 0;
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 1px;
+    background: #050505;
+    cursor: pointer;
+  }
+  
+  .login {
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 20px;
+    background: rgb(19, 23, 27);
+    display: flex;
+  }
+  
+  .login .loginContainer {
+    padding: 60px;
+    margin: auto;
+    width: 100%;
+    max-width: 520px;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: radial-gradient(
+      ellipse at left bottom,
+      rgb(3, 88, 8) 0%,
+      rgba(22, 54, 4, 0.9) 59%,
+      rgba(0, 144, 5, 0.9) 100%
+    );
+    box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.8);
+    background-image: linear-gradient(to right, #3E5151, #081c3a);
+  }
+  
+  .login .loginContainer label {
+    color: white;
+    margin: 14px 0;
+    display: block;
+    font-size: 22px;
+    line-height: 1;
+  }
+  
+  .login .loginContainer input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 19px;
+    padding: 10px;
+    background: rgba(46, 12, 12, 0.1);
+    color: #fff;
+    letter-spacing: 1px;
+  }
+  
+  .login .loginContainer .btnContainer {
+    width: 100%;
+    padding: 24px 0;
+  }
+  
+  .login .loginContainer .btnContainer p {
+    margin: 14px 0 0 0;
+    text-align: right;
+    color: #fff;
+  }
+  
+  .login .loginContainer .btnContainer p span {
+    color: rgb(255, 230, 0);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: all 400ms ease-in-out;
+  }
+  
+  .login .loginContainer .btnContainer p span:hover {
+    color: rgb(255, 254, 254);
+  }
+  
+  .login .loginContainer .errorMsg {
+    color: red;
+    font-size: 16px;
+  }
+  
