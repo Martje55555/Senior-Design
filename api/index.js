@@ -6,7 +6,7 @@ const serviceAccount = require("./admin.json");
 const { json } = require('express');
 
 let day = new Date().getDate();
-if(10 - day > 0) {
+if (10 - day > 0) {
     day = day.toString();
     day = '0' + day;
 } else {
@@ -14,7 +14,7 @@ if(10 - day > 0) {
 }
 
 let month = new Date().getMonth() + 1;
-if(10 - month > 0) {
+if (10 - month > 0) {
     month = month.toString();
     month = '0' + month;
 } else {
