@@ -1,6 +1,8 @@
 import React, {useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import '../styles/login.css'
+
 const Login = (props) => {
     const Navigate = useNavigate();
     const home = () => {
@@ -32,7 +34,7 @@ const Login = (props) => {
     return (
         <section className='login'>
             <div className='loginContainer'>
-                <label>Username</label>
+                <label className='username'>Username</label>
                 <input
                     type="text"
                     autoFocus
@@ -42,7 +44,7 @@ const Login = (props) => {
                 />
                 <p className="errorMsg" ><b>{emailError}</b></p>
 
-                <label>Password</label>
+                <label className='username'>Password  </label>
                 <input
                     type="password"
                     required
@@ -54,12 +56,12 @@ const Login = (props) => {
                 <div className='btnContainer'>
                     {hasAccount ? (
                         <>
-                            <button onClick={handleLogin}>Sign in</button>
-                            <p>Don't have an account? <span onClick={() => setHasAccount(!hasAccount)}><b>Sign up</b></span></p>
+                            <button className='sign' onClick={handleLogin}>Sign in</button>
+                            <p className='noaccount'>Don't have an account? <span onClick={() => setHasAccount(!hasAccount)}><b>Sign up</b></span></p>
                         </>
                     ) : (
                         <>
-                            <button onClick={handleSignup}>Sign up</button>
+                            <button className="sign" onClick={handleSignup}>Sign up</button>
                             <p>Have an account? <span onClick={() => setHasAccount(!hasAccount)}><b>Sign in</b></span></p>
                         </>
                     )}
