@@ -1,20 +1,39 @@
 {
   "name": "api",
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    },
+    "globalTeardown": "<rootDir>/test_setup/teardown.js",
+    "preset": "./node_modules/@babel/preset-env",
+    "verbose": true,
+    "testEnvironment": "node"
+  },
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js",
-    "test": "jest"
+    "start": "cross-env NODE_ENV=dev && node app.js",
+    "test": "cross-env NODE_ENV=test&& jest --forceExit",
+    "testAPI": "cross-env NODE_ENV=dev&& dotenv jest firebase.test.js --clearCache --detectOpenHandles --runInBand --forceExit"
   },
   "author": "Martje55555",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.0",
+    "dotenv-cli": "^5.1.0",
     "express": "^4.17.3",
     "firebase": "^9.6.8",
     "firebase-admin": "^10.0.2",
-    "jest": "^27.5.1",
     "supertest": "^6.2.2"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.16.11",
+    "babel-jest": "^27.5.1",
+    "firebase-functions-test": "^0.3.3",
+    "firebase-server": "^1.1.0",
+    "jest": "^27.5.1"
   }
 }
