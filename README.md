@@ -1,6 +1,8 @@
 # Senior-Design
 Senior Design - Spring 2022 - Fall 2022
 
+Team Members: [Alonso Gonzalez Gonzalez](https://github.com/AlonsoGonzalezGonzalez), [Israel Hernandez](https://github.com/IsraelHG), [Tyresse Lopez](https://github.com/TyresseL), and [Jesus Martinez](https://github.com/Martje55555)
+
 # How to get started
 
 ## The Client
