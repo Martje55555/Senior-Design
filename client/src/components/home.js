@@ -18,6 +18,7 @@ const Home = ({ handleLogout }) => {
     const [sens7, setSens7] = useState('');
     const [sens8, setSens8] = useState('');
     const [sens9, setSens9] = useState('blah');
+    const [weather, setWeather] = useState('blah');
 
     const getAllOtherValues = async () => {
 
@@ -56,10 +57,33 @@ const Home = ({ handleLogout }) => {
         }
     };
 
+    const getWeather = async () => {
+        let lat = 26.30519;
+        let lon = -98.171924;
+        axios.get(`${url}/weather`, { params : {
+            'lat' : lat,
+            'lon' : lon,
+            'appid' : process.env.REACT_APP_WEATHER_API_KEY
+        }})
+        .then((response) => {
+            let data = response.data[0];
+            //(K − 273.15) × 9/5 + 32 = -459.7°F
+            data = (data - 273.15) * 9/5 + 32;
+            data = data.toFixed(2);
+            console.log(data);
+            data.toString();
+            setWeather(data);
+        })
+        .catch((err) => {
+            console.log(`Error: ${err}`);
+        });
+    };
+
     // Leave commented when not using the data
     // to reduce the amount of calls, uncomment to see data
     // useEffect(() => {
     //     getAllOtherValues();
+    //     getWeather();
     // }, []);
 
     if (window.screen.width > 1280) {
@@ -70,7 +94,7 @@ const Home = ({ handleLogout }) => {
                     <div className="containerInfo">
                         <h1 className="sample">Status: On/Off</h1>
                         <h1 className="sample">Gathering data: Yes/No</h1>
-                        <h1 className="sample">Weather: 85°F</h1>
+                        <h1 className="sample">{`Weather: ${weather}°F`}</h1>
                         <h1 className="airHumidity">Air Humidity: 40%</h1>
                     </div>
                     <div className="containerGraph">
@@ -121,7 +145,7 @@ const Home = ({ handleLogout }) => {
                     <div className="containerInfo">
                         <h1 className="sample">Status: On/Off</h1>
                         <h1 className="sample">Gathering data: Yes/No</h1>
-                        <h1 className="sample">Weather: 85°F</h1>
+                        <h1 className="sample">{`Weather: ${weather}°F`}</h1>
                         <h1 className="sample">Air Humidity: 40%</h1>
                     </div>
                     <br style={{ marginTop: "50px" }} />
