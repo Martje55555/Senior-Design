@@ -1,9 +1,12 @@
 const express = require('express');
 const cors = require('cors');
 const firebase = require('firebase-admin');
+const axios = require('axios');
 
 const serviceAccount = require("./admin.json");
 const { json } = require('express');
+
+require('dotenv').config();
 
 let day = new Date().getDate();
 if (10 - day > 0) {
@@ -662,6 +665,35 @@ app.post("/other_sensors/add", async (req, res, next) => {
         } catch (err) {
             console.log("Error: " + err);
             res.status(400).json(["'Success': false", `"Error": ${err}`]);
+        }
+    }
+});
+
+///////////// OUTSIDE 3'rd PARTY API'S ///////////////
+
+app.get("/weather", async (req, res, next) => {
+    if (process.env.NODE_ENV === 'test') {
+        console.log("Success");
+        res.status(200).json(`"Success": true`);
+    } else {
+        if(req.query.appid === process.env.WEATHER_API_KEY) {
+            try {
+                let data;
+                let url = `https://api.openweathermap.org/data/2.5/weather`
+                axios.get(url, { params: {
+                    'lat' : req.query.lat,
+                    'lon' : req.query.lon,
+                    'appid' : req.query.appid }})
+                .then((response) => {
+                    data = response.data;
+                    res.status(200).json([data["main"]["temp"]])
+                });
+            } catch (err) {
+                console.log("Error: " + err);
+                res.status(400).json(["'Success': false", `"Error": ${err}`]);
+            }
+        } else {
+            res.status(401).json("ERROR: INVALID API KEY");
         }
     }
 });

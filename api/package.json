@@ -13,13 +13,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=dev && node app.js",
+    "start": "dotenv cross-env NODE_ENV=dev && node app.js",
     "test": "cross-env NODE_ENV=test&& jest --forceExit",
     "testAPI": "cross-env NODE_ENV=dev&& dotenv jest firebase.test.js --clearCache --detectOpenHandles --runInBand --forceExit"
   },
   "author": "Martje55555",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.26.1",
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.0",
