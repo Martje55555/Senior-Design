@@ -13,7 +13,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=dev && node app.js",
+    "start": "dotenv node app.js",
     "test": "cross-env NODE_ENV=test&& jest --forceExit",
     "testAPI": "cross-env NODE_ENV=dev&& dotenv jest firebase.test.js --clearCache --detectOpenHandles --runInBand --forceExit"
   },

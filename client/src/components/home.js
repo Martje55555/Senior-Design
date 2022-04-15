@@ -7,6 +7,11 @@ import '../styles/home.css'
 
 const Home = ({ handleLogout }) => {
 
+    let config = {
+        headers: { Authorization : `Bearer ${process.env.REACT_APP_API_KEY}` }
+    };
+    console.log(process.env.REACT_APP_API_KEY);
+
     const url = 'http://localhost:3001';
 
     const [sens1, setSens1] = useState('');
@@ -22,7 +27,7 @@ const Home = ({ handleLogout }) => {
     const getAllOtherValues = async () => {
 
         for (let i = 1; i <= 8; i++) {
-            axios.get(`${url}/other_sensors/sensor_${i}/latest`, { crossDomain: true })
+            axios.get(`${url}/other_sensors/sensor_${i}/latest`, config)
                 .then((response) => {
                     console.log(response);
                     if (i === 1) {
@@ -58,9 +63,9 @@ const Home = ({ handleLogout }) => {
 
     // Leave commented when not using the data
     // to reduce the amount of calls, uncomment to see data
-    // useEffect(() => {
-    //     getAllOtherValues();
-    // }, []);
+    useEffect(() => {
+        getAllOtherValues();
+    }, []);
 
     if (window.screen.width > 1280) {
         return (

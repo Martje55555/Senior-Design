@@ -61,18 +61,23 @@ app.get("/dht_sensors/all", async (req, res, next) => {
     if (process.env.NODE_ENV === 'test') {
         res.status(200).json(["'Success': true"])
     } else {
-        try {
-            let value;
-            await dhtRef.once('value', async (snapshot) => {
-                value = await snapshot.val();
-                console.log(snapshot.val());
-            });
-
-            res.status(200).json([value]);
-
-        } catch (err) {
-            console.log("Error: " + err);
-            res.status(400).json(["'Success': false", `"Error": ${err}`]);
+        if(req.query.key === process.env.API_KEY) {
+            try {
+                let value;
+                await dhtRef.once('value', async (snapshot) => {
+                    value = await snapshot.val();
+                    console.log(snapshot.val());
+                });
+                console.log(req.query.key);
+                res.send(req.query.key);
+                //res.status(200).json([value]);
+    
+            } catch (err) {
+                console.log("Error: " + err);
+                res.status(400).json(["'Success': false", `"Error": ${err}`]);
+            }
+        } else {
+            res.status(401).json(['"Message": "INVALID API KEY"'])
         }
     }
 });
@@ -432,29 +437,35 @@ app.get("/other_sensors/:sensor/latest", async (req, res, next) => {
         console.log("Success");
         res.status(200).json(`"Success": true`);
     } else {
-        try {
-            let value;
-            let key;
-            let data;
-            await database.ref(`/other_sensors/${req.params.sensor}`)
-                .orderByKey()
-                .limitToLast(1)
-                .once("value", async (snapshot) => {
-                    value = snapshot.forEach((childSnapshot) => {
-                        data = childSnapshot.val();
-                    });
-                })
-
-            for (var att in data) {
-                key = att;
+        if(`Bearer ${process.env.API_KEY}` === `${req.header("authorization")}`) {
+            try {
+                let value;
+                let key;
+                let data;
+                await database.ref(`/other_sensors/${req.params.sensor}`)
+                    .orderByKey()
+                    .limitToLast(1)
+                    .once("value", async (snapshot) => {
+                        value = snapshot.forEach((childSnapshot) => {
+                            data = childSnapshot.val();
+                        });
+                    })
+    
+                for (var att in data) {
+                    key = att;
+                }
+    
+                console.log(data[key]);
+                res.status(200).json(data[key]);
+            } catch (err) {
+                console.log("Error: " + err);
+                res.status(400).json(["'Success': false", `"Error": ${err}`]);
             }
-
-            console.log(data[key]);
-            res.status(200).json(data[key]);
-        } catch (err) {
-            console.log("Error: " + err);
-            res.status(400).json(["'Success': false", `"Error": ${err}`]);
+        } else {
+            console.log(req.headers.authorization)
+            res.status(401).json('"Message": "INVALID API KEY"');
         }
+        
     }
 });
 
