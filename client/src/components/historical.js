@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
 import NavBar from "./navBar";
-import BarChart from "./charts/BarChart.js";
+import LineChart from "./charts/LineChart.js";
 import dhtData from "./charts/data.json";
+
+import '../styles/historical.css';
 
 const Historical = () => {
     let dates = [];
@@ -125,8 +127,11 @@ const Historical = () => {
     return (
         <>
             <NavBar />
-            <h1>Temperature and Air Humdity</h1>
-            <BarChart chartData={dht_data} options={options} />
+            <div className="lineChartContainer">
+                <center><h1>Temperature and Air Humdity</h1></center>
+                <br/>
+                <LineChart chartData={dht_data} options={options} />
+            </div>
         </>
     )
 }
