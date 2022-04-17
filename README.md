@@ -31,3 +31,7 @@ npm start
 * The server should now be listening to requests on `http://localhost:3001/`
 * To view the different routes available view `index.js` in the api directory
 * Download my Postman collection here - https://www.getpostman.com/collections/fe93d96b3fb68bff1d0f
+
+### Testing
+
+* To test the api, run the following command ```npm test```
