@@ -1,0 +1,261 @@
+[
+    {
+        "humidity": {
+            "sensor_1": {
+                "04-02-2022": {
+                    "-MyECZ3ZVstNbXhE-SzJ": {
+                        "date": "3/15/2022",
+                        "time": "3:12:51 PM",
+                        "value": 0
+                    }
+                },
+                "04-03-2022": {
+                    "-MzhsDFqUJ8vX8SxQ9YB": {
+                        "date": "4/3/2022",
+                        "time": "12:23:32 AM",
+                        "value": 7.12
+                    },
+                    "-Mzhw1CERW6z7xLjMwqn": {
+                        "date": "4/3/2022",
+                        "time": "12:40:12 AM",
+                        "value": 7.12
+                    }
+                },
+                "04-04-2022": {
+                    "-Mzmzhudp7oGnZak3eAH": {
+                        "date": "4/4/2022",
+                        "time": "12:14:23 AM",
+                        "value": 7.12
+                    }
+                },
+                "04-05-2022": {
+                    "-MzsN2XrvJXxS5FPChoJ": {
+                        "date": "4/5/2022",
+                        "time": "1:18:49 AM",
+                        "value": 7.12
+                    },
+                    "-MzsNM8PK-fOMwFonRPi": {
+                        "date": "4/5/2022",
+                        "time": "1:20:10 AM",
+                        "value": 7.12
+                    },
+                    "-MzuL5wp4OoCI-LdUDLu": {
+                        "date": "4/5/2022",
+                        "time": "10:29:33 AM",
+                        "value": 7.12
+                    },
+                    "-MzuOCKzCSZavcVrnTTa": {
+                        "date": "4/5/2022",
+                        "time": "10:43:06 AM",
+                        "value": 7.12
+                    }
+                },
+                "04-10-2022": {
+                    "-N-HKqmwtQQ-GE2Q9PYB": {
+                        "date": "4/10/2022",
+                        "time": "2:19:20 AM",
+                        "value": 7.12
+                    }
+                },
+                "04-12-2022": {
+                    "-N-UdY2iLVq7LaGY7HIh": {
+                        "date": "4/12/2022",
+                        "description": "This is sensor_1, at location xyz.",
+                        "time": "4:20:26 PM",
+                        "value": 7.12
+                    },
+                    "-N-UeKAP4U3hXBLMFqx7": {
+                        "date": "4/12/2022",
+                        "description": "This is sensor_1, at location xyz.",
+                        "time": "4:23:51 PM",
+                        "value": 7.12
+                    },
+                    "-N-UeWQ8F60J8ovAMywq": {
+                        "date": "4/12/2022",
+                        "description": "This is sensor_1, at location xyz.",
+                        "time": "4:24:42 PM",
+                        "value": 7.12
+                    },
+                    "-N-UeWQhq3E_PgZH42BB": {
+                        "date": "4/12/2022",
+                        "description": "This is sensor_1, at location xyz.",
+                        "time": "4:24:42 PM",
+                        "value": 7.12
+                    },
+                    "-N-Uf2sWqQbpiPB4CKcf": {
+                        "date": "4/12/2022",
+                        "description": "This is sensor_1, at location xyz.",
+                        "time": "4:27:03 PM",
+                        "value": 7.12
+                    },
+                    "-N-UgRc16xUuSxUyOoGS": {
+                        "date": "4/12/2022",
+                        "description": "This is sensor_1, at location xyz.",
+                        "time": "4:33:06 PM",
+                        "value": 7.12
+                    },
+                    "-N-UkG8vjGHmCCR4LPdP": {
+                        "date": "4/12/2022",
+                        "description": "This is sensor_1, at location xyz.",
+                        "time": "4:49:48 PM",
+                        "value": 7.12
+                    },
+                    "-N-UmksbwWa7i4F2iXMA": {
+                        "date": "4/12/2022",
+                        "description": "This is sensor_1, at location xyz.",
+                        "time": "5:00:42 PM",
+                        "value": 7.12
+                    },
+                    "-N-UnFBRttI0AO2HZbgL": {
+                        "date": "4/12/2022",
+                        "description": "This is sensor_1, at location xyz.",
+                        "time": "5:02:50 PM",
+                        "value": 7.12
+                    },
+                    "-N-UqzV24tUyQIZ6sjJn": {
+                        "date": "4/12/2022",
+                        "description": "This is sensor_1, at location xyz.",
+                        "time": "5:19:11 PM",
+                        "value": 7.12
+                    },
+                    "-N-Ur1g5N_B5E7PcSVk8": {
+                        "date": "4/12/2022",
+                        "description": "This is sensor_1, at location xyz.",
+                        "time": "5:19:24 PM",
+                        "value": 7.12
+                    }
+                }
+            }
+        },
+        "temperature": {
+            "sensor_1": {
+                "04-02-2022": {
+                    "-MyECZ3ZVstNbXhE-SzJ": {
+                        "date": "3/15/2022",
+                        "time": "3:12:51 PM",
+                        "value": 97
+                    }
+                },
+                "04-03-2022": {
+                    "-MzhsDEm02j-3isZqtEx": {
+                        "date": "4/3/2022",
+                        "time": "12:23:32 AM",
+                        "value": 10
+                    },
+                    "-Mzhw1AWNFI-Wm1mvtUA": {
+                        "date": "4/3/2022",
+                        "time": "12:40:12 AM",
+                        "value": 60
+                    }
+                },
+                "04-04-2022": {
+                    "-MzmzhtjsH9l5ATAPCmH": {
+                        "date": "4/4/2022",
+                        "time": "12:14:23 AM",
+                        "value": 87
+                    }
+                },
+                "04-05-2022": {
+                    "-MzsN2X39XBaZCCCNhvY": {
+                        "date": "4/5/2022",
+                        "time": "1:18:49 AM",
+                        "value": 30
+                    },
+                    "-MzsNM7WJ46dVzWIFXMr": {
+                        "date": "4/5/2022",
+                        "time": "1:20:10 AM",
+                        "value": 77
+                    },
+                    "-MzuL5t-Apv7ypYdcrQf": {
+                        "date": "4/5/2022",
+                        "description": "This is sensor_1, at location xyz.",
+                        "time": "10:29:33 AM",
+                        "value": 68
+                    },
+                    "-MzuOCKIMWaY-irnTWWQ": {
+                        "date": "4/5/2022",
+                        "description": "This is sensor_1, at location xyz.",
+                        "time": "10:43:06 AM",
+                        "value": 79
+                    }
+                },
+                "04-10-2022": {
+                    "-N-HKqlm_R8Y1TDTAi7X": {
+                        "date": "4/10/2022",
+                        "description": "This is sensor_1, at location xyz.",
+                        "time": "2:19:20 AM",
+                        "value": 80
+                    }
+                },
+                "04-12-2022": {
+                    "-N-UdXyw5Sd29xJnAk5e": {
+                        "date": "4/12/2022",
+                        "description": "This is sensor_1, at location xyz.",
+                        "time": "4:20:26 PM",
+                        "value": 100
+                    },
+                    "-N-UeK8uBde_VFKQcRle": {
+                        "date": "4/12/2022",
+                        "description": "This is sensor_1, at location xyz.",
+                        "time": "4:23:51 PM",
+                        "value": 58
+                    },
+                    "-N-UeWOarmCAvsw8xkGw": {
+                        "date": "4/12/2022",
+                        "description": "This is sensor_1, at location xyz.",
+                        "time": "4:24:42 PM",
+                        "value": 100
+                    },
+                    "-N-UeWPB93hENGLitsod": {
+                        "date": "4/12/2022",
+                        "description": "This is sensor_1, at location xyz.",
+                        "time": "4:24:42 PM",
+                        "value": 100
+                    },
+                    "-N-Uf2r-6qJ1RH7MFxA7": {
+                        "date": "4/12/2022",
+                        "description": "This is sensor_1, at location xyz.",
+                        "time": "4:27:03 PM",
+                        "value": 100
+                    },
+                    "-N-UgRa_URKaVMQRQJ-b": {
+                        "date": "4/12/2022",
+                        "description": "This is sensor_1, at location xyz.",
+                        "time": "4:33:06 PM",
+                        "value": 100
+                    },
+                    "-N-UkG7RzGd0xFmB9-RO": {
+                        "date": "4/12/2022",
+                        "description": "This is sensor_1, at location xyz.",
+                        "time": "4:49:48 PM",
+                        "value": 100
+                    },
+                    "-N-Umkr7DWZ02rKMkuAs": {
+                        "date": "4/12/2022",
+                        "description": "This is sensor_1, at location xyz.",
+                        "time": "5:00:42 PM",
+                        "value": 100
+                    },
+                    "-N-UnF9sS4jjrK-trHVk": {
+                        "date": "4/12/2022",
+                        "description": "This is sensor_1, at location xyz.",
+                        "time": "5:02:50 PM",
+                        "value": 100
+                    },
+                    "-N-UqzUVWOJ_-Izj-35q": {
+                        "date": "4/12/2022",
+                        "description": "This is sensor_1, at location xyz.",
+                        "time": "5:19:11 PM",
+                        "value": 100
+                    },
+                    "-N-Ur1fRzAmNkFj-P6Mv": {
+                        "date": "4/12/2022",
+                        "description": "This is sensor_1, at location xyz.",
+                        "time": "5:19:24 PM",
+                        "value": 100
+                    }
+                }
+            }
+        }
+    }
+]
