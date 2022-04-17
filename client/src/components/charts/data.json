@@ -18,26 +18,26 @@
                     "-Mzhw1CERW6z7xLjMwqn": {
                         "date": "4/3/2022",
                         "time": "12:40:12 AM",
-                        "value": 7.12
+                        "value": 15.98
                     }
                 },
                 "04-04-2022": {
                     "-Mzmzhudp7oGnZak3eAH": {
                         "date": "4/4/2022",
                         "time": "12:14:23 AM",
-                        "value": 7.12
+                        "value": 9.12
                     }
                 },
                 "04-05-2022": {
                     "-MzsN2XrvJXxS5FPChoJ": {
                         "date": "4/5/2022",
                         "time": "1:18:49 AM",
-                        "value": 7.12
+                        "value": 5.12
                     },
                     "-MzsNM8PK-fOMwFonRPi": {
                         "date": "4/5/2022",
                         "time": "1:20:10 AM",
-                        "value": 7.12
+                        "value": 10.12
                     },
                     "-MzuL5wp4OoCI-LdUDLu": {
                         "date": "4/5/2022",
@@ -47,14 +47,14 @@
                     "-MzuOCKzCSZavcVrnTTa": {
                         "date": "4/5/2022",
                         "time": "10:43:06 AM",
-                        "value": 7.12
+                        "value": 17.12
                     }
                 },
                 "04-10-2022": {
                     "-N-HKqmwtQQ-GE2Q9PYB": {
                         "date": "4/10/2022",
                         "time": "2:19:20 AM",
-                        "value": 7.12
+                        "value": 27.12
                     }
                 },
                 "04-12-2022": {
@@ -62,7 +62,7 @@
                         "date": "4/12/2022",
                         "description": "This is sensor_1, at location xyz.",
                         "time": "4:20:26 PM",
-                        "value": 7.12
+                        "value": 5.38
                     },
                     "-N-UeKAP4U3hXBLMFqx7": {
                         "date": "4/12/2022",
@@ -74,7 +74,7 @@
                         "date": "4/12/2022",
                         "description": "This is sensor_1, at location xyz.",
                         "time": "4:24:42 PM",
-                        "value": 7.12
+                        "value": 12.12
                     },
                     "-N-UeWQhq3E_PgZH42BB": {
                         "date": "4/12/2022",

@@ -6,12 +6,16 @@ import dhtData from "./charts/data.json";
 
 const Historical = () => {
     let dates = [];
-    let largestValues = [];
-    let smallestValues = [];
-    let smallest = null;
-    let largest = null;
 
-    console.log(smallest);
+    let largestTempValues = [];
+    let smallestTempValues = [];
+    let smallestTemp = null;
+    let largestTemp = null;
+
+    let largestHumidityValues = [];
+    let smallestHumdityValues = [];
+    let smallestHumdity;
+    let largestHumdity;
 
     const getTempData = () => {
         dhtData.map((d) => {
@@ -24,70 +28,84 @@ const Historical = () => {
                     let item = val[key];
                     let temp = item.value;
 
-                    smallest = (temp < smallest || smallest == undefined) ? temp : smallest;
-                    largest = (temp > largest || largest == undefined) ? temp : largest;
-                    
+                    smallestTemp = (temp < smallestTemp || smallestTemp == undefined) ?
+                        temp :
+                        smallestTemp;
+
+                    largestTemp = (temp > largestTemp || largestTemp == undefined) ?
+                        temp :
+                        largestTemp;
+
                 }
-                largestValues.push(largest);
-                smallestValues.push(smallest);
-                smallest = null;
-                largest = null;
+                largestTempValues.push(largestTemp);
+                smallestTempValues.push(smallestTemp);
+                smallestTemp = null;
+                largestTemp = null;
             }
         });
 
-        largestValues.forEach(element => {
-            console.log(element);
-        });
+        // largestTempValues.forEach(element => {
+        //     console.log(element);
+        // });
     };
 
-    // const getHumidityData = () => {
-    //     dhtData.map((d, i) => {
-    //         var obj = d.humidity.sensor_1;
-    //         for (let key in obj) {
-    //             let val = obj[key];
-    //             dates.push(key);
+    const getHumidityData = () => {
+        dhtData.map((d) => {
+            var obj = d.humidity.sensor_1;
+            for (let key in obj) {
+                let val = obj[key];
+                //dates.push(key);
 
-    //             let largest = 0;
-    //             for (let key in val) {
-    //                 let item = val[key];
-    //                 if (item.value > largest) {
-    //                     largest = item.value;
-    //                 }
-    //             }
-    //             values.push(largest);
-    //         }
-    //     });
+                for (let key in val) {
+                    let item = val[key];
+                    let temp = item.value;
 
-    //     dhtData.map((d, i) => {
-    //         var obj = d.humidity.sensor_1;
-    //         for (let key in obj) {
-    //             let val = obj[key];
+                    smallestHumdity = (temp < smallestHumdity || smallestHumdity == undefined) ?
+                        temp :
+                        smallestHumdity;
 
-    //             for (let key in val) {
-    //                 let item = val[key]
-    //                 values.push(item.value);
-    //             }
-    //         }
-    //     });
+                    largestHumdity = (temp > largestHumdity || largestHumdity == undefined) ?
+                        temp :
+                        largestHumdity;
 
-    //     values.forEach(element => {
-    //         console.log(element);
-    //     });
-    // };
+                };
+
+                largestHumidityValues.push(largestHumdity);
+                smallestHumdityValues.push(smallestHumdity);
+                smallestHumdity = null;
+                largestHumdity = null;
+            }
+        });
+
+        // values.forEach(element => {
+        //     console.log(element);
+        // });
+    };
 
     getTempData();
+    getHumidityData();
 
-    const [data, setData] = useState({
+    const [dht_data, setData] = useState({
         labels: dates.map((d) => d),
         datasets: [{
-            label: "Highest Temperature",
-            data: largestValues.map((d) => d),
+            label: "Highest Temperature (F°)",
+            data: largestTempValues.map((d) => d),
             borderColor: 'Blue'
         },
         {
-            label: "Lowest Temperature",
-            data: smallestValues.map((d) => d),
+            label: "Lowest Temperature (F°)",
+            data: smallestTempValues.map((d) => d),
             borderColor: 'Red'
+        },
+        {
+            label: "Highest Humidity (%rh)",
+            data: largestHumidityValues.map((d) => d),
+            borderColor: 'Purple'
+        },
+        {
+            label: "Lowest Humidity (%rh)",
+            data: smallestHumdityValues.map((d) => d),
+            borderColor: 'Yellow'
         }]
     });
 
@@ -107,8 +125,8 @@ const Historical = () => {
     return (
         <>
             <NavBar />
-            <h1>This is the Historical Page</h1>
-            <BarChart chartData={data} options={options} />
+            <h1>Temperature and Air Humdity</h1>
+            <BarChart chartData={dht_data} options={options} />
         </>
     )
 }
