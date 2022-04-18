@@ -1,0 +1,1252 @@
+[
+    {
+        "sensor_1": {
+            "04-02-2022": {
+                "-MyECZ3ZVstNbXhE-SzJ": {
+                    "date": "3/15/2022",
+                    "time": "3:12:51 PM",
+                    "value": 0
+                }
+            },
+            "04-03-2022": {
+                "-Mzhr9qV7mtc7e_o_OxW": {
+                    "date": "4/3/2022",
+                    "time": "12:18:56 AM",
+                    "value": 1234
+                },
+                "-MzhrD4Sm_vO-cP_h7st": {
+                    "date": "4/3/2022",
+                    "time": "12:19:10 AM",
+                    "value": 1234
+                },
+                "-Mzhw1jhNGnBtOYnu1La": {
+                    "date": "4/3/2022",
+                    "time": "12:40:14 AM",
+                    "value": 1234
+                }
+            },
+            "04-05-2022": {
+                "-MzsNJoZ99--eO9gmwa7": {
+                    "date": "4/5/2022",
+                    "time": "1:20:00 AM",
+                    "value": 12234524534
+                },
+                "-MzsNMlI1NTUvzgGjkOH": {
+                    "date": "4/5/2022",
+                    "time": "1:20:12 AM",
+                    "value": 12234524534
+                },
+                "-MzuL3Vi6Op3l3F10-3H": {
+                    "date": "4/5/2022",
+                    "description": "This is 12234524534, at location xyz.",
+                    "time": "10:29:24 AM",
+                    "value": 12234524534
+                },
+                "-MzuLXM6-o0mZb56DxG2": {
+                    "date": "4/5/2022",
+                    "description": "This is sensor_1, at location xyz.",
+                    "time": "10:31:26 AM",
+                    "value": 12234524534
+                }
+            },
+            "04-10-2022": {
+                "-N-HG1i3WJFiUXok3ERG": {
+                    "date": "4/10/2022",
+                    "description": "This is sensor_1, at location xyz.",
+                    "time": "1:58:19 AM",
+                    "value": 21
+                },
+                "-N-HG9pVMHdRv1INWLOw": {
+                    "date": "4/10/2022",
+                    "description": "This is sensor_1, at location xyz.",
+                    "time": "1:58:52 AM",
+                    "value": 21
+                },
+                "-N-HKhKEa7h9RGXsCdnc": {
+                    "date": "4/10/2022",
+                    "description": "This is sensor_1, at location xyz.",
+                    "time": "2:18:42 AM",
+                    "value": 21
+                },
+                "-N-K_GXHQ3MA3t3nVFu4": {
+                    "date": "4/10/2022",
+                    "description": "This is sensor_1, at location xyz.",
+                    "time": "5:25:34 PM",
+                    "value": 21
+                }
+            },
+            "04-12-2022": {
+                "-N-UdY3HnfGsYXLYhv6K": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_1, at location xyz.",
+                    "time": "4:20:26 PM",
+                    "value": 21
+                },
+                "-N-UeKAzgzdRxj2CU3Go": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_1, at location xyz.",
+                    "time": "4:23:52 PM",
+                    "value": 21
+                },
+                "-N-UeWQhj5eVoRjUojjf": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_1, at location xyz.",
+                    "time": "4:24:42 PM",
+                    "value": 21
+                },
+                "-N-UeWRYsyzbcSGFgdHC": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_1, at location xyz.",
+                    "time": "4:24:42 PM",
+                    "value": 21
+                },
+                "-N-Uf2tAyM3IzWUKhsh-": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_1, at location xyz.",
+                    "time": "4:27:03 PM",
+                    "value": 21
+                },
+                "-N-UgRccU1t06MQak2Te": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_1, at location xyz.",
+                    "time": "4:33:06 PM",
+                    "value": 21
+                },
+                "-N-UkG9WiDkGEs8nv1jc": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_1, at location xyz.",
+                    "time": "4:49:48 PM",
+                    "value": 21
+                },
+                "-N-UlG9guHtZQH2xft7B": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_1, at location xyz.",
+                    "time": "4:54:10 PM",
+                    "value": 21
+                },
+                "-N-UmO4WiuJfqM9P7z1i": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_1, at location xyz.",
+                    "time": "4:59:05 PM",
+                    "value": 21
+                },
+                "-N-UmaXKmBYYydmZhS9_": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_1, at location xyz.",
+                    "time": "5:00:00 PM",
+                    "value": 21
+                },
+                "-N-UmktA-rPMS4fEt3rM": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_1, at location xyz.",
+                    "time": "5:00:42 PM",
+                    "value": 21
+                },
+                "-N-UnFC1MVoryex4LsSa": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_1, at location xyz.",
+                    "time": "5:02:50 PM",
+                    "value": 21
+                },
+                "-N-Ur2jakh2QyLTHQe1_": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_1, at location xyz.",
+                    "time": "5:19:28 PM",
+                    "value": 21
+                }
+            }
+        },
+        "sensor_2": {
+            "04-02-2022": {
+                "-MyECZ3ZVstNbXhE-SzJ": {
+                    "date": "3/15/2022",
+                    "time": "3:12:51 PM",
+                    "value": 0
+                }
+            },
+            "04-03-2022": {
+                "-Mzhr9rWkm1BT396dfxt": {
+                    "date": "4/3/2022",
+                    "time": "12:18:56 AM",
+                    "value": 1234
+                },
+                "-MzhrD5VbCQXkyC42aw9": {
+                    "date": "4/3/2022",
+                    "time": "12:19:10 AM",
+                    "value": 1234
+                },
+                "-Mzhw1khimqoQuERIiuH": {
+                    "date": "4/3/2022",
+                    "time": "12:40:14 AM",
+                    "value": 1234
+                }
+            },
+            "04-05-2022": {
+                "-MzsNJpMWBTj49ntH1ln": {
+                    "date": "4/5/2022",
+                    "time": "1:20:00 AM",
+                    "value": 123345
+                },
+                "-MzsNMm11x22pBe27Af9": {
+                    "date": "4/5/2022",
+                    "time": "1:20:12 AM",
+                    "value": 123345
+                },
+                "-MzuL3aWX0qzZTV7btz4": {
+                    "date": "4/5/2022",
+                    "description": "This is 123345, at location xyz.",
+                    "time": "10:29:24 AM",
+                    "value": 123345
+                },
+                "-MzuLXT8QY7g_o7MyzdB": {
+                    "date": "4/5/2022",
+                    "description": "This is sensor_2, at location xyz.",
+                    "time": "10:31:26 AM",
+                    "value": 123345
+                }
+            },
+            "04-10-2022": {
+                "-N-HG1jCLOrA4UObIGc7": {
+                    "date": "4/10/2022",
+                    "description": "This is sensor_2, at location xyz.",
+                    "time": "1:58:19 AM",
+                    "value": 32
+                },
+                "-N-HG9qN4jS6-9mcVvMP": {
+                    "date": "4/10/2022",
+                    "description": "This is sensor_2, at location xyz.",
+                    "time": "1:58:52 AM",
+                    "value": 32
+                },
+                "-N-HKhLCf1sTs_hD9UJV": {
+                    "date": "4/10/2022",
+                    "description": "This is sensor_2, at location xyz.",
+                    "time": "2:18:42 AM",
+                    "value": 32
+                },
+                "-N-K_GY9gM80cX_O6f8w": {
+                    "date": "4/10/2022",
+                    "description": "This is sensor_2, at location xyz.",
+                    "time": "5:25:34 PM",
+                    "value": 32
+                }
+            },
+            "04-12-2022": {
+                "-N-UdY3p8ikjUBhDwrBl": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_2, at location xyz.",
+                    "time": "4:20:26 PM",
+                    "value": 32
+                },
+                "-N-UeKBYjZJJ7vorP6_d": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_2, at location xyz.",
+                    "time": "4:23:52 PM",
+                    "value": 32
+                },
+                "-N-UeWRF1dVMdbOSVvrv": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_2, at location xyz.",
+                    "time": "4:24:42 PM",
+                    "value": 32
+                },
+                "-N-UeWS52BRwfB5H30Tt": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_2, at location xyz.",
+                    "time": "4:24:42 PM",
+                    "value": 32
+                },
+                "-N-Uf2tjm-9Gja37n6cI": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_2, at location xyz.",
+                    "time": "4:27:03 PM",
+                    "value": 32
+                },
+                "-N-UgRdBlNV_ew0IPYnW": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_2, at location xyz.",
+                    "time": "4:33:06 PM",
+                    "value": 32
+                },
+                "-N-UkGA4nj431MW6L18A": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_2, at location xyz.",
+                    "time": "4:49:48 PM",
+                    "value": 32
+                },
+                "-N-UlGHIgME97xn0rmcd": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_2, at location xyz.",
+                    "time": "4:54:10 PM",
+                    "value": 32
+                },
+                "-N-UmOCnIvkFFNdVvhci": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_2, at location xyz.",
+                    "time": "4:59:05 PM",
+                    "value": 32
+                },
+                "-N-Umai5NaHkVnYYDRt2": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_2, at location xyz.",
+                    "time": "5:00:00 PM",
+                    "value": 32
+                },
+                "-N-Umktix2N_uYNALiSn": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_2, at location xyz.",
+                    "time": "5:00:42 PM",
+                    "value": 32
+                },
+                "-N-UnFCaGamdNSDNoaQH": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_2, at location xyz.",
+                    "time": "5:02:50 PM",
+                    "value": 32
+                },
+                "-N-Ur2kG491O5NnZ3ZLV": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_2, at location xyz.",
+                    "time": "5:19:28 PM",
+                    "value": 32
+                }
+            }
+        },
+        "sensor_3": {
+            "04-02-2022": {
+                "-MyECZ3ZVstNbXhE-SzJ": {
+                    "date": "3/15/2022",
+                    "time": "3:12:51 PM",
+                    "value": 0
+                }
+            },
+            "04-03-2022": {
+                "-Mzhr9seJnvemfk7WFIS": {
+                    "date": "4/3/2022",
+                    "time": "12:18:56 AM",
+                    "value": 412456345634655400
+                },
+                "-MzhrD6SuWCZ0fkwn033": {
+                    "date": "4/3/2022",
+                    "time": "12:19:10 AM",
+                    "value": 412456345634655400
+                },
+                "-Mzhw1m8btxOyJi-YAl2": {
+                    "date": "4/3/2022",
+                    "time": "12:40:14 AM",
+                    "value": 412456345634655400
+                }
+            },
+            "04-05-2022": {
+                "-MzsNJqBFyI0Ds6YH7_8": {
+                    "date": "4/5/2022",
+                    "time": "1:20:00 AM",
+                    "value": 412456345634655400
+                },
+                "-MzsNMmvqlX6dPO_aKuV": {
+                    "date": "4/5/2022",
+                    "time": "1:20:12 AM",
+                    "value": 412456345634655400
+                },
+                "-MzuL3dIW4_kuCieX-Mi": {
+                    "date": "4/5/2022",
+                    "description": "This is 412456345634655400, at location xyz.",
+                    "time": "10:29:24 AM",
+                    "value": 412456345634655400
+                },
+                "-MzuLXVvUTSiULdwN_DS": {
+                    "date": "4/5/2022",
+                    "description": "This is sensor_3, at location xyz.",
+                    "time": "10:31:26 AM",
+                    "value": 412456345634655400
+                }
+            },
+            "04-10-2022": {
+                "-N-HG1kNBDKN-j6_qm_1": {
+                    "date": "4/10/2022",
+                    "description": "This is sensor_3, at location xyz.",
+                    "time": "1:58:19 AM",
+                    "value": 12
+                },
+                "-N-HG9rQ7bAdk8ROCx9_": {
+                    "date": "4/10/2022",
+                    "description": "This is sensor_3, at location xyz.",
+                    "time": "1:58:52 AM",
+                    "value": 12
+                },
+                "-N-HKhMCo-3BiRDk5GYe": {
+                    "date": "4/10/2022",
+                    "description": "This is sensor_3, at location xyz.",
+                    "time": "2:18:42 AM",
+                    "value": 12
+                },
+                "-N-K_GZFWdu0oEZlLRcn": {
+                    "date": "4/10/2022",
+                    "description": "This is sensor_3, at location xyz.",
+                    "time": "5:25:34 PM",
+                    "value": 12
+                }
+            },
+            "04-12-2022": {
+                "-N-UdY4N0RPvL-JBTBN8": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_3, at location xyz.",
+                    "time": "4:20:26 PM",
+                    "value": 12
+                },
+                "-N-UeKC6bg88HuzvFEoS": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_3, at location xyz.",
+                    "time": "4:23:52 PM",
+                    "value": 12
+                },
+                "-N-UeWRnoM5JwSEZTldS": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_3, at location xyz.",
+                    "time": "4:24:42 PM",
+                    "value": 12
+                },
+                "-N-UeWSfEKgrAlZTePHt": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_3, at location xyz.",
+                    "time": "4:24:42 PM",
+                    "value": 12
+                },
+                "-N-Uf2uH45Aolbq9jh1W": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_3, at location xyz.",
+                    "time": "4:27:03 PM",
+                    "value": 12
+                },
+                "-N-UgRdkP-9mOXPq44Wi": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_3, at location xyz.",
+                    "time": "4:33:06 PM",
+                    "value": 12
+                },
+                "-N-UkGAc29eC_JDZM-qS": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_3, at location xyz.",
+                    "time": "4:49:48 PM",
+                    "value": 12
+                },
+                "-N-UlGHqNvALkKqHadAU": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_3, at location xyz.",
+                    "time": "4:54:10 PM",
+                    "value": 12
+                },
+                "-N-UmODLXM4OYtUL3kz_": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_3, at location xyz.",
+                    "time": "4:59:05 PM",
+                    "value": 12
+                },
+                "-N-UmaidAEI0IlrrPudM": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_3, at location xyz.",
+                    "time": "5:00:00 PM",
+                    "value": 12
+                },
+                "-N-UmkuFZx8P5hm4O05G": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_3, at location xyz.",
+                    "time": "5:00:42 PM",
+                    "value": 12
+                },
+                "-N-UnFD8e-NyrVX4adwU": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_3, at location xyz.",
+                    "time": "5:02:50 PM",
+                    "value": 12
+                },
+                "-N-Ur2kpqYoLC0g4SAG3": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_3, at location xyz.",
+                    "time": "5:19:28 PM",
+                    "value": 12
+                }
+            }
+        },
+        "sensor_4": {
+            "04-02-2022": {
+                "-MyECZ3ZVstNbXhE-SzJ": {
+                    "date": "3/15/2022",
+                    "time": "3:12:51 PM",
+                    "value": 0
+                }
+            },
+            "04-03-2022": {
+                "-Mzhr9tqwCeZdCqhSvmV": {
+                    "date": "4/3/2022",
+                    "time": "12:18:56 AM",
+                    "value": 412341
+                },
+                "-MzhrD7mJLJ1Ed28aQSh": {
+                    "date": "4/3/2022",
+                    "time": "12:19:10 AM",
+                    "value": 412341
+                },
+                "-Mzhw1pjFuPnzWlbppTb": {
+                    "date": "4/3/2022",
+                    "time": "12:40:14 AM",
+                    "value": 412341
+                }
+            },
+            "04-05-2022": {
+                "-MzsNJr6UDNrFIw_AVQp": {
+                    "date": "4/5/2022",
+                    "time": "1:20:00 AM",
+                    "value": 4122435341
+                },
+                "-MzsNMnxCmhu3LTWrfUJ": {
+                    "date": "4/5/2022",
+                    "time": "1:20:12 AM",
+                    "value": 4122435341
+                },
+                "-MzuL3iUSItjGRGSnfFg": {
+                    "date": "4/5/2022",
+                    "description": "This is 4122435341, at location xyz.",
+                    "time": "10:29:24 AM",
+                    "value": 4122435341
+                },
+                "-MzuLXZ5_Exvlm1A2wwu": {
+                    "date": "4/5/2022",
+                    "description": "This is sensor_4, at location xyz.",
+                    "time": "10:31:26 AM",
+                    "value": 4122435341
+                }
+            },
+            "04-10-2022": {
+                "-N-HG1lRr8XCqFfhJ4WK": {
+                    "date": "4/10/2022",
+                    "description": "This is sensor_4, at location xyz.",
+                    "time": "1:58:19 AM",
+                    "value": 15
+                },
+                "-N-HG9sWDnOvQWAdhsjP": {
+                    "date": "4/10/2022",
+                    "description": "This is sensor_4, at location xyz.",
+                    "time": "1:58:52 AM",
+                    "value": 15
+                },
+                "-N-HKhNEsAtSc7vAU0u8": {
+                    "date": "4/10/2022",
+                    "description": "This is sensor_4, at location xyz.",
+                    "time": "2:18:42 AM",
+                    "value": 15
+                },
+                "-N-K_G_RGKRL5vWsiQy1": {
+                    "date": "4/10/2022",
+                    "description": "This is sensor_4, at location xyz.",
+                    "time": "5:25:34 PM",
+                    "value": 15
+                }
+            },
+            "04-12-2022": {
+                "-N-UdY4vvtOS6dn-Tut2": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_4, at location xyz.",
+                    "time": "4:20:26 PM",
+                    "value": 15
+                },
+                "-N-UeKCfVn_Xl5QfU9xQ": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_4, at location xyz.",
+                    "time": "4:23:52 PM",
+                    "value": 15
+                },
+                "-N-UeWSLM8PuE6_hokWH": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_4, at location xyz.",
+                    "time": "4:24:42 PM",
+                    "value": 15
+                },
+                "-N-UeWTE66ISU4vc83Dh": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_4, at location xyz.",
+                    "time": "4:24:42 PM",
+                    "value": 15
+                },
+                "-N-Uf2upPYiVDj1gkM2k": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_4, at location xyz.",
+                    "time": "4:27:03 PM",
+                    "value": 15
+                },
+                "-N-UgReKaeJ1bgSXrIfx": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_4, at location xyz.",
+                    "time": "4:33:06 PM",
+                    "value": 15
+                },
+                "-N-UkGBB-EhwwDQ60uM_": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_4, at location xyz.",
+                    "time": "4:49:48 PM",
+                    "value": 15
+                },
+                "-N-UlGIOc7mGFCAHMMsD": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_4, at location xyz.",
+                    "time": "4:54:10 PM",
+                    "value": 15
+                },
+                "-N-UmODtb4Y3-fwFfQtH": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_4, at location xyz.",
+                    "time": "4:59:05 PM",
+                    "value": 15
+                },
+                "-N-UmajB5BS68UrznYk3": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_4, at location xyz.",
+                    "time": "5:00:00 PM",
+                    "value": 15
+                },
+                "-N-Umkuoc4KQO8MbGKqB": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_4, at location xyz.",
+                    "time": "5:00:42 PM",
+                    "value": 15
+                },
+                "-N-UnFDh91orFmmQAeAz": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_4, at location xyz.",
+                    "time": "5:02:50 PM",
+                    "value": 15
+                },
+                "-N-Ur2lSAs2mMc_GEsyw": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_4, at location xyz.",
+                    "time": "5:19:28 PM",
+                    "value": 15
+                }
+            }
+        },
+        "sensor_5": {
+            "04-02-2022": {
+                "-MyECZ3ZVstNbXhE-SzJ": {
+                    "date": "3/15/2022",
+                    "time": "3:12:51 PM",
+                    "value": 0
+                }
+            },
+            "04-03-2022": {
+                "-Mzhr9v8wcE1BphnY6ig": {
+                    "date": "4/3/2022",
+                    "time": "12:18:56 AM",
+                    "value": 413143
+                },
+                "-MzhrD8pYzaiFVL9KPpF": {
+                    "date": "4/3/2022",
+                    "time": "12:19:10 AM",
+                    "value": 413143
+                },
+                "-Mzhw1r60cyKonEHI4qr": {
+                    "date": "4/3/2022",
+                    "time": "12:40:14 AM",
+                    "value": 413143
+                }
+            },
+            "04-05-2022": {
+                "-MzsNJs0iZTsWkeCIcGW": {
+                    "date": "4/5/2022",
+                    "time": "1:20:00 AM",
+                    "value": 4132345143
+                },
+                "-MzsNMp-_JXNssI0Dhl8": {
+                    "date": "4/5/2022",
+                    "time": "1:20:12 AM",
+                    "value": 4132345143
+                },
+                "-MzuL3jplIjjl3Qy-PmQ": {
+                    "date": "4/5/2022",
+                    "description": "This is 4132345143, at location xyz.",
+                    "time": "10:29:24 AM",
+                    "value": 4132345143
+                },
+                "-MzuLX_w6mYjKAZra5em": {
+                    "date": "4/5/2022",
+                    "description": "This is sensor_5, at location xyz.",
+                    "time": "10:31:26 AM",
+                    "value": 4132345143
+                }
+            },
+            "04-10-2022": {
+                "-N-HG1mMROw3zxDzUjBw": {
+                    "date": "4/10/2022",
+                    "description": "This is sensor_5, at location xyz.",
+                    "time": "1:58:19 AM",
+                    "value": 20
+                },
+                "-N-HG9tdsiHiSTt41vXe": {
+                    "date": "4/10/2022",
+                    "description": "This is sensor_5, at location xyz.",
+                    "time": "1:58:52 AM",
+                    "value": 20
+                },
+                "-N-HKhOIlRGMLeKlIR_F": {
+                    "date": "4/10/2022",
+                    "description": "This is sensor_5, at location xyz.",
+                    "time": "2:18:42 AM",
+                    "value": 20
+                },
+                "-N-K_GaJLfGV-1IPfDWp": {
+                    "date": "4/10/2022",
+                    "description": "This is sensor_5, at location xyz.",
+                    "time": "5:25:34 PM",
+                    "value": 20
+                }
+            },
+            "04-12-2022": {
+                "-N-UdY5SpebrX6eVFnQM": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_5, at location xyz.",
+                    "time": "4:20:26 PM",
+                    "value": 20
+                },
+                "-N-UeKDFKJ0Vol6YNFym": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_5, at location xyz.",
+                    "time": "4:23:52 PM",
+                    "value": 20
+                },
+                "-N-UeWSsVDj_wybGzdCq": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_5, at location xyz.",
+                    "time": "4:24:42 PM",
+                    "value": 20
+                },
+                "-N-UeWTnnvfWZ4CaaFwE": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_5, at location xyz.",
+                    "time": "4:24:42 PM",
+                    "value": 20
+                },
+                "-N-Uf2vOzx6Pjke4o-mN": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_5, at location xyz.",
+                    "time": "4:27:03 PM",
+                    "value": 20
+                },
+                "-N-UgReuLW5CC551B6Av": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_5, at location xyz.",
+                    "time": "4:33:06 PM",
+                    "value": 20
+                },
+                "-N-UkGBlQSROyHr7AC0O": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_5, at location xyz.",
+                    "time": "4:49:48 PM",
+                    "value": 20
+                },
+                "-N-UlGIwx0GMZColrVSD": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_5, at location xyz.",
+                    "time": "4:54:10 PM",
+                    "value": 20
+                },
+                "-N-UmOERtugApbapqZX5": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_5, at location xyz.",
+                    "time": "4:59:05 PM",
+                    "value": 20
+                },
+                "-N-UmajjeT4445xyIzw6": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_5, at location xyz.",
+                    "time": "5:00:00 PM",
+                    "value": 20
+                },
+                "-N-UmkvLnHhnW9pR2Ge9": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_5, at location xyz.",
+                    "time": "5:00:42 PM",
+                    "value": 20
+                },
+                "-N-UnFEGt9tLYsQjpYAc": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_5, at location xyz.",
+                    "time": "5:02:50 PM",
+                    "value": 20
+                },
+                "-N-Ur2m1aBNDlbd-z_iC": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_5, at location xyz.",
+                    "time": "5:19:28 PM",
+                    "value": 20
+                }
+            }
+        },
+        "sensor_6": {
+            "04-02-2022": {
+                "-MyECZ3ZVstNbXhE-SzJ": {
+                    "date": "3/15/2022",
+                    "time": "3:12:51 PM",
+                    "value": 0
+                }
+            },
+            "04-03-2022": {
+                "-Mzhr9waVyA5eVjvsNam": {
+                    "date": "4/3/2022",
+                    "time": "12:18:56 AM",
+                    "value": 23412
+                },
+                "-MzhrD9yDiQbNZ5JJ3vj": {
+                    "date": "4/3/2022",
+                    "time": "12:19:10 AM",
+                    "value": 23412
+                },
+                "-Mzhw1sHCGK4x5LxN0cN": {
+                    "date": "4/3/2022",
+                    "time": "12:40:14 AM",
+                    "value": 23412
+                }
+            },
+            "04-05-2022": {
+                "-MzsNJsohUYpVC21piiu": {
+                    "date": "4/5/2022",
+                    "time": "1:20:00 AM",
+                    "value": 234234512
+                },
+                "-MzsNMplkQFPZ2zhfZ1A": {
+                    "date": "4/5/2022",
+                    "time": "1:20:12 AM",
+                    "value": 234234512
+                },
+                "-MzuL3lWIhyWKffgJbxX": {
+                    "date": "4/5/2022",
+                    "description": "This is 234234512, at location xyz.",
+                    "time": "10:29:24 AM",
+                    "value": 234234512
+                },
+                "-MzuLXbekr2SmasLQksV": {
+                    "date": "4/5/2022",
+                    "description": "This is sensor_6, at location xyz.",
+                    "time": "10:31:26 AM",
+                    "value": 234234512
+                }
+            },
+            "04-10-2022": {
+                "-N-HG1nb4hOLZRzKqQM1": {
+                    "date": "4/10/2022",
+                    "description": "This is sensor_6, at location xyz.",
+                    "time": "1:58:19 AM",
+                    "value": 23
+                },
+                "-N-HG9ujwPapBwkP81xh": {
+                    "date": "4/10/2022",
+                    "description": "This is sensor_6, at location xyz.",
+                    "time": "1:58:52 AM",
+                    "value": 23
+                },
+                "-N-HKhPMXVTY72kvoHQ4": {
+                    "date": "4/10/2022",
+                    "description": "This is sensor_6, at location xyz.",
+                    "time": "2:18:42 AM",
+                    "value": 23
+                },
+                "-N-K_GbGGcd4yTuk23aT": {
+                    "date": "4/10/2022",
+                    "description": "This is sensor_6, at location xyz.",
+                    "time": "5:25:34 PM",
+                    "value": 23
+                }
+            },
+            "04-12-2022": {
+                "-N-UdY6-xkBvY4X-Rgwf": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_6, at location xyz.",
+                    "time": "4:20:26 PM",
+                    "value": 23
+                },
+                "-N-UeKDpU-WboBl1zmgc": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_6, at location xyz.",
+                    "time": "4:23:52 PM",
+                    "value": 23
+                },
+                "-N-UeWTQlgkvXTeLluGl": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_6, at location xyz.",
+                    "time": "4:24:42 PM",
+                    "value": 23
+                },
+                "-N-UeWUNMJ_jSd45kmNK": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_6, at location xyz.",
+                    "time": "4:24:42 PM",
+                    "value": 23
+                },
+                "-N-Uf2vyLJETWKjssjGZ": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_6, at location xyz.",
+                    "time": "4:27:03 PM",
+                    "value": 23
+                },
+                "-N-UgRfUuSfQzPB-zkTm": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_6, at location xyz.",
+                    "time": "4:33:06 PM",
+                    "value": 23
+                },
+                "-N-UkGCLZe9fhb66xVY5": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_6, at location xyz.",
+                    "time": "4:49:48 PM",
+                    "value": 23
+                },
+                "-N-UlGJUcsb9gR8gBBv0": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_6, at location xyz.",
+                    "time": "4:54:10 PM",
+                    "value": 23
+                },
+                "-N-UmOEy1-5T4WieD0i5": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_6, at location xyz.",
+                    "time": "4:59:05 PM",
+                    "value": 23
+                },
+                "-N-UmakH46WVg7QPHGBV": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_6, at location xyz.",
+                    "time": "5:00:00 PM",
+                    "value": 23
+                },
+                "-N-UmkvsMZ26VY0t30eX": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_6, at location xyz.",
+                    "time": "5:00:42 PM",
+                    "value": 23
+                },
+                "-N-UnFEpt5euzC7g7Gsl": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_6, at location xyz.",
+                    "time": "5:02:50 PM",
+                    "value": 23
+                },
+                "-N-Ur2mk3Ch2q0p5KX7b": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_6, at location xyz.",
+                    "time": "5:19:28 PM",
+                    "value": 23
+                }
+            }
+        },
+        "sensor_7": {
+            "04-02-2022": {
+                "-MyECZ3ZVstNbXhE-SzJ": {
+                    "date": "3/15/2022",
+                    "time": "3:12:51 PM",
+                    "value": 0
+                }
+            },
+            "04-03-2022": {
+                "-Mzhr9xunm6voPD5tcm6": {
+                    "date": "4/3/2022",
+                    "time": "12:18:56 AM",
+                    "value": 142341
+                },
+                "-MzhrDAv41fPMxohX6B6": {
+                    "date": "4/3/2022",
+                    "time": "12:19:10 AM",
+                    "value": 142341
+                },
+                "-Mzhw1tYyCiUISnbcM6e": {
+                    "date": "4/3/2022",
+                    "time": "12:40:14 AM",
+                    "value": 142341
+                }
+            },
+            "04-05-2022": {
+                "-MzsNJt_8gN-OoyuHmZ3": {
+                    "date": "4/5/2022",
+                    "time": "1:20:00 AM",
+                    "value": 1422435341
+                },
+                "-MzsNMqc1RuqCKLKzL0l": {
+                    "date": "4/5/2022",
+                    "time": "1:20:12 AM",
+                    "value": 1422435341
+                },
+                "-MzuL3tLSTTJyXnijMJL": {
+                    "date": "4/5/2022",
+                    "description": "This is 1422435341, at location xyz.",
+                    "time": "10:29:24 AM",
+                    "value": 1422435341
+                },
+                "-MzuLXetZxQPoStLzJFQ": {
+                    "date": "4/5/2022",
+                    "description": "This is sensor_7, at location xyz.",
+                    "time": "10:31:26 AM",
+                    "value": 1422435341
+                }
+            },
+            "04-10-2022": {
+                "-N-HG1okW0yU9nkWTa1h": {
+                    "date": "4/10/2022",
+                    "description": "This is sensor_7, at location xyz.",
+                    "time": "1:58:19 AM",
+                    "value": 16
+                },
+                "-N-HG9vfLEem4L_iin8s": {
+                    "date": "4/10/2022",
+                    "description": "This is sensor_7, at location xyz.",
+                    "time": "1:58:52 AM",
+                    "value": 16
+                },
+                "-N-HKhQUL-EgCDY2DhB3": {
+                    "date": "4/10/2022",
+                    "description": "This is sensor_7, at location xyz.",
+                    "time": "2:18:42 AM",
+                    "value": 16
+                },
+                "-N-K_GcLtglNMAbs3_Mv": {
+                    "date": "4/10/2022",
+                    "description": "This is sensor_7, at location xyz.",
+                    "time": "5:25:34 PM",
+                    "value": 16
+                }
+            },
+            "04-12-2022": {
+                "-N-UdY9f-FRbMBmhPz54": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_7, at location xyz.",
+                    "time": "4:20:26 PM",
+                    "value": 16
+                },
+                "-N-UeKEPvf3cJhbeEK1m": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_7, at location xyz.",
+                    "time": "4:23:52 PM",
+                    "value": 16
+                },
+                "-N-UeWTyp61SWvsRFgMG": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_7, at location xyz.",
+                    "time": "4:24:42 PM",
+                    "value": 16
+                },
+                "-N-UeWUwjArEcI3N5cQ9": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_7, at location xyz.",
+                    "time": "4:24:42 PM",
+                    "value": 16
+                },
+                "-N-Uf2z0CAqsqFVEGfkl": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_7, at location xyz.",
+                    "time": "4:27:03 PM",
+                    "value": 16
+                },
+                "-N-UgRg5bie5bygILdPt": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_7, at location xyz.",
+                    "time": "4:33:06 PM",
+                    "value": 16
+                },
+                "-N-UkGCvRMWtr1cniNAQ": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_7, at location xyz.",
+                    "time": "4:49:48 PM",
+                    "value": 16
+                },
+                "-N-UlGK1HOzhqznL1sWX": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_7, at location xyz.",
+                    "time": "4:54:10 PM",
+                    "value": 16
+                },
+                "-N-UmOFXzI-9ARnflw72": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_7, at location xyz.",
+                    "time": "4:59:05 PM",
+                    "value": 16
+                },
+                "-N-UmakptWtAHw9WEuTU": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_7, at location xyz.",
+                    "time": "5:00:00 PM",
+                    "value": 16
+                },
+                "-N-UmkwPo9JSeCIMdfaU": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_7, at location xyz.",
+                    "time": "5:00:42 PM",
+                    "value": 16
+                },
+                "-N-UnFFOn1Dj7ekvURgl": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_7, at location xyz.",
+                    "time": "5:02:50 PM",
+                    "value": 16
+                },
+                "-N-Ur2nOrqKXB_L5Lbq5": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_7, at location xyz.",
+                    "time": "5:19:28 PM",
+                    "value": 16
+                }
+            }
+        },
+        "sensor_8": {
+            "04-02-2022": {
+                "-MyECZ3ZVstNbXhE-SzJ": {
+                    "date": "3/15/2022",
+                    "time": "3:12:51 PM",
+                    "value": 0
+                }
+            },
+            "04-03-2022": {
+                "-Mzhr9z8rswzN7tP2Ntt": {
+                    "date": "4/3/2022",
+                    "time": "12:18:56 AM",
+                    "value": 2435
+                },
+                "-MzhrDBvu9-c7QAw_MJp": {
+                    "date": "4/3/2022",
+                    "time": "12:19:10 AM",
+                    "value": 2435
+                },
+                "-Mzhw1ud4aQHJ7hcl-5q": {
+                    "date": "4/3/2022",
+                    "time": "12:40:14 AM",
+                    "value": 2435
+                }
+            },
+            "04-05-2022": {
+                "-MzsNJu_F0YvYVFZzas4": {
+                    "date": "4/5/2022",
+                    "time": "1:20:00 AM",
+                    "value": 24234535
+                },
+                "-MzsNMrUzbmizse0E02U": {
+                    "date": "4/5/2022",
+                    "time": "1:20:12 AM",
+                    "value": 24234535
+                },
+                "-MzuL40lkfoh91K61rXc": {
+                    "date": "4/5/2022",
+                    "description": "This is 24234535, at location xyz.",
+                    "time": "10:29:24 AM",
+                    "value": 24234535
+                },
+                "-MzuLXi3ib-bXdVP5obP": {
+                    "date": "4/5/2022",
+                    "description": "This is sensor_8, at location xyz.",
+                    "time": "10:31:26 AM",
+                    "value": 24234535
+                }
+            },
+            "04-10-2022": {
+                "-N-HG1pvnK4QdIMuAkhZ": {
+                    "date": "4/10/2022",
+                    "description": "This is sensor_8, at location xyz.",
+                    "time": "1:58:19 AM",
+                    "value": 19
+                },
+                "-N-HG9wfQbJtE78snKzQ": {
+                    "date": "4/10/2022",
+                    "description": "This is sensor_8, at location xyz.",
+                    "time": "1:58:52 AM",
+                    "value": 19
+                },
+                "-N-HKhRff1B3ZKcEG6Fl": {
+                    "date": "4/10/2022",
+                    "description": "This is sensor_8, at location xyz.",
+                    "time": "2:18:42 AM",
+                    "value": 19
+                },
+                "-N-K_GdKrDWh2pOtmJ_3": {
+                    "date": "4/10/2022",
+                    "description": "This is sensor_8, at location xyz.",
+                    "time": "5:25:34 PM",
+                    "value": 19
+                }
+            },
+            "04-12-2022": {
+                "-N-UdYAGvWeFAawLFoOA": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_8, at location xyz.",
+                    "time": "4:20:26 PM",
+                    "value": 19
+                },
+                "-N-UeKEzAgV5G7OiX67l": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_8, at location xyz.",
+                    "time": "4:23:52 PM",
+                    "value": 19
+                },
+                "-N-UeWUVyBhiTtC4Z_ok": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_8, at location xyz.",
+                    "time": "4:24:42 PM",
+                    "value": 19
+                },
+                "-N-UeWVW8-5QvSMBxBNq": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_8, at location xyz.",
+                    "time": "4:24:42 PM",
+                    "value": 19
+                },
+                "-N-Uf2zbejr6zGEkCbkU": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_8, at location xyz.",
+                    "time": "4:27:03 PM",
+                    "value": 19
+                },
+                "-N-UgRggXohCsxcCg2ax": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_8, at location xyz.",
+                    "time": "4:33:06 PM",
+                    "value": 19
+                },
+                "-N-UkGDV4DUBi2HflQis": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_8, at location xyz.",
+                    "time": "4:49:48 PM",
+                    "value": 19
+                },
+                "-N-UlGK_KmyxRKvOZOKi": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_8, at location xyz.",
+                    "time": "4:54:10 PM",
+                    "value": 19
+                },
+                "-N-UmOG4vHyMFlg-1L1b": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_8, at location xyz.",
+                    "time": "4:59:05 PM",
+                    "value": 19
+                },
+                "-N-UmalNMK1IIxoSRKXT": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_8, at location xyz.",
+                    "time": "5:00:00 PM",
+                    "value": 19
+                },
+                "-N-UmkwxXiJI27HauE8e": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_8, at location xyz.",
+                    "time": "5:00:42 PM",
+                    "value": 19
+                },
+                "-N-UnFFxDNpleSRij9eG": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_8, at location xyz.",
+                    "time": "5:02:50 PM",
+                    "value": 19
+                },
+                "-N-Ur2o3Gry1l7VSBept": {
+                    "date": "4/12/2022",
+                    "description": "This is sensor_8, at location xyz.",
+                    "time": "5:19:28 PM",
+                    "value": 19
+                }
+            }
+        }
+    }
+]
