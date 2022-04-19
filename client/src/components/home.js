@@ -92,8 +92,8 @@ const Home = ({ handleLogout }) => {
                 <NavBar />
                 <div className="outerD">
                     <div className="containerInfo">
-                        <h1 className="sample">Status: On/Off</h1>
-                        <h1 className="sample">Gathering data: Yes/No</h1>
+                        <h1 className="sample">Status: On</h1>
+                        <h1 className="sample">Gathering data: Yes</h1>
                         <h1 className="sample">{`Weather: ${weather}°F`}</h1>
                         <h1 className="airHumidity">Air Humidity: 40%</h1>
                     </div>
