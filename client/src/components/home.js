@@ -9,16 +9,16 @@ const Home = ({ handleLogout }) => {
 
     const url = 'http://localhost:3001';
 
-    const [sens1, setSens1] = useState('');
-    const [sens2, setSens2] = useState('');
-    const [sens3, setSens3] = useState('');
-    const [sens4, setSens4] = useState('');
-    const [sens5, setSens5] = useState('');
-    const [sens6, setSens6] = useState('');
-    const [sens7, setSens7] = useState('');
-    const [sens8, setSens8] = useState('');
-    const [sens9, setSens9] = useState('blah');
-    const [weather, setWeather] = useState('blah');
+    const [sens1, setSens1] = useState('1');
+    const [sens2, setSens2] = useState('2');
+    const [sens3, setSens3] = useState('3');
+    const [sens4, setSens4] = useState('4');
+    const [sens5, setSens5] = useState('5');
+    const [sens6, setSens6] = useState('6');
+    const [sens7, setSens7] = useState('7');
+    const [sens8, setSens8] = useState('8');
+    const [sens9, setSens9] = useState('9');
+    const [weather, setWeather] = useState('weather');
 
     const getAllOtherValues = async () => {
 
@@ -92,8 +92,8 @@ const Home = ({ handleLogout }) => {
                 <NavBar />
                 <div className="outerD">
                     <div className="containerInfo">
-                        <h1 className="sample">Status: On/Off</h1>
-                        <h1 className="sample">Gathering data: Yes/No</h1>
+                        <h1 className="sample">Status: On</h1>
+                        <h1 className="sample">Gathering data: Yes</h1>
                         <h1 className="sample">{`Weather: ${weather}°F`}</h1>
                         <h1 className="airHumidity">Air Humidity: 40%</h1>
                     </div>
