@@ -16,6 +16,9 @@ npm start
 ```
 * The client should now be available on `http://localhost:3000`
 
+#### Testing
+* To test the client, run the following command ```npm test```
+
 
 
 ## The Server
@@ -32,6 +35,6 @@ npm start
 * To view the different routes available view `index.js` in the api directory
 * Download my Postman collection here - https://www.getpostman.com/collections/fe93d96b3fb68bff1d0f
 
-### Testing
+#### Testing
 
 * To test the api, run the following command ```npm test```
