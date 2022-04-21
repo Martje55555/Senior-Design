@@ -11,14 +11,14 @@ const Control = () => {
             <div className="outer">
                 <div className="container">
                     <h1>Last Irrigation: 3-26-2022 9:30 AM</h1>
-                    <h1>First Irrigation: 3-26-2022 9:30 AM</h1>
+                    <h1>Next Irrigation: 3-26-2022 9:30 AM</h1>
 
                 </div>
                 <div className="buttons">
 
-                    <button className="btn1">ON</button>
+                    <button data-testid="onButton" className="btn1">ON</button>
 
-                    <button className="btn2">OFF</button>
+                    <button data-testid="offButton" className="btn2">OFF</button>
                 </div>
             </div>
         </>
