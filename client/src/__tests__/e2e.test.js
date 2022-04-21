@@ -1,9 +1,6 @@
 import puppeteer from "puppeteer";
 import '@testing-library/jest-dom'
 
-//jest.useFakeTimers('legacy')
-//jest.useRealTimers();
-
 describe("Login.js Happy Paths", () => {
     let browser;
     let page;
