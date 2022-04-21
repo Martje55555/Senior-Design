@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing components it renders Control screen 1`] = `ReactWrapper {}`;
+
+exports[`Testing components it renders Historical screen 1`] = `ReactWrapper {}`;
+
+exports[`Testing components it renders Historical screen 2`] = `ReactWrapper {}`;
+
+exports[`Testing components it renders Home Screen 1`] = `ReactWrapper {}`;
