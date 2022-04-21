@@ -42,16 +42,16 @@ const Login = (props) => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                 />
-                <p className="errorMsg" ><b>{emailError}</b></p>
+                <p className="errorMsgUser" ><b>{emailError}</b></p>
 
-                <label className='username'>Password  </label>
+                <label className='password'>Password  </label>
                 <input
                     type="password"
                     required
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
-                <p className='errorMsg'><b>{passwordError}</b></p>
+                <p className='errorMsgPass'><b>{passwordError}</b></p>
 
                 <div className='btnContainer'>
                     {hasAccount ? (
@@ -62,7 +62,7 @@ const Login = (props) => {
                     ) : (
                         <>
                             <button className="sign" onClick={handleSignup}>Sign up</button>
-                            <p>Have an account? <span onClick={() => setHasAccount(!hasAccount)}><b>Sign in</b></span></p>
+                            <p>Have an account? <span className="signin" onClick={() => setHasAccount(!hasAccount)}><b>Sign in</b></span></p>
                         </>
                     )}
                 </div>

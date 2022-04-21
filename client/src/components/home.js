@@ -146,7 +146,7 @@ const Home = ({ handleLogout }) => {
                         <h1 className="sample">Status: On/Off</h1>
                         <h1 className="sample">Gathering data: Yes/No</h1>
                         <h1 className="sample">{`Weather: ${weather}°F`}</h1>
-                        <h1 className="sample">Air Humidity: 40%</h1>
+                        <h1 className="airHumidity">Air Humidity: 40%</h1>
                     </div>
                     <br style={{ marginTop: "50px" }} />
                     <center><button onClick={handleLogout}>LOGOUT</button></center>

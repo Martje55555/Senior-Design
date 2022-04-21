@@ -17,7 +17,8 @@ npm start
 * The client should now be available on `http://localhost:3000`
 
 #### Testing
-* To test the client, run the following command ```npm test```
+* To test the rendering of components, run the following command ```npm test```
+* To run the end to end testing, run the following command ```npm run test:e2e```
 
 
 
