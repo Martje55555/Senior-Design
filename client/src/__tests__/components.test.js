@@ -109,4 +109,18 @@ describe('Testing components', () => {
         expect(offBtn).toBeInTheDocument();
     });
 
+    test('it renders the navigation bar', async () => {
+        render(<NavBar />);
+
+        const home = screen.queryByText(/Home/i);
+        const historical = screen.queryByText(/Historical/i);
+        const control = screen.queryByText(/Control/i);
+        const random = screen.queryByText(/This shouldn't be here/i);
+
+        expect(random).not.toBeInTheDocument();
+        expect(home).toBeInTheDocument();
+        expect(historical).toBeInTheDocument();
+        expect(control).toBeInTheDocument();
+    });
+
 });
