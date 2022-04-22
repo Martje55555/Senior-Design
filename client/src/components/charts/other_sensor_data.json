@@ -5,48 +5,53 @@
                 "-MyECZ3ZVstNbXhE-SzJ": {
                     "date": "3/15/2022",
                     "time": "3:12:51 PM",
-                    "value": 0
+                    "value": 20
+                },
+                "-MyECZ3ZVstNbXhE-Szp": {
+                    "date": "3/15/2022",
+                    "time": "3:12:51 PM",
+                    "value": 45
                 }
             },
             "04-03-2022": {
                 "-Mzhr9qV7mtc7e_o_OxW": {
                     "date": "4/3/2022",
                     "time": "12:18:56 AM",
-                    "value": 1234
+                    "value": 19
                 },
                 "-MzhrD4Sm_vO-cP_h7st": {
                     "date": "4/3/2022",
                     "time": "12:19:10 AM",
-                    "value": 1234
+                    "value": 67
                 },
                 "-Mzhw1jhNGnBtOYnu1La": {
                     "date": "4/3/2022",
                     "time": "12:40:14 AM",
-                    "value": 1234
+                    "value": 18
                 }
             },
             "04-05-2022": {
                 "-MzsNJoZ99--eO9gmwa7": {
                     "date": "4/5/2022",
                     "time": "1:20:00 AM",
-                    "value": 12234524534
+                    "value": 19
                 },
                 "-MzsNMlI1NTUvzgGjkOH": {
                     "date": "4/5/2022",
                     "time": "1:20:12 AM",
-                    "value": 12234524534
+                    "value": 15
                 },
                 "-MzuL3Vi6Op3l3F10-3H": {
                     "date": "4/5/2022",
                     "description": "This is 12234524534, at location xyz.",
                     "time": "10:29:24 AM",
-                    "value": 12234524534
+                    "value": 33
                 },
                 "-MzuLXM6-o0mZb56DxG2": {
                     "date": "4/5/2022",
                     "description": "This is sensor_1, at location xyz.",
                     "time": "10:31:26 AM",
-                    "value": 12234524534
+                    "value": 12
                 }
             },
             "04-10-2022": {
@@ -66,7 +71,7 @@
                     "date": "4/10/2022",
                     "description": "This is sensor_1, at location xyz.",
                     "time": "2:18:42 AM",
-                    "value": 21
+                    "value": 45
                 },
                 "-N-K_GXHQ3MA3t3nVFu4": {
                     "date": "4/10/2022",
@@ -104,7 +109,7 @@
                     "date": "4/12/2022",
                     "description": "This is sensor_1, at location xyz.",
                     "time": "4:27:03 PM",
-                    "value": 21
+                    "value": 46
                 },
                 "-N-UgRccU1t06MQak2Te": {
                     "date": "4/12/2022",
@@ -140,13 +145,13 @@
                     "date": "4/12/2022",
                     "description": "This is sensor_1, at location xyz.",
                     "time": "5:00:42 PM",
-                    "value": 21
+                    "value": 18
                 },
                 "-N-UnFC1MVoryex4LsSa": {
                     "date": "4/12/2022",
                     "description": "This is sensor_1, at location xyz.",
                     "time": "5:02:50 PM",
-                    "value": 21
+                    "value": 22
                 },
                 "-N-Ur2jakh2QyLTHQe1_": {
                     "date": "4/12/2022",
@@ -168,41 +173,41 @@
                 "-Mzhr9rWkm1BT396dfxt": {
                     "date": "4/3/2022",
                     "time": "12:18:56 AM",
-                    "value": 1234
+                    "value": 16
                 },
                 "-MzhrD5VbCQXkyC42aw9": {
                     "date": "4/3/2022",
                     "time": "12:19:10 AM",
-                    "value": 1234
+                    "value": 29
                 },
                 "-Mzhw1khimqoQuERIiuH": {
                     "date": "4/3/2022",
                     "time": "12:40:14 AM",
-                    "value": 1234
+                    "value": 15
                 }
             },
             "04-05-2022": {
                 "-MzsNJpMWBTj49ntH1ln": {
                     "date": "4/5/2022",
                     "time": "1:20:00 AM",
-                    "value": 123345
+                    "value": 22
                 },
                 "-MzsNMm11x22pBe27Af9": {
                     "date": "4/5/2022",
                     "time": "1:20:12 AM",
-                    "value": 123345
+                    "value": 54
                 },
                 "-MzuL3aWX0qzZTV7btz4": {
                     "date": "4/5/2022",
                     "description": "This is 123345, at location xyz.",
                     "time": "10:29:24 AM",
-                    "value": 123345
+                    "value": 12
                 },
                 "-MzuLXT8QY7g_o7MyzdB": {
                     "date": "4/5/2022",
                     "description": "This is sensor_2, at location xyz.",
                     "time": "10:31:26 AM",
-                    "value": 123345
+                    "value": 24
                 }
             },
             "04-10-2022": {
@@ -210,7 +215,7 @@
                     "date": "4/10/2022",
                     "description": "This is sensor_2, at location xyz.",
                     "time": "1:58:19 AM",
-                    "value": 32
+                    "value": 19
                 },
                 "-N-HG9qN4jS6-9mcVvMP": {
                     "date": "4/10/2022",
@@ -222,13 +227,13 @@
                     "date": "4/10/2022",
                     "description": "This is sensor_2, at location xyz.",
                     "time": "2:18:42 AM",
-                    "value": 32
+                    "value": 13
                 },
                 "-N-K_GY9gM80cX_O6f8w": {
                     "date": "4/10/2022",
                     "description": "This is sensor_2, at location xyz.",
                     "time": "5:25:34 PM",
-                    "value": 32
+                    "value": 12
                 }
             },
             "04-12-2022": {
@@ -236,37 +241,37 @@
                     "date": "4/12/2022",
                     "description": "This is sensor_2, at location xyz.",
                     "time": "4:20:26 PM",
-                    "value": 32
+                    "value": 31
                 },
                 "-N-UeKBYjZJJ7vorP6_d": {
                     "date": "4/12/2022",
                     "description": "This is sensor_2, at location xyz.",
                     "time": "4:23:52 PM",
-                    "value": 32
+                    "value": 54
                 },
                 "-N-UeWRF1dVMdbOSVvrv": {
                     "date": "4/12/2022",
                     "description": "This is sensor_2, at location xyz.",
                     "time": "4:24:42 PM",
-                    "value": 32
+                    "value": 23
                 },
                 "-N-UeWS52BRwfB5H30Tt": {
                     "date": "4/12/2022",
                     "description": "This is sensor_2, at location xyz.",
                     "time": "4:24:42 PM",
-                    "value": 32
+                    "value": 16
                 },
                 "-N-Uf2tjm-9Gja37n6cI": {
                     "date": "4/12/2022",
                     "description": "This is sensor_2, at location xyz.",
                     "time": "4:27:03 PM",
-                    "value": 32
+                    "value": 10
                 },
                 "-N-UgRdBlNV_ew0IPYnW": {
                     "date": "4/12/2022",
                     "description": "This is sensor_2, at location xyz.",
                     "time": "4:33:06 PM",
-                    "value": 32
+                    "value": 19
                 },
                 "-N-UkGA4nj431MW6L18A": {
                     "date": "4/12/2022",
@@ -278,7 +283,7 @@
                     "date": "4/12/2022",
                     "description": "This is sensor_2, at location xyz.",
                     "time": "4:54:10 PM",
-                    "value": 32
+                    "value": 21
                 },
                 "-N-UmOCnIvkFFNdVvhci": {
                     "date": "4/12/2022",
@@ -317,48 +322,48 @@
                 "-MyECZ3ZVstNbXhE-SzJ": {
                     "date": "3/15/2022",
                     "time": "3:12:51 PM",
-                    "value": 0
+                    "value": 10
                 }
             },
             "04-03-2022": {
                 "-Mzhr9seJnvemfk7WFIS": {
                     "date": "4/3/2022",
                     "time": "12:18:56 AM",
-                    "value": 412456345634655400
+                    "value": 12
                 },
                 "-MzhrD6SuWCZ0fkwn033": {
                     "date": "4/3/2022",
                     "time": "12:19:10 AM",
-                    "value": 412456345634655400
+                    "value": 31
                 },
                 "-Mzhw1m8btxOyJi-YAl2": {
                     "date": "4/3/2022",
                     "time": "12:40:14 AM",
-                    "value": 412456345634655400
+                    "value": 12
                 }
             },
             "04-05-2022": {
                 "-MzsNJqBFyI0Ds6YH7_8": {
                     "date": "4/5/2022",
                     "time": "1:20:00 AM",
-                    "value": 412456345634655400
+                    "value": 14
                 },
                 "-MzsNMmvqlX6dPO_aKuV": {
                     "date": "4/5/2022",
                     "time": "1:20:12 AM",
-                    "value": 412456345634655400
+                    "value": 16
                 },
                 "-MzuL3dIW4_kuCieX-Mi": {
                     "date": "4/5/2022",
                     "description": "This is 412456345634655400, at location xyz.",
                     "time": "10:29:24 AM",
-                    "value": 412456345634655400
+                    "value": 12
                 },
                 "-MzuLXVvUTSiULdwN_DS": {
                     "date": "4/5/2022",
                     "description": "This is sensor_3, at location xyz.",
                     "time": "10:31:26 AM",
-                    "value": 412456345634655400
+                    "value": 19
                 }
             },
             "04-10-2022": {
@@ -480,41 +485,41 @@
                 "-Mzhr9tqwCeZdCqhSvmV": {
                     "date": "4/3/2022",
                     "time": "12:18:56 AM",
-                    "value": 412341
+                    "value": 13
                 },
                 "-MzhrD7mJLJ1Ed28aQSh": {
                     "date": "4/3/2022",
                     "time": "12:19:10 AM",
-                    "value": 412341
+                    "value": 43
                 },
                 "-Mzhw1pjFuPnzWlbppTb": {
                     "date": "4/3/2022",
                     "time": "12:40:14 AM",
-                    "value": 412341
+                    "value": 13
                 }
             },
             "04-05-2022": {
                 "-MzsNJr6UDNrFIw_AVQp": {
                     "date": "4/5/2022",
                     "time": "1:20:00 AM",
-                    "value": 4122435341
+                    "value": 15
                 },
                 "-MzsNMnxCmhu3LTWrfUJ": {
                     "date": "4/5/2022",
                     "time": "1:20:12 AM",
-                    "value": 4122435341
+                    "value": 13
                 },
                 "-MzuL3iUSItjGRGSnfFg": {
                     "date": "4/5/2022",
                     "description": "This is 4122435341, at location xyz.",
                     "time": "10:29:24 AM",
-                    "value": 4122435341
+                    "value": 51
                 },
                 "-MzuLXZ5_Exvlm1A2wwu": {
                     "date": "4/5/2022",
                     "description": "This is sensor_4, at location xyz.",
                     "time": "10:31:26 AM",
-                    "value": 4122435341
+                    "value": 31
                 }
             },
             "04-10-2022": {
@@ -629,48 +634,48 @@
                 "-MyECZ3ZVstNbXhE-SzJ": {
                     "date": "3/15/2022",
                     "time": "3:12:51 PM",
-                    "value": 0
+                    "value": 20
                 }
             },
             "04-03-2022": {
                 "-Mzhr9v8wcE1BphnY6ig": {
                     "date": "4/3/2022",
                     "time": "12:18:56 AM",
-                    "value": 413143
+                    "value": 13
                 },
                 "-MzhrD8pYzaiFVL9KPpF": {
                     "date": "4/3/2022",
                     "time": "12:19:10 AM",
-                    "value": 413143
+                    "value": 41
                 },
                 "-Mzhw1r60cyKonEHI4qr": {
                     "date": "4/3/2022",
                     "time": "12:40:14 AM",
-                    "value": 413143
+                    "value": 21
                 }
             },
             "04-05-2022": {
                 "-MzsNJs0iZTsWkeCIcGW": {
                     "date": "4/5/2022",
                     "time": "1:20:00 AM",
-                    "value": 4132345143
+                    "value": 11
                 },
                 "-MzsNMp-_JXNssI0Dhl8": {
                     "date": "4/5/2022",
                     "time": "1:20:12 AM",
-                    "value": 4132345143
+                    "value": 12
                 },
                 "-MzuL3jplIjjl3Qy-PmQ": {
                     "date": "4/5/2022",
                     "description": "This is 4132345143, at location xyz.",
                     "time": "10:29:24 AM",
-                    "value": 4132345143
+                    "value": 14
                 },
                 "-MzuLX_w6mYjKAZra5em": {
                     "date": "4/5/2022",
                     "description": "This is sensor_5, at location xyz.",
                     "time": "10:31:26 AM",
-                    "value": 4132345143
+                    "value": 14
                 }
             },
             "04-10-2022": {
@@ -678,7 +683,7 @@
                     "date": "4/10/2022",
                     "description": "This is sensor_5, at location xyz.",
                     "time": "1:58:19 AM",
-                    "value": 20
+                    "value": 51
                 },
                 "-N-HG9tdsiHiSTt41vXe": {
                     "date": "4/10/2022",
@@ -785,48 +790,48 @@
                 "-MyECZ3ZVstNbXhE-SzJ": {
                     "date": "3/15/2022",
                     "time": "3:12:51 PM",
-                    "value": 0
+                    "value": 30
                 }
             },
             "04-03-2022": {
                 "-Mzhr9waVyA5eVjvsNam": {
                     "date": "4/3/2022",
                     "time": "12:18:56 AM",
-                    "value": 23412
+                    "value": 12
                 },
                 "-MzhrD9yDiQbNZ5JJ3vj": {
                     "date": "4/3/2022",
                     "time": "12:19:10 AM",
-                    "value": 23412
+                    "value": 21
                 },
                 "-Mzhw1sHCGK4x5LxN0cN": {
                     "date": "4/3/2022",
                     "time": "12:40:14 AM",
-                    "value": 23412
+                    "value": 13
                 }
             },
             "04-05-2022": {
                 "-MzsNJsohUYpVC21piiu": {
                     "date": "4/5/2022",
                     "time": "1:20:00 AM",
-                    "value": 234234512
+                    "value": 13
                 },
                 "-MzsNMplkQFPZ2zhfZ1A": {
                     "date": "4/5/2022",
                     "time": "1:20:12 AM",
-                    "value": 234234512
+                    "value": 41
                 },
                 "-MzuL3lWIhyWKffgJbxX": {
                     "date": "4/5/2022",
                     "description": "This is 234234512, at location xyz.",
                     "time": "10:29:24 AM",
-                    "value": 234234512
+                    "value": 41
                 },
                 "-MzuLXbekr2SmasLQksV": {
                     "date": "4/5/2022",
                     "description": "This is sensor_6, at location xyz.",
                     "time": "10:31:26 AM",
-                    "value": 234234512
+                    "value": 15
                 }
             },
             "04-10-2022": {
@@ -941,48 +946,48 @@
                 "-MyECZ3ZVstNbXhE-SzJ": {
                     "date": "3/15/2022",
                     "time": "3:12:51 PM",
-                    "value": 0
+                    "value": 30
                 }
             },
             "04-03-2022": {
                 "-Mzhr9xunm6voPD5tcm6": {
                     "date": "4/3/2022",
                     "time": "12:18:56 AM",
-                    "value": 142341
+                    "value": 13
                 },
                 "-MzhrDAv41fPMxohX6B6": {
                     "date": "4/3/2022",
                     "time": "12:19:10 AM",
-                    "value": 142341
+                    "value": 41
                 },
                 "-Mzhw1tYyCiUISnbcM6e": {
                     "date": "4/3/2022",
                     "time": "12:40:14 AM",
-                    "value": 142341
+                    "value": 15
                 }
             },
             "04-05-2022": {
                 "-MzsNJt_8gN-OoyuHmZ3": {
                     "date": "4/5/2022",
                     "time": "1:20:00 AM",
-                    "value": 1422435341
+                    "value": 14
                 },
                 "-MzsNMqc1RuqCKLKzL0l": {
                     "date": "4/5/2022",
                     "time": "1:20:12 AM",
-                    "value": 1422435341
+                    "value": 41
                 },
                 "-MzuL3tLSTTJyXnijMJL": {
                     "date": "4/5/2022",
                     "description": "This is 1422435341, at location xyz.",
                     "time": "10:29:24 AM",
-                    "value": 1422435341
+                    "value": 31
                 },
                 "-MzuLXetZxQPoStLzJFQ": {
                     "date": "4/5/2022",
                     "description": "This is sensor_7, at location xyz.",
                     "time": "10:31:26 AM",
-                    "value": 1422435341
+                    "value": 24
                 }
             },
             "04-10-2022": {
@@ -1097,48 +1102,48 @@
                 "-MyECZ3ZVstNbXhE-SzJ": {
                     "date": "3/15/2022",
                     "time": "3:12:51 PM",
-                    "value": 0
+                    "value": 30
                 }
             },
             "04-03-2022": {
                 "-Mzhr9z8rswzN7tP2Ntt": {
                     "date": "4/3/2022",
                     "time": "12:18:56 AM",
-                    "value": 2435
+                    "value": 31
                 },
                 "-MzhrDBvu9-c7QAw_MJp": {
                     "date": "4/3/2022",
                     "time": "12:19:10 AM",
-                    "value": 2435
+                    "value": 12
                 },
                 "-Mzhw1ud4aQHJ7hcl-5q": {
                     "date": "4/3/2022",
                     "time": "12:40:14 AM",
-                    "value": 2435
+                    "value": 35
                 }
             },
             "04-05-2022": {
                 "-MzsNJu_F0YvYVFZzas4": {
                     "date": "4/5/2022",
                     "time": "1:20:00 AM",
-                    "value": 24234535
+                    "value": 24
                 },
                 "-MzsNMrUzbmizse0E02U": {
                     "date": "4/5/2022",
                     "time": "1:20:12 AM",
-                    "value": 24234535
+                    "value": 21
                 },
                 "-MzuL40lkfoh91K61rXc": {
                     "date": "4/5/2022",
                     "description": "This is 24234535, at location xyz.",
                     "time": "10:29:24 AM",
-                    "value": 24234535
+                    "value": 25
                 },
                 "-MzuLXi3ib-bXdVP5obP": {
                     "date": "4/5/2022",
                     "description": "This is sensor_8, at location xyz.",
                     "time": "10:31:26 AM",
-                    "value": 24234535
+                    "value": 25
                 }
             },
             "04-10-2022": {
