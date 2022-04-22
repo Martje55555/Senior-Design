@@ -22,7 +22,7 @@ const Home = ({ handleLogout }) => {
 
     const getAllOtherValues = async () => {
 
-        for (let i = 1; i <= 8; i++) {
+        for (let i = 1; i <= 9; i++) {
             axios.get(`${url}/other_sensors/sensor_${i}/latest`, { crossDomain: true })
                 .then((response) => {
                     console.log(response);
@@ -49,6 +49,9 @@ const Home = ({ handleLogout }) => {
                     }
                     else if (i === 8) {
                         setSens8(`${response.data.value}%`);
+                    }
+                    else if (i == 9) {
+                        setSens9(`${response.data.value}%`);
                     }
                 })
                 .catch((err) => {
@@ -81,10 +84,10 @@ const Home = ({ handleLogout }) => {
 
     // Leave commented when not using the data
     // to reduce the amount of calls, uncomment to see data
-    // useEffect(() => {
-    //     getAllOtherValues();
-    //     getWeather();
-    // }, []);
+    useEffect(() => {
+        getAllOtherValues();
+        getWeather();
+    }, []);
 
     if (window.screen.width > 1280) {
         return (

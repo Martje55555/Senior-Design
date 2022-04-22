@@ -574,11 +574,12 @@ app.post("/other_sensors/add", async (req, res, next) => {
         let sens6;
         let sens7;
         let sens8;
+        let sens9;
 
         bodyObj.time = "right now";
         bodyObj.date = "today";
 
-        for (let i = 1; i <= 8; i++) {
+        for (let i = 1; i <= 9; i++) {
             if (i == 1) {
                 bodyObj.value = req.body.sensor_1;
                 bodyObj.description = `This is sensor_1, at location xyz.`
@@ -612,10 +613,14 @@ app.post("/other_sensors/add", async (req, res, next) => {
                 bodyObj.value = req.body.sensor_8;
                 bodyObj.description = `This is sensor_8, at location xyz.`
                 sens8 = bodyObj;
+            } else if (i == 9) {
+                bodyObj.value = req.body.sensor_9;
+                bodyObj.description = `This is sensor_9, at location xyz.`
+                sens9 = bodyObj;
             }
         }
 
-        sendObj = sens1 + sens2 + sens3 + sens4 + sens5 + sens6 + sens7 + sens8;
+        sendObj = sens1 + sens2 + sens3 + sens4 + sens5 + sens6 + sens7 + sens8 + sens9;
         console.log(sendObj);
 
         console.log("Success");
@@ -623,7 +628,7 @@ app.post("/other_sensors/add", async (req, res, next) => {
 
     } else {
         try {
-            for (let i = 1; i <= 8; i++) {
+            for (let i = 1; i <= 9; i++) {
                 if (i == 1) {
                     bodyObj.value = req.body.sensor_1;
                     bodyObj.description = `This is sensor_1, at location xyz.`
@@ -648,6 +653,9 @@ app.post("/other_sensors/add", async (req, res, next) => {
                 } else if (i == 8) {
                     bodyObj.value = req.body.sensor_8;
                     bodyObj.description = `This is sensor_8, at location xyz.`
+                } else if (i == 9) {
+                    bodyObj.value = req.body.sensor_9;
+                    bodyObj.description = `This is sensor_9 at location xyz`
                 }
 
                 await database.ref("/other_sensors/").child(`sensor_${i}/${today}`).push(bodyObj, (error) => {
