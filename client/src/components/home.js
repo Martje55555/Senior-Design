@@ -19,6 +19,14 @@ const Home = ({ handleLogout }) => {
     const [sens8, setSens8] = useState('8');
     const [sens9, setSens9] = useState('9');
     const [weather, setWeather] = useState('weather');
+    const [status, setStatus] = useState('UNKNOWN')
+
+    const getStatus = async () => {
+        axios.get(`${url}/status`, {crossDomain: true})
+        .then((response) => {
+            setStatus(`${response.data}`)
+        });
+    }
 
     const getAllOtherValues = async () => {
 
@@ -84,10 +92,11 @@ const Home = ({ handleLogout }) => {
 
     // Leave commented when not using the data
     // to reduce the amount of calls, uncomment to see data
-    // useEffect(() => {
-    //     getAllOtherValues();
-    //     getWeather();
-    // }, []);
+    useEffect(() => {
+        //getAllOtherValues();
+        //getWeather();
+        getStatus();
+    }, []);
 
     if (window.screen.width > 1280) {
         return (
@@ -95,7 +104,7 @@ const Home = ({ handleLogout }) => {
                 <NavBar />
                 <div className="outerD">
                     <div className="containerInfo">
-                        <h1 className="sample">Status: On</h1>
+                        <h1 className="sample">Status: {status}</h1>
                         <h1 className="sample">Gathering data: Yes</h1>
                         <h1 className="sample">{`Weather: ${weather}°F`}</h1>
                         <h1 className="airHumidity">Air Humidity: 40%</h1>
@@ -146,8 +155,8 @@ const Home = ({ handleLogout }) => {
                         </div>
                     </div>
                     <div className="containerInfo">
-                        <h1 className="sample">Status: On/Off</h1>
-                        <h1 className="sample">Gathering data: Yes/No</h1>
+                        <h1 className="sample">Status: {status}</h1>
+                        <h1 className="sample">Gathering data: Yes</h1>
                         <h1 className="sample">{`Weather: ${weather}°F`}</h1>
                         <h1 className="airHumidity">Air Humidity: 40%</h1>
                     </div>

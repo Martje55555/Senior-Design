@@ -67,7 +67,7 @@ describe('Testing components', () => {
         render(<Home />);
 
         const navbarWrapper = mount(<NavBar />,);
-        const status = screen.queryByText(/Status: On/i);
+        const status = screen.queryByText(/Status: UNKNOWN/i);
         const gathering = screen.queryByText(/Gathering data: Yes/i);
         const weather = screen.queryByText(/Weather: weather°F/i);
         const air = screen.queryByText(/Air Humidity: 40%/i);
