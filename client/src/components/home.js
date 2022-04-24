@@ -63,25 +63,23 @@ const Home = ({ handleLogout }) => {
     const getWeather = async () => {
         let lat = 26.30519;
         let lon = -98.171924;
-        axios.get(`${url}/weather`, {
-            params: {
-                'lat': lat,
-                'lon': lon,
-                'appid': process.env.REACT_APP_WEATHER_API_KEY
-            }
+        axios.get(`${url}/weather`, { params : {
+            'lat' : lat,
+            'lon' : lon,
+            'appid' : process.env.REACT_APP_WEATHER_API_KEY
+        }})
+        .then((response) => {
+            let data = response.data[0];
+            //(K − 273.15) × 9/5 + 32 = -459.7°F
+            data = (data - 273.15) * 9/5 + 32;
+            data = data.toFixed(2);
+            console.log(data);
+            data.toString();
+            setWeather(data);
         })
-            .then((response) => {
-                let data = response.data[0];
-                //(K − 273.15) × 9/5 + 32 = -459.7°F
-                data = (data - 273.15) * 9 / 5 + 32;
-                data = data.toFixed(2);
-                console.log(data);
-                data.toString();
-                setWeather(data);
-            })
-            .catch((err) => {
-                console.log(`Error: ${err}`);
-            });
+        .catch((err) => {
+            console.log(`Error: ${err}`);
+        });
     };
 
     // Leave commented when not using the data
