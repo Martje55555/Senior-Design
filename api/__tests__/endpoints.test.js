@@ -225,7 +225,8 @@ describe("POST /other_sensors/add", () => {
             "sensor_5": 20,
             "sensor_6": 23,
             "sensor_7": 16,
-            "sensor_8": 19
+            "sensor_8": 19,
+            "sensor_9": 18,
         };
 
         const tempObj = {
@@ -242,7 +243,7 @@ describe("POST /other_sensors/add", () => {
             "description": "This is sensor_1, at location xyz."
         };
 
-        for (let i = 2; i <= 8; i++) {
+        for (let i = 2; i <= 9; i++) {
             if (i == 2) {
                 tempObj.value = body.sensor_2;
                 tempObj.description = `This is sensor_2, at location xyz.`
@@ -270,6 +271,10 @@ describe("POST /other_sensors/add", () => {
             } else if (i == 8) {
                 tempObj.value = body.sensor_8;
                 tempObj.description = `This is sensor_8, at location xyz.`
+                postResult += tempObj;
+            } else if (i == 9) {
+                tempObj.value = body.sensor_9;
+                tempObj.description = `This is sensor_9, at location xyz.`
                 postResult += tempObj;
             }
         }

@@ -28,6 +28,7 @@
     "express": "^4.17.3",
     "firebase": "^9.6.8",
     "firebase-admin": "^10.0.2",
+    "net-ping": "^1.2.3",
     "supertest": "^6.2.2"
   },
   "devDependencies": {

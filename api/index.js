@@ -2,11 +2,16 @@ const express = require('express');
 const cors = require('cors');
 const firebase = require('firebase-admin');
 const axios = require('axios');
+const ping = require('net-ping');
 
 const serviceAccount = require("./admin.json");
 const { json } = require('express');
 
 require('dotenv').config();
+
+let session = ping.createSession();
+
+let espIP = null;
 
 let day = new Date().getDate();
 if (10 - day > 0) {
@@ -55,7 +60,47 @@ const getNumberOfChildren = async (sensor) => {
     });
 
     return response.numChildren();
-}
+};
+
+// STATUS OF ESP
+app.get("/status", async (req, res, next) => {
+    if (espIP === null) {
+        res.status(404).json("Please set ip using /set_ip endpoint");
+    } else {
+        try {
+            session.pingHost(espIP, function (error, espIP) {
+                if (error) {
+                    console.log(espIP + ": " + error.toString());
+                    isAlive = false;
+                    res.status(200).json("OFF");
+                } else {
+                    console.log(espIP + ": Alive");
+                    isAlive = true;
+                    res.status(200).json("ON");
+                }
+            });
+        } catch (e) {
+            console.log("Error: " + e);
+            res.status(400).json(`${e}`);
+        };
+    }
+});
+
+// SET THE IP of the ESP
+app.post("/set_ip", async (req, res, next) => {
+    try {
+        espIP = req.body.ip.toString();
+        console.log(espIP);
+        if(typeof(espIP) === 'string') {
+            res.status(200).json(`Set ip: ${espIP}`);
+        } else {
+            res.status(403).json(`Incorrect ip format`);
+        }
+    } catch (e) {
+        console.log("Error: " + e);
+        res.status(400).json(`Error: ${e}`);
+    }
+});
 
 // GET REQUESTS
 
@@ -677,6 +722,8 @@ app.post("/other_sensors/add", async (req, res, next) => {
     }
 });
 
+
+
 ///////////// OUTSIDE 3'rd PARTY API'S ///////////////
 
 app.get("/weather", async (req, res, next) => {
@@ -684,18 +731,21 @@ app.get("/weather", async (req, res, next) => {
         console.log("Success");
         res.status(200).json(`"Success": true`);
     } else {
-        if(req.query.appid === process.env.WEATHER_API_KEY) {
+        if (req.query.appid === process.env.WEATHER_API_KEY) {
             try {
                 let data;
                 let url = `https://api.openweathermap.org/data/2.5/weather`
-                axios.get(url, { params: {
-                    'lat' : req.query.lat,
-                    'lon' : req.query.lon,
-                    'appid' : req.query.appid }})
-                .then((response) => {
-                    data = response.data;
-                    res.status(200).json([data["main"]["temp"]])
-                });
+                axios.get(url, {
+                    params: {
+                        'lat': req.query.lat,
+                        'lon': req.query.lon,
+                        'appid': req.query.appid
+                    }
+                })
+                    .then((response) => {
+                        data = response.data;
+                        res.status(200).json([data["main"]["temp"]])
+                    });
             } catch (err) {
                 console.log("Error: " + err);
                 res.status(400).json(["'Success': false", `"Error": ${err}`]);
