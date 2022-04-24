@@ -128,6 +128,7 @@ const Home = ({ handleLogout }) => {
     else {
         return (
             <>
+<<<<<<< Updated upstream
                 <NavBar />
                 <div className="outerM">
                     <div className="containerGraphM">
@@ -146,6 +147,20 @@ const Home = ({ handleLogout }) => {
                             <div className="box">{sens8}</div>
                             <div className="box">{sens9}</div>
                         </div>
+=======
+            <NavBar />
+            <div className="outerM">
+                <div className="containerGraphM">
+                    <div className="gridContainer">
+                        <div className="box">1</div>
+                        <div className="box">2</div>
+                        <div className="box">3</div>
+                    </div>
+                    <div className="gridContainer">
+                        <div className="box">4</div>
+                        <div className="box">5</div>
+                        <div className="box">6</div>
+>>>>>>> Stashed changes
                     </div>
                     <div className="containerInfo">
                         <h1 className="sample">Status: On/Off</h1>
@@ -156,6 +171,18 @@ const Home = ({ handleLogout }) => {
                     <br style={{ marginTop: "50px" }} />
                     <center><button onClick={handleLogout}>LOGOUT</button></center>
                 </div>
+<<<<<<< Updated upstream
+=======
+                <div className="containerInfo">
+                    <h1 className="sample">Status: On/Off</h1>
+                    <h1 className="sample">Gathering data: Yes/No</h1>
+                    <h1 className="sample">Weather: 85°F</h1>
+                    <h1 className="sample">Air Humidity: 40%</h1>
+                </div>
+                <br style={{ marginTop: "50px" }} />
+                <center><button onClick={handleLogout}>LOGOUT</button></center>
+            </div>
+>>>>>>> Stashed changes
             </>
         )
     }
