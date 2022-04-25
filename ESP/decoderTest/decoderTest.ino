@@ -6,35 +6,34 @@
 #include <ESP8266WiFi.h>
 
 #define WIFI_SSID "Alonso7"
-#define WIFI_PASSWORD "figmaEngineer69"
+#define WIFI_PASSWORD "rayados10"
 
-const char *serverName = "http://0030e32a333f97.lhrtunnel.link/other_sensors/add";
+String serverName = "http://25eb02c0a521ce.lhrtunnel.link";
 
-#define D0 16
-#define D1 5
-#define D2 4
-#define D3 0
-#define D4 2
-#define D5 14
-#define D6 12
-#define D7 13
-#define D8 15
-
-float dataStorage[8];
+#define D0 16 // A selection
+#define D1 5  // B selection
+#define D2 4  // C selection
+//#define D3 0  // (Nothing yet)
+#define D4 2  // Powers DHT-11
+#define D6 12 // Powers FC-28 (9th sensor)
+#define D5 14 // Power decoder
+#define D7 13 // DHT-11 recieving data
+  
+float dataStorage[11];
 int hold;
 int output_value0;
 int sensor_pinA0 = A0;
 
-void setup()
-{
+dht DHT0;
+
+void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
 
   // connect to wifi.
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
   Serial.print("connecting");
-  while (WiFi.status() != WL_CONNECTED)
-  {
+  while (WiFi.status() != WL_CONNECTED) {
     Serial.print(".");
     delay(500);
   }
@@ -42,72 +41,73 @@ void setup()
   Serial.print("connected: ");
   Serial.println(WiFi.localIP());
 
-  pinMode(D0, OUTPUT); // sensor 0
-  pinMode(D1, OUTPUT); //
-  pinMode(D2, OUTPUT); // MSB
+  pinMode(D0, OUTPUT); // LSB (Powers FC-28 #1-8)
+  pinMode(D1, OUTPUT); // (Powers FC-28 #1-8)
+  pinMode(D2, OUTPUT); // MSB (Powers FC-28 #1-8)
+  pinMode(D4, OUTPUT); // Powers DHT11
+  pinMode(D5, OUTPUT); // Powers DECODER
+  pinMode(D6, OUTPUT); // Powers FC-28
+  //pinMode(D7, INPUT);  // Input data for DHT11
   
 }
 
-void printStorage(float arr[])
-{
-  for (int ndex = 0; ndex < 8; ndex++)
-  {
+void printStorage(float arr[]) {
+  for (int ndex = 0; ndex < 11; ndex++) {
     Serial.print(arr[ndex]);
     Serial.print(" ");
   }
 }
 
 // function to send non-dht via api
-void dataToServer()
-{
+void dataToServer() {
   Serial.println("Sending data to Server");
-
-  if (WiFi.status() == WL_CONNECTED)
-  {
+  if (WiFi.status() == WL_CONNECTED) {
     WiFiClient client;
     HTTPClient http;
 
-    http.begin(client, serverName);
+    String dht_endpoint = serverName + "/other_sensors/add";
+
+    http.begin(client, dht_endpoint);
     http.addHeader("Content-Type", "application/json");
 
     StaticJsonDocument<200> doc; // to create json obj
+    StaticJsonDocument<200> second_doc; // to create json obj   
 
-    for (int i = 0; i < 8; i++)
-    {
-      if (i == 0)
-      {
+    for (int i = 0; i < 11; i++) {
+      if (i == 0) {
         doc["sensor_1"] = dataStorage[i];
       }
-      else if (i == 1)
-      {
+      else if (i == 1) {
         doc["sensor_2"] = dataStorage[i];
       }
-      else if (i == 2)
-      {
+      else if (i == 2) {
         doc["sensor_3"] = dataStorage[i];
       }
-      else if (i == 3)
-      {
+      else if (i == 3) {
         doc["sensor_4"] = dataStorage[i];
       }
-      else if (i == 4)
-      {
+      else if (i == 4) {
         doc["sensor_5"] = dataStorage[i];
       }
-      else if (i == 5)
-      {
+      else if (i == 5) {
         doc["sensor_6"] = dataStorage[i];
       }
-      else if (i == 6)
-      {
+      else if (i == 6) {
         doc["sensor_7"] = dataStorage[i];
       }
-      else if (i == 7)
-      {
+      else if (i == 7) {
         doc["sensor_8"] = dataStorage[i];
       }
+      else if (i == 8) {
+        doc["sensor_9"] = dataStorage[i];
+      }
+      else if (i == 9) {
+        second_doc["temperature"] = dataStorage[i];
+      }
+      else if (i == 10) {
+        second_doc["humidity"] = dataStorage[i];
+      }
     }
-
     // result of doc should be this
     /*
     {
@@ -118,7 +118,10 @@ void dataToServer()
       "sensor_5" : value,
       "sensor_6" : value,
       "sensor_7" : value,
-      "sensor_8" : value
+      "sensor_8" : value,
+      "sensor_9" : value,
+      "temperature" : value,
+      "humidity" : value
     }
     */
 
@@ -126,26 +129,36 @@ void dataToServer()
     // root.prettyPrintTo(json_string, sizeof(json_string));
     String jsonOutput;
     serializeJson(doc, jsonOutput);
-
-    
-
     int httpResponseCode = http.POST(String(jsonOutput));
-
     Serial.print("Response Code: ");
     Serial.println(httpResponseCode);
 
     http.end();
+
+    // WiFiClient client;
+    // HTTPClient http;
+
+    String fc28_endpoint = serverName + "/sensor_1";
+
+    http.begin(client, fc28_endpoint);
+    http.addHeader("Content-Type", "application/json");
+
+    String secondJsonOutput;
+    serializeJson(second_doc, secondJsonOutput);
+    int secondHttpResponseCode = http.POST(String(secondJsonOutput));
+    Serial.print("Response Code 2: ");
+    Serial.println(secondHttpResponseCode);
+
+    http.end();
   }
-  else
-  {
+  else {
     Serial.println("Not connected");
   }
 }
 
-void sensorLoop()
-{
-  for (int i = 0; i < 8; i++)
-  {
+void sensorLoop() {
+  digitalWrite(D5, HIGH); //............................................Turns on the decoder and all of the 8 sensors.
+  for (int i = 0; i < 8; i++) {
     digitalWrite(D0, LOW);
     digitalWrite(D1, LOW);
     digitalWrite(D2, LOW);
@@ -154,42 +167,35 @@ void sensorLoop()
 
     hold = i;
     int j = 0;
-    while (hold > 0)
-    {
+    while (hold > 0) {
       bitArray[j] = hold % 2;
       hold = hold / 2;
       j++;
     }
 
-    if (bitArray[2] == 1)
-    {
+    if (bitArray[2] == 1) {
       digitalWrite(D0, HIGH);
     }
-    else
-    {
+    else {
       digitalWrite(D0, LOW);
     }
-    if (bitArray[1] == 1)
-    {
+    if (bitArray[1] == 1) {
       digitalWrite(D1, HIGH);
     }
-    else
-    {
+    else {
       digitalWrite(D1, LOW);
     }
-    if (bitArray[0] == 1)
-    {
+    if (bitArray[0] == 1) {
       digitalWrite(D2, HIGH);
     }
-    else
-    {
+    else {
       digitalWrite(D2, LOW);
     }
 
-    for (int index = 2; index >= 0; index--)
-    {
+    for (int index = 2; index >= 0; index--) {
       Serial.print(bitArray[index]);
     }
+    
     output_value0 = analogRead(sensor_pinA0);
     output_value0 = map(output_value0, 550, 0, 0, 100);
     dataStorage[i] = output_value0;
@@ -199,20 +205,66 @@ void sensorLoop()
     Serial.println();
     
     delay(2000);
-    delay(20);
   }
+  digitalWrite(D0, LOW); //.............................................MAYBE: Set the decoder values to 000
+  digitalWrite(D1, LOW); //.............................................MAYBE: Set the decoder values to 000
+  digitalWrite(D2, LOW); //.............................................MAYBE: Set the decoder values to 000
+  digitalWrite(D5, LOW); //.............................................Turns off the sensor that powers the decoder and all 8 sensors.
+
+
+  //**************************************Sensor 9 (FC-28)**************************************************************
+  digitalWrite(D6, HIGH); //............................................Turns on FC-28 Sensor
+  delay(100);
+  output_value0 = analogRead(sensor_pinA0); //..........................Reads the value from FC-28 as an analog value
+  output_value0 = map(output_value0, 550, 0, 0, 100); //................Converts into readable values
+  dataStorage[8] = output_value0; //....................................Stores the value grabbed from sensor into array to send to database.
+  Serial.println();
+  printStorage(dataStorage); //.........................................Prints the value in element 9 in array for FC-28 (prints all array, too)
+  Serial.println();
+  Serial.println();
+  delay(2000); //.......................................................2 second DELAY
+  digitalWrite(D6, LOW); //.............................................Turns off sensor FC-28
+  
+
+  //**************************************Sensor 10 (DHT11)*************************************************************
+  digitalWrite(D4, HIGH); //............................................Turns on DHT11 Sensor
+  delay(100);
+  DHT0.read11(D7); //...................................................Reads data from DHT11 sensor.
+  Serial.print(DHT0.temperature); //....................................TEST: To see if temperature was grabbed from sensor.
+  
+  dataStorage[9] = DHT0.temperature; //.................................Stores the temperature value into element 10 in array for DHT11
+  Serial.println();
+  printStorage(dataStorage); //.........................................Prints the value in element 10 in array for DHT11. ONLY Temperature was stored. (prints all array, too)
+  Serial.println();
+  Serial.println();
+  delay(2000); //.......................................................2 Second DELAY
+
+  //....................................................................Sensor 10 (DHT-11 for humidity read)
+  dataStorage[10] = DHT0.humidity; //...................................Stores the humidity value into element 11 in array for DHT11
+  Serial.println();
+  printStorage(dataStorage); //.........................................Prints the value in element 11 in array for DHT11. ONLY humidity was stored. (prints all array, too
+  Serial.println();
+  Serial.println();
+  delay(2000); //.......................................................2 second DELAY
+  digitalWrite(D4, LOW); //.............................................Turns off DHT11 sensor
 }
+
 
 void loop()
 {
   // put your main code here, to run repeatedly:
-  digitalWrite(D0, LOW);
-  digitalWrite(D1, LOW);
-  digitalWrite(D2, LOW);
-
-  sensorLoop();
+  digitalWrite(D0, LOW); //.............................................Default Decoder values
+  digitalWrite(D1, LOW); //.............................................Default Decoder values
+  digitalWrite(D2, LOW); //.............................................Default Decoder values
+  digitalWrite(D4, LOW); //.............................................Default power DHT
+  digitalWrite(D5, LOW); //.............................................Default power DECODER
+  digitalWrite(D6, LOW); //.............................................Default power FC-28
+ 
+  //sensorLoop();
+  
   dataToServer();
-  delay(60000);
+  delay(5000);
+  /*Serial.println();
   Serial.println();
   Serial.println();
   Serial.println();
@@ -223,6 +275,5 @@ void loop()
   Serial.println();
   Serial.println();
   Serial.println();
-  Serial.println();
-  Serial.println();
+  Serial.println();*/
 }
