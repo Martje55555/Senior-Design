@@ -41,6 +41,25 @@ void setup() {
   Serial.print("connected: ");
   Serial.println(WiFi.localIP());
 
+  String setIpEndpoint = serverName + "/set_ip";
+
+  WiFiClient client;
+  HTTPClient http;
+
+  http.begin(client, setIpEndpoint);
+  http.addHeader("Content-Type", "application/json");
+
+  StaticJsonDocument<200> doc;
+  doc["ip"] = WiFi.localIP();
+
+  String sendIP;
+  serializeJson(doc, sendIP);
+  int responseCode = http.POST(String(sendIP));
+  Serial.print("Response Code to Send IP: ");
+  Serial.println(responseCode);
+
+  http.end();
+
   pinMode(D0, OUTPUT); // LSB (Powers FC-28 #1-8)
   pinMode(D1, OUTPUT); // (Powers FC-28 #1-8)
   pinMode(D2, OUTPUT); // MSB (Powers FC-28 #1-8)
