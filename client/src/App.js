@@ -30,7 +30,9 @@ const App = () => {
 
     const handleLogin = () => {
         clearErrors();
-        fire.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
+        fire.
+            auth().
+            setPersistence(firebase.auth.Auth.Persistence.SESSION)
             .then(() => {
                 return fire.auth().signInWithEmailAndPassword(email, password);
             })
