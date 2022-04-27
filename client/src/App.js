@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Navigate, Route, Routes, useLocation, Outlet } from 'react-router-dom';
 
-
 import Home from './components/home.js';
 import Historical from './components/historical.js';
 import Control from './components/control.js';
-import NavBar from './components/navBar.js';
 import fire from './fire.js';
+import firebase from 'firebase';
 
 import Login from './components/Login.js';
 
@@ -31,10 +30,11 @@ const App = () => {
 
     const handleLogin = () => {
         clearErrors();
-        fire
-            .auth()
-            .signInWithEmailAndPassword(email, password)
-            .catch(err => {
+        fire.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
+            .then(() => {
+                return fire.auth().signInWithEmailAndPassword(email, password);
+            })
+            .catch((err) => {
                 switch (err.code) {
                     case "auth/invalid-email":
                     case "auth/user-disabled":
@@ -115,7 +115,7 @@ const App = () => {
                         <Route path="/home" element={isLoggedIn ? <Home handleLogout={handleLogout} user={user} /> : <Login />} />
                         <Route path="/historical" element={<Historical />} />
                         <Route path="/control" element={<Control />} />
-                        <Route path="*" element={ <Navigate to="/home" />} />
+                        <Route path="*" element={<Navigate to="/home" />} />
                     </Routes>
                 </Router>
             ) : (
