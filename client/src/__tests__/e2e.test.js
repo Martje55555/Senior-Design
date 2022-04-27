@@ -1,5 +1,8 @@
 import puppeteer from "puppeteer";
 import '@testing-library/jest-dom'
+import {screen} from '@testing-library/dom'
+import { render } from "enzyme";
+import Home from "../components/home";
 
 describe("Login.js Happy Paths", () => {
     let browser;
@@ -65,6 +68,9 @@ describe("Login.js Happy Paths", () => {
 
     afterAll(() => browser.close());
 });
+
+
+
 
 describe("Login.js Sad Paths", () => {
     let browser;
@@ -199,3 +205,68 @@ describe("Login.js Sad Paths", () => {
 
     afterAll(() => browser.close());
 });
+
+describe("Happy paths for home screen", () => {
+    let browser;
+    let page;
+
+    jest.setTimeout(5000);
+    beforeAll(async () => {
+
+        browser = await puppeteer.launch({
+            headless: true,
+        });
+        page = await browser.newPage();
+        await page.goto("http://localhost:3000/login");
+        await page.waitForSelector('input[type="text"]');
+        await page.waitForSelector('input[type="password"]');
+        await page.click('input[type="text"]');
+        await page.type('input[type="text"]', "test@gmail.com");
+
+        await page.click('input[type="password"]');
+        await page.type('input[type="password"]', "password");
+
+        await page.click(".signin");
+        await page.click(".sign");
+        await page.waitForNavigation();
+    });
+
+    
+
+    test("on home screen", () =>{
+        const onHome = page.url() == "http://localhost:3000/home" ? true : false;
+        expect(onHome).toBe(true);
+    });
+
+    test("navigate to historical from home screen and back", async () => {
+        await page.click(".historical");
+        const onHistorical = page.url() == "http://localhost:3000/historical" ? true : false;
+
+        expect(onHistorical).toBe(true);
+
+        await page.click(".home");
+        const onHome = page.url() == "http://localhost:3000/home" ? true : false;
+
+        expect(onHome).toBe(true);
+    });
+
+    test("navigate to control screen from home and back", async () =>{
+        await page.click(".control");
+        const onControl = page.url() == "http://localhost:3000/control" ? true : false;
+
+        expect(onControl).toBe(true);
+
+        await page.click(".home");
+        const onHome = page.url() == "http://localhost:3000/home" ? true : false;
+
+        expect(onHome).toBe(true);
+    })
+
+    // test("logout", async () => {
+    //     await page.waitForSelector(".logoutButton");
+    //     await page.click(".logoutButton");
+    //     const onLogin = page.url() == "http://localhost:3000/login" ? true : false;
+    //     expect(onLogin).toBe(true);
+
+    // })
+})

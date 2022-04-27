@@ -104,7 +104,7 @@ const Home = ({ handleLogout }) => {
                 <NavBar />
                 <div className="outerD">
                     <div className="containerInfo">
-                        <h1 className="sample">Status: {status}</h1>
+                        <h1 className="sample" data-testid="status">Status: {status}</h1>
                         <h1 className="sample">Gathering data: Yes</h1>
                         <h1 className="sample">{`Weather: ${weather}°F`}</h1>
                         <h1 className="airHumidity">Air Humidity: 40%</h1>
@@ -128,7 +128,7 @@ const Home = ({ handleLogout }) => {
                     </div>
                 </div>
                 <br style={{ marginTop: "50px" }} />
-                <center><button onClick={handleLogout}>LOGOUT</button></center>
+                <center><button className="logoutButton" onClick={handleLogout}>LOGOUT</button></center>
             </>
         )
     }
@@ -161,7 +161,7 @@ const Home = ({ handleLogout }) => {
                         <h1 className="airHumidity">Air Humidity: 40%</h1>
                     </div>
                     <br style={{ marginTop: "50px" }} />
-                    <center><button onClick={handleLogout}>LOGOUT</button></center>
+                    <center><button className="logoutButton" onClick={handleLogout}>LOGOUT</button></center>
                 </div>
             </>
         )
