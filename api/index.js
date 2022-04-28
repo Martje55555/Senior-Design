@@ -91,7 +91,7 @@ app.post("/set_ip", async (req, res, next) => {
     try {
         espIP = req.body.ip.toString();
         console.log(espIP);
-        if(typeof(espIP) === 'string') {
+        if (typeof (espIP) === 'string') {
             res.status(200).json(`Set ip: ${espIP}`);
         } else {
             res.status(403).json(`Incorrect ip format`);
@@ -99,6 +99,27 @@ app.post("/set_ip", async (req, res, next) => {
     } catch (e) {
         console.log("Error: " + e);
         res.status(400).json(`Error: ${e}`);
+    }
+});
+
+// Calls the ESP endpoint to gather data
+app.get("/trigger_esp_data", async (req, res, next) => {
+    if (process.env.NODE_ENV === 'test') {
+        console.log("Success");
+        res.status(200).json(`"Success": true`);
+    } else {
+        try {
+            let data;
+            let url = `http://${espIP}/sendData`
+            axios.get(url)
+                .then((response) => {
+                    data = response.data;
+                    res.status(200).json(data);
+                });
+        } catch (err) {
+            console.log("Error: " + err);
+            res.status(400).json(["'Success': false", `"Error": ${err}`]);
+        }
     }
 });
 
