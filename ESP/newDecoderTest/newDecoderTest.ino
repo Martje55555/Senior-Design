@@ -4,11 +4,12 @@
 #include <dht.h>
 #include <Arduino_JSON.h>
 #include <ESP8266WiFi.h>
+#include <ESP8266WebServer.h>
 
-#define WIFI_SSID "Israel's Galaxy S21 Ultra 5G"
-#define WIFI_PASSWORD "20429911!"
+#define WIFI_SSID "Alonso7"
+#define WIFI_PASSWORD "rayados10"
 
-String serverName = "http://73908c7278fde8.lhrtunnel.link";
+String serverName = "http://9933bf7d06a4b7.lhrtunnel.link";
 
 #define D0 16 // A selection
 #define D1 5  // B selection
@@ -20,6 +21,8 @@ float dataStorage[11]; //Data array
 int hold;              //used for binary conversion
 int output_value0;     //
 int sensor_pinA0 = A0; //Analog input
+
+ESP8266WebServer server(80);
 
 dht DHT0;              //DHT11 struct thing
 
@@ -43,7 +46,9 @@ void setup() {
   pinMode(D2, OUTPUT); // 
   pinMode(D3, OUTPUT); // MSB
   pinMode(D4, INPUT);  // DHT11 Input
-  
+
+  server.on("/sendData", sensorLoop);
+  server.begin(); 
 }
 
 void printStorage(float arr[]) {
@@ -145,6 +150,7 @@ void dataToServer() {
     Serial.println(secondHttpResponseCode);
 
     http.end();
+    server.send(200, "text/plain", "Successful."); 
   }
   else {
     Serial.println("Not connected");
@@ -152,7 +158,7 @@ void dataToServer() {
 }
 
 void sensorLoop() {
-  for (int i = 0; i < 10; i++) {
+  for (int i = 0; i < 9; i++) {
     digitalWrite(D0, LOW);
     digitalWrite(D1, LOW);
     digitalWrite(D2, LOW);
@@ -161,11 +167,11 @@ void sensorLoop() {
     int bitArray[4] = {0, 0, 0, 0};
 
     hold = i;
-    int j = 0;
+    int j = 3;
     while (hold > 0) {
       bitArray[j] = hold % 2;
       hold = hold / 2;
-      j++;
+      j--;
     }
 
     if (bitArray[3] == 1) {
@@ -196,6 +202,7 @@ void sensorLoop() {
     printStorage(dataStorage);
     Serial.println();
     Serial.println();
+    delay(1000);
   }
 
   digitalWrite(D0, HIGH);// Select DHT11
@@ -213,7 +220,7 @@ void sensorLoop() {
   printStorage(dataStorage); //.........................................Prints the value in element 10 in array for DHT11. ONLY Temperature was stored. (prints all array, too)
   Serial.println();
   Serial.println();
-  delay(2000); //.......................................................2 Second DELAY
+  delay(1000); //.......................................................2 Second DELAY
 
   //....................................................................Sensor 10 (DHT-11 for humidity read)
   dataStorage[10] = DHT0.humidity; //...................................Stores the humidity value into element 11 in array for DHT11
@@ -221,30 +228,21 @@ void sensorLoop() {
   printStorage(dataStorage); //.........................................Prints the value in element 11 in array for DHT11. ONLY humidity was stored. (prints all array, too
   Serial.println();
   Serial.println();
-  delay(2000); //.......................................................2 second DELAY
+  delay(1000); //.......................................................2 second DELAY
 
-  digitalWrite(D0, HIGH); //Unselect
-  digitalWrite(D1, LOW);
-  digitalWrite(D2, HIGH);
-  digitalWrite(D3, LOW);
+  digitalWrite(D0, LOW); //Unselect
+  digitalWrite(D1, HIGH);
+  digitalWrite(D2, LOW);
+  digitalWrite(D3, HIGH);
+
+  dataToServer();
 }
 
 
 void loop()
 {
-  sensorLoop(); 
-  dataToServer();
-  delay(5000);
-  /*Serial.println();
-  Serial.println();
-  Serial.println();
-  Serial.println();
-  Serial.println();
-  Serial.println();
-  Serial.println();
-  Serial.println();
-  Serial.println();
-  Serial.println();
-  Serial.println();
-  Serial.println();*/
+  server.handleClient();
+  //sensorLoop(); 
+  //dataToServer();
+  //delay(5000);
 }
