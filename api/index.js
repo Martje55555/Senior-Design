@@ -62,6 +62,13 @@ const getNumberOfChildren = async (sensor) => {
     return response.numChildren();
 };
 
+// This function runs in intervals - every ___ minutes
+var minutes = 1, the_interval = minutes * 60 * 1000;
+setInterval( async function() {
+  console.log("I am doing my 1 minute check");
+  console.log(espIP);
+}, the_interval);
+
 // STATUS OF ESP
 app.get("/status", async (req, res, next) => {
     if (espIP === null) {
@@ -102,6 +109,8 @@ app.post("/set_ip", async (req, res, next) => {
     }
 });
 
+console.log(espIP);
+
 // Calls the ESP endpoint to gather data
 app.get("/trigger_esp_data", async (req, res, next) => {
     if (process.env.NODE_ENV === 'test') {
@@ -110,6 +119,7 @@ app.get("/trigger_esp_data", async (req, res, next) => {
     } else {
         try {
             let data;
+            console.log(espIP);
             let url = `http://${espIP}/sendData`
             axios.get(url)
                 .then((response) => {
@@ -772,7 +782,8 @@ app.get("/weather", async (req, res, next) => {
                 res.status(400).json(["'Success': false", `"Error": ${err}`]);
             }
         } else {
-            res.status(401).json("ERROR: INVALID API KEY");
+
+            res.status(401).json(`ERROR: INVALID API KEY - ${req.query.appid}`);
         }
     }
 });
