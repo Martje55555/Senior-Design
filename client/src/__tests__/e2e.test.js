@@ -1,6 +1,6 @@
 import puppeteer from "puppeteer";
 import '@testing-library/jest-dom'
-import {screen} from '@testing-library/dom'
+import { screen } from '@testing-library/dom'
 import { render } from "enzyme";
 import Home from "../components/home";
 
@@ -133,7 +133,7 @@ describe("Login.js Sad Paths", () => {
     test("entering incorrect password gives you an error and doesn't redirect you", async () => {
         await page.click('input[type="text"]');
         await page.type('input[type="text"]', "test@gmail.com");
-        
+
         await page.click('input[type="password"]');
         await page.type('input[type="password"]', "incorrectpassword");
 
@@ -155,7 +155,7 @@ describe("Login.js Sad Paths", () => {
     test("entering invalid email when sign up gives you an error", async () => {
         await page.click('input[type="text"]');
         await page.type('input[type="text"]', "test@.com");
-        
+
         await page.click('input[type="password"]');
         await page.type('input[type="password"]', "incorrectpassword");
 
@@ -175,7 +175,7 @@ describe("Login.js Sad Paths", () => {
     test("entering invalid password when sign up gives you an error", async () => {
         await page.click('input[type="text"]');
         await page.type('input[type="text"]', "goodemail@gmail.com");
-        
+
         await page.click('input[type="password"]');
         await page.type('input[type="password"]', "123");
 
@@ -231,9 +231,9 @@ describe("Happy paths for home screen", () => {
         await page.waitForNavigation();
     });
 
-    
 
-    test("on home screen", () =>{
+
+    test("on home screen", () => {
         const onHome = page.url() == "http://localhost:3000/home" ? true : false;
         expect(onHome).toBe(true);
     });
@@ -250,7 +250,7 @@ describe("Happy paths for home screen", () => {
         expect(onHome).toBe(true);
     });
 
-    test("navigate to control screen from home and back", async () =>{
+    test("navigate to control screen from home and back", async () => {
         await page.click(".control");
         const onControl = page.url() == "http://localhost:3000/control" ? true : false;
 
@@ -262,11 +262,12 @@ describe("Happy paths for home screen", () => {
         expect(onHome).toBe(true);
     })
 
-    // test("logout", async () => {
-    //     await page.waitForSelector(".logoutButton");
-    //     await page.click(".logoutButton");
-    //     const onLogin = page.url() == "http://localhost:3000/login" ? true : false;
-    //     expect(onLogin).toBe(true);
+    test("logout", async () => {
+        let button = await page.waitForSelector(".logoutButton");
+        await button.evaluate(b => b.click());
+        await page.waitForNavigation();
 
-    // })
+        const onLogin = page.url() == "http://localhost:3000/login" ? true : false;
+        expect(onLogin).toBe(true);
+    })
 })
