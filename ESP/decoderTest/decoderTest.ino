@@ -5,6 +5,9 @@
 #include <Arduino_JSON.h>
 #include <ESP8266WiFi.h>
 
+// Library 
+#include <ESP8266WebServer.h>
+
 #define WIFI_SSID "Alonso7"
 #define WIFI_PASSWORD "rayados10"
 
@@ -23,6 +26,8 @@ float dataStorage[11];
 int hold;
 int output_value0;
 int sensor_pinA0 = A0;
+
+ESP8266WebServer server(80);
 
 dht DHT0;
 
@@ -67,6 +72,10 @@ void setup() {
   pinMode(D5, OUTPUT); // Powers DECODER
   pinMode(D6, OUTPUT); // Powers FC-28
   //pinMode(D7, INPUT);  // Input data for DHT11
+
+  server.on("/sendData", sensorLoop);
+
+  server.begin();
   
 }
 
@@ -169,9 +178,12 @@ void dataToServer() {
     Serial.println(secondHttpResponseCode);
 
     http.end();
+
+    server.send(200, "text/plain", "Successful");
   }
   else {
     Serial.println("Not connected");
+    server.send(400, "text/plain", "Not Connected");
   }
 }
 
@@ -266,6 +278,8 @@ void sensorLoop() {
   Serial.println();
   delay(2000); //.......................................................2 second DELAY
   digitalWrite(D4, LOW); //.............................................Turns off DHT11 sensor
+
+  dataToServer();
 }
 
 
@@ -280,9 +294,9 @@ void loop()
   digitalWrite(D6, LOW); //.............................................Default power FC-28
  
   //sensorLoop();
-  
-  dataToServer();
-  delay(5000);
+  server.handleClient();
+  //dataToServer();
+  //delay(5000);
   /*Serial.println();
   Serial.println();
   Serial.println();
