@@ -260,7 +260,7 @@ describe("Happy paths for home screen", () => {
         const onHome = page.url() == "http://localhost:3000/home" ? true : false;
 
         expect(onHome).toBe(true);
-    })
+    });
 
     test("logout", async () => {
         // jest.setTimeout(6000);
@@ -270,7 +270,10 @@ describe("Happy paths for home screen", () => {
 
         const onLogin = page.url() == "http://localhost:3000/login" ? true : false;
         expect(onLogin).toBe(true);
-    })
+
+    });
+
+    afterAll(() => browser.close());
 })
 
 describe("Happy paths for historical screen", () => {
@@ -304,7 +307,7 @@ describe("Happy paths for historical screen", () => {
         const onHistorical = page.url() == "http://localhost:3000/historical" ? true : false;
 
         expect(onHistorical).toBe(true);
-    })
+    });
 
     test("navigate to control and back", async () =>{
         await page.click(".control");
@@ -316,14 +319,14 @@ describe("Happy paths for historical screen", () => {
         const onHistorical = page.url() == "http://localhost:3000/historical" ? true : false;
 
         expect(onHistorical).toBe(true);
-    })
+    });
 
     test("navigate to home screen from historical", async() =>{
         await page.click(".home");
         const onHome=page.url()=="http://localhost:3000/home" ? true : false;
 
         expect(onHome).toBe(true);
-    })
+    });
 
     test("logout", async () => {
         // jest.setTimeout(6000);
@@ -333,5 +336,7 @@ describe("Happy paths for historical screen", () => {
 
         const onLogin = page.url() == "http://localhost:3000/login" ? true : false;
         expect(onLogin).toBe(true);
-    })
-})
+    });
+
+    afterAll(() => browser.close());
+});
