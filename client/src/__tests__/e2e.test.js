@@ -263,14 +263,11 @@ describe("Happy paths for home screen", () => {
     });
 
     test("logout", async () => {
-        // jest.setTimeout(6000);
         let button = await page.waitForSelector(".logoutButton");
         await button.evaluate(b => b.click());
-        // await page.waitForNavigation();
 
         const onLogin = page.url() == "http://localhost:3000/login" ? true : false;
         expect(onLogin).toBe(true);
-
     });
 
     afterAll(() => browser.close());
@@ -329,10 +326,8 @@ describe("Happy paths for historical screen", () => {
     });
 
     test("logout", async () => {
-        // jest.setTimeout(6000);
         let button = await page.waitForSelector(".logoutButton");
         await button.evaluate(b => b.click());
-        // await page.waitForNavigation();
 
         const onLogin = page.url() == "http://localhost:3000/login" ? true : false;
         expect(onLogin).toBe(true);
