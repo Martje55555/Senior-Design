@@ -65,7 +65,7 @@ const Home = ({ handleLogout }) => {
                 .catch((err) => {
                     console.log(`Error: ${err}`);
                 });
-        }
+        };
     };
 
     const getWeather = async () => {
@@ -84,6 +84,17 @@ const Home = ({ handleLogout }) => {
             console.log(data);
             data.toString();
             setWeather(data);
+        })
+        .catch((err) => {
+            console.log(`Error: ${err}`);
+        });
+    };
+
+    const handleGather = async () => {
+        await axios.get(`${url}/trigger_esp_data`, { crossDomain : true })
+        .then( async (response) => {
+            console.log(response);
+            await getAllOtherValues();
         })
         .catch((err) => {
             console.log(`Error: ${err}`);
@@ -125,6 +136,7 @@ const Home = ({ handleLogout }) => {
                             <div className="box">{sens8}</div>
                             <div className="box">{sens9}</div>
                         </div>
+                        <center><button onClick={handleGather}>Gather Data</button></center>
                     </div>
                 </div>
                 <br style={{ marginTop: "50px" }} />
@@ -153,6 +165,8 @@ const Home = ({ handleLogout }) => {
                             <div className="box">{sens8}</div>
                             <div className="box">{sens9}</div>
                         </div>
+                        <center><button onClick={handleGather}>Gather Data</button></center>
+                        <br style={{ marginTop: "10px"}}></br>
                     </div>
                     <div className="containerInfo">
                         <h1 className="sample">Status: {status}</h1>

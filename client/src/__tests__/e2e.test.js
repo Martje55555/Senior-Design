@@ -265,7 +265,6 @@ describe("Happy paths for home screen", () => {
     test("logout", async () => {
         let button = await page.waitForSelector(".logoutButton");
         await button.evaluate(b => b.click());
-        await page.waitForNavigation();
 
         const onLogin = page.url() == "http://localhost:3000/login" ? true : false;
         expect(onLogin).toBe(true);
