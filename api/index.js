@@ -175,7 +175,7 @@ app.get("/dht_sensors/all", async (req, res, next) => {
             console.log("Error: " + err);
             res.status(400).json(["'Success': false", `"Error": ${err}`]);
         }
-    }
+    };
 });
 
 // Get all temp sensors

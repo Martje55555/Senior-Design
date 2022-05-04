@@ -284,6 +284,8 @@ irrigateSignal(){
   digitalWrite(D1, HIGH);
   digitalWrite(D2, LOW);
   digitalWrite(D3, HIGH);
+
+  server.send(200, "text/plain", "Successful.");
 }
 
 void loop()

@@ -33,7 +33,7 @@ const Control = () => {
                 </div>
             </div>
         </>
-    )
-}
+    );
+};
 
 export default Control;
