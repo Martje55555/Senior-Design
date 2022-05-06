@@ -133,6 +133,28 @@ app.get("/trigger_esp_data", async (req, res, next) => {
     }
 });
 
+// Calls the ESP endpoint to trigger irrigation
+app.get("/trigger_esp_irrigation", async (req, res, next) => {
+    if (process.env.NODE_ENV === 'test'){
+        console.log("Success");
+    } else {
+        try {
+            let data;
+            console.log(espIP);
+            let url = `http://${espIP}/irrigate`
+            axios.get(url)
+                .then((response) => {
+                    data = response.data;
+                    res.status(200).json(data);
+                });
+        } catch (err) {
+            console.log("Error: " + err);
+            res.status(400).json(["'Success': false", `"Error": ${err}`]);
+        }
+    }
+
+});
+
 // GET REQUESTS
 
 // Get all dht-sensors
@@ -153,7 +175,7 @@ app.get("/dht_sensors/all", async (req, res, next) => {
             console.log("Error: " + err);
             res.status(400).json(["'Success': false", `"Error": ${err}`]);
         }
-    }
+    };
 });
 
 // Get all temp sensors

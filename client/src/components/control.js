@@ -1,9 +1,22 @@
 import React from 'react';
+import axios from 'axios';
 
 import '../styles/control.css'
 import NavBar from "./navBar";
 
 const Control = () => {
+
+    const url = 'http://localhost:3001';
+
+    const handleIrrigation = async () => {
+        await axios.get(`${url}/trigger_esp_irrigation`, { crossDomain : true })
+        .then( async (response) => {
+            console.log(response);
+        })
+        .catch((err) => {
+            console.log(`Error: ${err}`);
+        });
+    };
 
     return (
         <>
@@ -15,14 +28,12 @@ const Control = () => {
 
                 </div>
                 <div className="buttons">
-
-                    <button data-testid="onButton" className="btn1">ON</button>
-
-                    <button data-testid="offButton" className="btn2">OFF</button>
+                    <button onClick={handleIrrigation} data-testid="onButton" className="btn1">Manual Irrigation</button>
+                    <button data-testid="offButton" className="btn2">Delay Irrigation</button>
                 </div>
             </div>
         </>
-    )
-}
+    );
+};
 
 export default Control;

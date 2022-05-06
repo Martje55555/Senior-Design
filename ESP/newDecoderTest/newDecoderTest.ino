@@ -9,7 +9,7 @@
 #define WIFI_SSID "Alonso7"
 #define WIFI_PASSWORD "rayados10"
 
-String serverName = "http://9933bf7d06a4b7.lhrtunnel.link";
+String serverName = "http://9ca855bc8af0e1.lhrtunnel.link";
 
 #define D0 16 // A selection
 #define D1 5  // B selection
@@ -67,6 +67,7 @@ void setup() {
   pinMode(D4, INPUT);  // DHT11 Input
 
   server.on("/sendData", sensorLoop);
+  server.on("/irrigate", irrigateSignal);
   server.begin(); 
 }
 
@@ -176,6 +177,7 @@ void dataToServer() {
   }
 }
 
+// function that collects data from sensors
 void sensorLoop() {
   for (int i = 0; i < 9; i++) {
     digitalWrite(D0, LOW);
@@ -232,6 +234,7 @@ void sensorLoop() {
   //**************************************Sensor 10 (DHT11)*************************************************************
 
   DHT0.read11(D4); //...................................................Reads data from DHT11 sensor.
+  delay(100);
   Serial.print(DHT0.temperature); //....................................TEST: To see if temperature was grabbed from sensor.
   
   dataStorage[9] = DHT0.temperature; //.................................Stores the temperature value into element 10 in array for DHT11
@@ -257,6 +260,36 @@ void sensorLoop() {
   dataToServer();
 }
 
+// function that triggers irrigation
+ void irrigateSignal(){
+  Serial.println("Irrigate was called");
+  digitalWrite(D0, LOW); //tells us were in irrigated
+  digitalWrite(D1, LOW);
+  digitalWrite(D2, HIGH);
+  digitalWrite(D3, HIGH);
+
+  delay(2000);
+  
+  digitalWrite(D0, HIGH); //irrigation
+  digitalWrite(D1, HIGH);
+  digitalWrite(D2, LOW);
+  digitalWrite(D3, HIGH);
+  delay(5000);
+
+  digitalWrite(D0, LOW); //tells us irrigation is done
+  digitalWrite(D1, LOW);
+  digitalWrite(D2, HIGH);
+  digitalWrite(D3, HIGH);
+  delay(1000);
+
+  digitalWrite(D0, LOW); //Unselect
+  digitalWrite(D1, HIGH);
+  digitalWrite(D2, LOW);
+  digitalWrite(D3, HIGH);
+
+  server.send(200, "text/plain", "Successful.");
+  Serial.println("Irrigate sent successfully");
+}
 
 void loop()
 {
@@ -265,3 +298,33 @@ void loop()
   //dataToServer();
   //delay(5000);
 }
+
+
+/*
+0 : 0000  FC-28 1-9
+1 : 0001
+2 : 0010
+3 : 0011
+4 : 0100
+5 : 0101
+6 : 0110
+7 : 0111
+8 : 1000
+--------
+9 : 1001  DHT11
+--------
+10: 1010  Unselect
+--------
+11: 1011  Irrigate
+12: 1100
+--------
+13: 1101  Unused
+14: 1110  
+15: 1111
+When assigning digital writes 
+  digitalWrite(D0, LOW);
+  digitalWrite(D1, HIGH);
+  digitalWrite(D2, LOW);
+  digitalWrite(D3, HIGH);
+assign binary in reverse this is 1010 not 0101
+*/
