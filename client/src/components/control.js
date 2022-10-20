@@ -14,7 +14,7 @@ const Control = () => {
             console.log(response);
         })
         .catch((err) => {
-            console.log(`Error: ${err}`);
+            console.log(`Error: ${err}`); 
         });
     };
 

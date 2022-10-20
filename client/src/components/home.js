@@ -4,7 +4,7 @@ import axios from 'axios';
 import NavBar from "./navBar";
 
 import '../styles/home.css'
-
+import '../styles/button.scss'
 const Home = ({ handleLogout }) => {
 
     const url = 'http://localhost:3001';
@@ -136,11 +136,36 @@ const Home = ({ handleLogout }) => {
                             <div className="box">{sens8}</div>
                             <div className="box">{sens9}</div>
                         </div>
-                        <center><button onClick={handleGather}>Gather Data</button></center>
+                        <center><button class="ui inverted button">Gather data</button></center>
                     </div>
                 </div>
                 <br style={{ marginTop: "50px" }} />
-                <center><button className="logoutButton" onClick={handleLogout}>LOGOUT</button></center>
+                <center>
+                <div class="buttons">
+  <button class="blob-btn" onClick={handleLogout}>
+    Logout 
+    <span class="blob-btn__inner">
+      <span class="blob-btn__blobs">
+        <span class="blob-btn__blob"></span>
+        <span class="blob-btn__blob"></span>
+        <span class="blob-btn__blob"></span>
+        <span class="blob-btn__blob"></span>
+      </span>
+    </span>
+  </button>
+  <br/>
+
+
+  <defs>
+    <filter id="goo">
+      <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
+      <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+    </filter>
+  </defs>
+
+</div>
+                </center>
             </>
         )
     }
@@ -148,6 +173,7 @@ const Home = ({ handleLogout }) => {
         return (
             <>
                 <NavBar />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
                 <div className="outerM">
                     <div className="containerGraphM">
                         <div className="gridContainer">
@@ -165,17 +191,28 @@ const Home = ({ handleLogout }) => {
                             <div className="box">{sens8}</div>
                             <div className="box">{sens9}</div>
                         </div>
-                        <center><button onClick={handleGather}>Gather Data</button></center>
+                        <center><button class="ui inverted button">Gather data</button></center>
                         <br style={{ marginTop: "10px"}}></br>
                     </div>
                     <div className="containerInfo">
                         <h1 className="sample">Status: {status}</h1>
                         <h1 className="sample">Gathering data: Yes</h1>
-                        <h1 className="sample">{`Weather: ${weather}°F`}</h1>
+                         <h1 className="sample">{`Weather: ${weather}°F`}</h1>
                         <h1 className="airHumidity">Air Humidity: 40%</h1>
                     </div>
                     <br style={{ marginTop: "50px" }} />
-                    <center><button className="logoutButton" onClick={handleLogout}>LOGOUT</button></center>
+                    <button class="blob-btn" onClick={handleLogout}>
+    Logout 
+    <span class="blob-btn__inner">
+      <span class="blob-btn__blobs">
+        <span class="blob-btn__blob"></span>
+        <span class="blob-btn__blob"></span>
+        <span class="blob-btn__blob"></span>
+        <span class="blob-btn__blob"></span>
+      </span>
+    </span>
+  </button>
+                    
                 </div>
             </>
         )

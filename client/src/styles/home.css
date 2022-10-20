@@ -1,5 +1,6 @@
 .outerM{
     justify-content: center;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
 }
 
 .outerD{
@@ -31,3 +32,24 @@
     background: linear-gradient(-45deg, #788cff, #b4c8ff);
 }
 
+body{
+    background: rgb(63,94,251);
+    background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(32,76,82,1) 100%);
+}
+
+.icon.sign.out.alternate.icon{
+    background-color: transparent;
+    text-align: center;
+    
+}
+
+.logout{
+    background-color: rgb(43, 108, 173);
+    border: none;
+    color: white;
+    padding: 12px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 15%;
+    text-align: center;    
+}
