@@ -16,6 +16,8 @@
 .containerGraph{
     flex: 1;
     margin: 0 auto;
+    vertical-align: middle;
+    text-align: center;
 }
 
 .gridContainer{
@@ -25,7 +27,9 @@
 
 .box{
     text-align: center;
+    vertical-align: middle;
     flex: 1;
+    padding-top:40px;
     margin: 10px;
     max-width: 100px;
     height: 100px;

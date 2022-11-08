@@ -23,8 +23,8 @@ const Control = () => {
             <NavBar />
             <div className="outer">
                 <div className="container">
-                    <h1>Last Irrigation: 3-26-2022 9:30 AM</h1>
-                    <h1>Next Irrigation: 3-26-2022 9:30 AM</h1>
+                    <h1>Last Irrigation: TBD </h1>
+                    <h1>Next Irrigation: TBD </h1>
 
                 </div>
                 <div className="buttons">
