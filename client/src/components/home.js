@@ -103,11 +103,11 @@ const Home = ({ handleLogout }) => {
 
     // Leave commented when not using the data
     // to reduce the amount of calls, uncomment to see data
-    // useEffect(() => {
-    //     getAllOtherValues();
-    //     getWeather();
-    //     getStatus();
-    // }, []);
+    useEffect(() => {
+        getAllOtherValues();
+        getWeather();
+        getStatus();
+    }, []);
 
     if (window.screen.width > 1280) {
         return (
@@ -136,7 +136,7 @@ const Home = ({ handleLogout }) => {
                             <div className="box">{sens8}</div>
                             <div className="box">{sens9}</div>
                         </div>
-                        <center><button class="ui inverted button">Gather data</button></center>
+                        <center><button class="ui inverted button" onClick={handleGather}>Gather data</button></center>
                     </div>
                 </div>
                 <br style={{ marginTop: "50px" }} />

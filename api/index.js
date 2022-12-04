@@ -69,6 +69,21 @@ setInterval( async function() {
   console.log(espIP);
 }, the_interval);
 
+// Call Model
+app.get("/call_model", async (req, res, next) => {
+    try {
+        var spawn = require('child_process').spawn;
+        var process = spawn('python', ['./model/run_model.py']);
+        process.stdout.on('data', function (data) {
+            let prediction = JSON.parse(data);
+            res.status(200).json(prediction);
+        });
+    } catch(e) {
+        console.log(e);
+        res.status(400).json(["'Success': false", `"Error": ${e}`]);
+    };
+});
+
 // STATUS OF ESP
 app.get("/status", async (req, res, next) => {
     if (espIP === null) {
