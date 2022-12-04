@@ -9,7 +9,7 @@
 #define WIFI_SSID "Alonso7"
 #define WIFI_PASSWORD "rayados10"
 
-String serverName = "http://9933bf7d06a4b7.lhrtunnel.link";
+String serverName = "http://9ca855bc8af0e1.lhrtunnel.link";
 
 #define D0 16 // A selection
 #define D1 5  // B selection
@@ -234,6 +234,7 @@ void sensorLoop() {
   //**************************************Sensor 10 (DHT11)*************************************************************
 
   DHT0.read11(D4); //...................................................Reads data from DHT11 sensor.
+  delay(100);
   Serial.print(DHT0.temperature); //....................................TEST: To see if temperature was grabbed from sensor.
   
   dataStorage[9] = DHT0.temperature; //.................................Stores the temperature value into element 10 in array for DHT11
@@ -260,8 +261,9 @@ void sensorLoop() {
 }
 
 // function that triggers irrigation
-irrigateSignal(){
-  digitalWrite(D0, LOW); //tells us were in irrigate
+ void irrigateSignal(){
+  Serial.println("Irrigate was called");
+  digitalWrite(D0, LOW); //tells us were in irrigated
   digitalWrite(D1, LOW);
   digitalWrite(D2, HIGH);
   digitalWrite(D3, HIGH);
@@ -269,7 +271,7 @@ irrigateSignal(){
   delay(2000);
   
   digitalWrite(D0, HIGH); //irrigation
-  digitalWrite(D1, HIGH;
+  digitalWrite(D1, HIGH);
   digitalWrite(D2, LOW);
   digitalWrite(D3, HIGH);
   delay(5000);
@@ -286,6 +288,7 @@ irrigateSignal(){
   digitalWrite(D3, HIGH);
 
   server.send(200, "text/plain", "Successful.");
+  Serial.println("Irrigate sent successfully");
 }
 
 void loop()
@@ -318,7 +321,6 @@ void loop()
 13: 1101  Unused
 14: 1110  
 15: 1111
-
 When assigning digital writes 
   digitalWrite(D0, LOW);
   digitalWrite(D1, HIGH);

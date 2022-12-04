@@ -335,3 +335,60 @@ describe("Happy paths for historical screen", () => {
 
     afterAll(() => browser.close());
 });
+
+describe("Happy paths for control screen", () => {
+    let browser;
+    let page;
+
+    jest.setTimeout(5000);
+    beforeAll(async () => {
+
+        browser = await puppeteer.launch({
+            headless: true,
+        });
+        page = await browser.newPage();
+        await page.goto("http://localhost:3000/login");
+        await page.waitForSelector('input[type="text"]');
+        await page.waitForSelector('input[type="password"]');
+        await page.click('input[type="text"]');
+        await page.type('input[type="text"]', "test@gmail.com");
+
+        await page.click('input[type="password"]');
+        await page.type('input[type="password"]', "password");
+
+        await page.click(".signin");
+        await page.click(".sign");
+        await page.waitForNavigation();
+    });
+
+    test("on home screen and go to control screen", async () => {
+        await page.click(".control");
+        const onControl = page.url() == "http://localhost:3000/control" ? true : false;
+
+        expect(onControl).toBe(true);
+    });
+
+    test("go to historical screen from control and back", async () => {
+        await page.click(".historical");
+        const onHistorical = page.url() == "http://localhost:3000/historical" ? true : false;
+
+        expect(onHistorical).toBe(true);
+    });
+
+    test("go to home screen from control", async () => {
+        await page.click(".home");
+        const onHome = page.url() == "http://localhost:3000/home" ? true : false;
+
+        expect(onHome).toBe(true);
+    });
+
+    test("logout", async () => {
+        let button = await page.waitForSelector(".logoutButton");
+        await button.evaluate(b => b.click());
+
+        const onLogin = page.url() == "http://localhost:3000/login" ? true : false;
+        expect(onLogin).toBe(true);
+    });
+
+    afterAll(() => browser.close());
+});
