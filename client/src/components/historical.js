@@ -121,31 +121,54 @@ const Historical = () => {
             {
                 label: "Highest Temperature (F°)",
                 data: largestTempValues.map((d) => d),
-                borderColor: 'Blue'
+                borderColor: 'Blue',
+                backgroundColor: 'Blue'
+                
             },
             {
                 label: "Lowest Temperature (F°)",
                 data: smallestTempValues.map((d) => d),
-                borderColor: 'Red'
+                borderColor: 'Red',
+                backgroundColor: "Red"
             },
             {
                 label: "Highest Humidity (%rh)",
                 data: largestHumidityValues.map((d) => d),
-                borderColor: 'Purple'
+                borderColor: 'Purple',
+                backgroundColor: "Purple"
             },
             {
                 label: "Lowest Humidity (%rh)",
                 data: smallestHumdityValues.map((d) => d),
-                borderColor: 'Yellow'
+                borderColor: 'Yellow',
+                backgroundColor: "Yellow"
             }]
     });
 
+    
+        
+
     const [options, setOptions] = useState({
-        scales: {
-            y: {
-                min: 0
+        responsive: true,
+        plugins:{
+            legend: {
+                labels: {
+                    color: 'black'
+                }
             }
-        }
+        },
+        scales: {
+            
+            y: {
+                ticks: { color: 'black', beginAtZero: true },
+                min: 0,
+            },
+            x: {
+                ticks: { color: 'black', beginAtZero: true }
+            }
+        },
+        maintainAspectRatio: false
+        
     });
 
     const [fc28_data, setFc28_data] = useState({
@@ -154,23 +177,28 @@ const Historical = () => {
                 {
                     label: "Largest Humdity (%rh)",
                     data: largestFcValues.map((d) => d),
-                    borderColor: "Blue"
+                    borderColor: "Blue",
+                    backgroundColor: "Blue"
                 },
                 {
                     label: "Lowest Humidity (%rh)",
                     data: smallestFcValues.map((d) => d),
-                    borderColor: "Green"
+                    borderColor: "Green",
+                    backgroundColor: "Green"
                 }
             ]
     });
+
+    
 
     // useEffect(() => {
     //     getTempData();
     // }, []);
 
-
+    
     return (
         <>
+            
             <NavBar />
             <div className="lineChartContainer">
                 <center><h1>Temperature and Air Humdity</h1></center>

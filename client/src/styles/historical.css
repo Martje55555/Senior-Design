@@ -1,4 +1,6 @@
 .lineChartContainer {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+    height: 60vh;
 }
