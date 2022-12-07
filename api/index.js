@@ -169,8 +169,6 @@ app.get("/trigger_esp_irrigation/:number", async (req, res, next) => {
     };
 });
 
-
-
 // GET REQUESTS
 
 // Get all dht-sensors

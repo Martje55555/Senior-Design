@@ -13,8 +13,40 @@ const Control = () => {
 
     const url = 'http://localhost:3001';
 
-    const handleIrrigation = async () => {
-        await axios.get(`${url}/trigger_esp_irrigation`, { crossDomain : true })
+    const handleIrrigationAll = async () => {
+        for (let i = 1; i <= 3; i++) {
+            await axios.get(`${url}/trigger_esp_irrigation/${i}`, { crossDomain : true })
+            .then( async (response) => {
+                console.log(response);
+            })
+            .catch((err) => {
+                console.log(`Error: ${err}`); 
+            });
+        };
+    };
+
+    const handleIrrigation1 = async () => {
+        await axios.get(`${url}/trigger_esp_irrigation/1`, { crossDomain : true })
+        .then( async (response) => {
+            console.log(response);
+        })
+        .catch((err) => {
+            console.log(`Error: ${err}`); 
+        });
+    };
+
+    const handleIrrigation2 = async () => {
+        await axios.get(`${url}/trigger_esp_irrigation/2`, { crossDomain : true })
+        .then( async (response) => {
+            console.log(response);
+        })
+        .catch((err) => {
+            console.log(`Error: ${err}`); 
+        });
+    };
+
+    const handleIrrigation3 = async () => {
+        await axios.get(`${url}/trigger_esp_irrigation/3`, { crossDomain : true })
         .then( async (response) => {
             console.log(response);
         })
@@ -70,8 +102,13 @@ const Control = () => {
 
                 </div>
                 <div className="buttons">
-                    <button onClick={handleIrrigation} data-testid="onButton" className="btn1">Manual Irrigation</button>
-                    <button data-testid="offButton" className="btn2">Delay Irrigation</button>
+                    <button onClick={handleIrrigationAll} data-testid="onButton" className="massive green ui button">Manual Irrigation All</button>
+                    <br/>
+                    <button style={{marginTop: '20px'}} onClick={handleIrrigation1} data-testid="onButton" className="massive green ui button">Manual Irrigation 1</button>
+                    <button style={{marginTop: '5px'}} onClick={handleIrrigation2} data-testid="onButton" className="massive green ui button">Manual Irrigation 2</button>
+                    <button style={{marginTop: '5px'}} onClick={handleIrrigation3} data-testid="onButton" className="massive green ui button">Manual Irrigation 3</button>
+                    <br/>
+                    <button style={{marginTop:'20px'}} data-testid="offButton" className="massive red ui button">DELAY IRRIGATION</button>
                 </div>
             </div>
         </>
