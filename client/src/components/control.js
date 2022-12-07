@@ -37,6 +37,7 @@ const Control = () => {
         })
         .catch((err) => {
             console.log(`Error: ${err}`);
+
         });
     };
 
@@ -55,6 +56,7 @@ const Control = () => {
     useEffect(() => {
         handle_model();
         handleWeather();
+
     }, []);
 
     return (
