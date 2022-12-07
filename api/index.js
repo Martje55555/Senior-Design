@@ -149,26 +149,27 @@ app.get("/trigger_esp_data", async (req, res, next) => {
 });
 
 // Calls the ESP endpoint to trigger irrigation
-app.get("/trigger_esp_irrigation", async (req, res, next) => {
+app.get("/trigger_esp_irrigation/:number", async (req, res, next) => {
     if (process.env.NODE_ENV === 'test'){
         console.log("Success");
     } else {
         try {
             let data;
             console.log(espIP);
-            let url = `http://${espIP}/irrigate`
+            let url = `http://${espIP}/irrigate/${req.params.number}`;
             axios.get(url)
                 .then((response) => {
                     data = response.data;
-                    res.status(200).json(data);
+                    res.status(200).json([`${req.params.number}: ${data}`]);
                 });
         } catch (err) {
             console.log("Error: " + err);
-            res.status(400).json(["'Success': false", `"Error": ${err}`]);
-        }
-    }
-
+            res.status(400).json(["'Success': false", `"Error": ${err}`, `${req.params.number}: ${err}`]);
+        };
+    };
 });
+
+
 
 // GET REQUESTS
 
@@ -813,6 +814,39 @@ app.get("/weather", async (req, res, next) => {
                     .then((response) => {
                         data = response.data;
                         res.status(200).json([data["main"]["temp"]])
+                    });
+            } catch (err) {
+                console.log("Error: " + err);
+                res.status(400).json(["'Success': false", `"Error": ${err}`]);
+            }
+        } else {
+
+            res.status(401).json(`ERROR: INVALID API KEY - ${req.query.appid}`);
+        }
+    }
+});
+
+// weather desc
+app.get("/weather_desc", async (req, res, next) => {
+    if (process.env.NODE_ENV === 'test') {
+        console.log("Success");
+        res.status(200).json(`"Success": true`);
+    } else {
+        if (req.query.appid === process.env.WEATHER_API_KEY) {
+            try {
+                let data;
+                let url = `https://api.openweathermap.org/data/2.5/weather`
+                axios.get(url, {
+                    params: {
+                        'lat': req.query.lat,
+                        'lon': req.query.lon,
+                        'appid': req.query.appid
+                    }
+                })
+                    .then((response) => {
+                        data = response.data;
+                        console.log(data["weather"][0]["description"])
+                        res.status(200).json([data["weather"][0]["description"]]);
                     });
             } catch (err) {
                 console.log("Error: " + err);

@@ -42,7 +42,7 @@ def run_model():
             max['name'] = key
             max['val'] = val
 
-    best_time = int(max['name'])
+    best_time = int(max['name'])-1
 
     output = json.dumps({'next_irrigation': str(best_time)+':00', 'last_irrigation': '18:00'}, cls=DecimalEncoder)
     print(output)
