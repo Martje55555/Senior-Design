@@ -103,11 +103,11 @@ const Home = ({ handleLogout }) => {
 
     // Leave commented when not using the data
     // to reduce the amount of calls, uncomment to see data
-    useEffect(() => {
-        getAllOtherValues();
-        getWeather();
-        getStatus();
-    }, []);
+    // useEffect(() => {
+    //     getAllOtherValues();
+    //     getWeather();
+    //     getStatus();
+    // }, []);
 
     if (window.screen.width > 1280) {
         return (
