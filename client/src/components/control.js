@@ -65,11 +65,10 @@ const Control = () => {
         }})
         .then((response) => {
             let data = response.data[0];
-            setCurrWeather(data.toString());
+            setCurrWeather(response.data[1].toString() + '/' + data.toString());
         })
         .catch((err) => {
             console.log(`Error: ${err}`);
-
         });
     };
 

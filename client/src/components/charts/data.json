@@ -2,14 +2,14 @@
     {
         "humidity": {
             "sensor_1": {
-                "04-02-2022": {
+                "11-30-2022": {
                     "-MyECZ3ZVstNbXhE-SzJ": {
                         "date": "3/15/2022",
                         "time": "3:12:51 PM",
                         "value": 0
                     }
                 },
-                "04-03-2022": {
+                "12-01-2022": {
                     "-MzhsDFqUJ8vX8SxQ9YB": {
                         "date": "4/3/2022",
                         "time": "12:23:32 AM",
@@ -21,14 +21,14 @@
                         "value": 15.98
                     }
                 },
-                "04-04-2022": {
+                "12-02-2022": {
                     "-Mzmzhudp7oGnZak3eAH": {
                         "date": "4/4/2022",
                         "time": "12:14:23 AM",
                         "value": 9.12
                     }
                 },
-                "04-05-2022": {
+                "12-03-2022": {
                     "-MzsN2XrvJXxS5FPChoJ": {
                         "date": "4/5/2022",
                         "time": "1:18:49 AM",
@@ -50,14 +50,14 @@
                         "value": 17.12
                     }
                 },
-                "04-10-2022": {
+                "12-04-2022": {
                     "-N-HKqmwtQQ-GE2Q9PYB": {
                         "date": "4/10/2022",
                         "time": "2:19:20 AM",
                         "value": 27.12
                     }
                 },
-                "04-12-2022": {
+                "12-05-2022": {
                     "-N-UdY2iLVq7LaGY7HIh": {
                         "date": "4/12/2022",
                         "description": "This is sensor_1, at location xyz.",
@@ -129,14 +129,14 @@
         },
         "temperature": {
             "sensor_1": {
-                "04-02-2022": {
+                "11-30-2022": {
                     "-MyECZ3ZVstNbXhE-SzJ": {
                         "date": "3/15/2022",
                         "time": "3:12:51 PM",
                         "value": 97
                     }
                 },
-                "04-03-2022": {
+                "12-01-2022": {
                     "-MzhsDEm02j-3isZqtEx": {
                         "date": "4/3/2022",
                         "time": "12:23:32 AM",
@@ -148,14 +148,14 @@
                         "value": 60
                     }
                 },
-                "04-04-2022": {
+                "12-02-2022": {
                     "-MzmzhtjsH9l5ATAPCmH": {
                         "date": "4/4/2022",
                         "time": "12:14:23 AM",
                         "value": 87
                     }
                 },
-                "04-05-2022": {
+                "12-03-2022": {
                     "-MzsN2X39XBaZCCCNhvY": {
                         "date": "4/5/2022",
                         "time": "1:18:49 AM",
@@ -179,7 +179,7 @@
                         "value": 79
                     }
                 },
-                "04-10-2022": {
+                "12-04-2022": {
                     "-N-HKqlm_R8Y1TDTAi7X": {
                         "date": "4/10/2022",
                         "description": "This is sensor_1, at location xyz.",
@@ -187,7 +187,7 @@
                         "value": 80
                     }
                 },
-                "04-12-2022": {
+                "12-05-2022": {
                     "-N-UdXyw5Sd29xJnAk5e": {
                         "date": "4/12/2022",
                         "description": "This is sensor_1, at location xyz.",

@@ -35,31 +35,49 @@ const Home = ({ handleLogout }) => {
                 .then((response) => {
                     console.log(response);
                     if (i === 1) {
-                        setSens1(`${response.data.value}%`);
+                        let s = response.data.value
+                        let g = ( (s-(-99)) / (99 - (-99)) ) * (100 - 0) + 0
+                        setSens1(`${g.toFixed(2)}%`);
                     }
                     else if (i === 2) {
-                        setSens2(`${response.data.value}%`);
+                        let s = response.data.value
+                        let g = ( (s-(-99)) / (99 - (-99)) ) * (100 - 0) + 0
+                        setSens2(`${g.toFixed(2)}%`);
                     }
                     else if (i === 3) {
-                        setSens3(`${response.data.value}%`);
+                        let s = response.data.value
+                        let g = ( (s-(-99)) / (99 - (-99)) ) * (100 - 0) + 0
+                        setSens3(`${g.toFixed(2)}%`);
                     }
                     else if (i === 4) {
-                        setSens4(`${response.data.value}%`);
+                        let s = response.data.value
+                        let g = ( (s-(-99)) / (99 - (-99)) ) * (100 - 0) + 0
+                        setSens4(`${g.toFixed(2)}%`);
                     }
                     else if (i === 5) {
-                        setSens5(`${response.data.value}%`);
+                        let s = response.data.value
+                        let g = ( (s-(-99)) / (99 - (-99)) ) * (100 - 0) + 0
+                        setSens5(`${g.toFixed(2)}%`);
                     }
                     else if (i === 6) {
-                        setSens6(`${response.data.value}%`);
+                        let s = response.data.value
+                        let g = ( (s-(-99)) / (99 - (-99)) ) * (100 - 0) + 0
+                        setSens6(`${g.toFixed(2)}%`);
                     }
                     else if (i === 7) {
-                        setSens7(`${response.data.value}%`);
+                        let s = response.data.value
+                        let g = ( (s-(-99)) / (99 - (-99)) ) * (100 - 0) + 0
+                        setSens7(`${g.toFixed(2)}%`);
                     }
                     else if (i === 8) {
-                        setSens8(`${response.data.value}%`);
+                        let s = response.data.value
+                        let g = ( (s-(-99)) / (99 - (-99)) ) * (100 - 0) + 0
+                        setSens8(`${g.toFixed(2)}%`);
                     }
                     else if (i == 9) {
-                        setSens9(`${response.data.value}%`);
+                        let s = response.data.value
+                        let g = ( (s-(-99)) / (99 - (-99)) ) * (100 - 0) + 0
+                        setSens9(`${g.toFixed(2)}%`);
                     }
                 })
                 .catch((err) => {
@@ -103,11 +121,11 @@ const Home = ({ handleLogout }) => {
 
     // Leave commented when not using the data
     // to reduce the amount of calls, uncomment to see data
-    // useEffect(() => {
-    //     getAllOtherValues();
-    //     getWeather();
-    //     getStatus();
-    // }, []);
+    useEffect(() => {
+        getAllOtherValues();
+        getWeather();
+        getStatus();
+    }, []);
 
     if (window.screen.width > 1280) {
         return (
