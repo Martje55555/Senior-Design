@@ -55,6 +55,26 @@ const Control = () => {
         });
     };
 
+    const handleIrrigation2 = async () => {
+        await axios.get(`${url}/trigger_esp_irrigation/2`, { crossDomain : true })
+        .then( async (response) => {
+            console.log(response);
+        })
+        .catch((err) => {
+            console.log(`Error: ${err}`); 
+        });
+    };
+
+    const handleIrrigation3 = async () => {
+        await axios.get(`${url}/trigger_esp_irrigation/3`, { crossDomain : true })
+        .then( async (response) => {
+            console.log(response);
+        })
+        .catch((err) => {
+            console.log(`Error: ${err}`); 
+        });
+    };
+
     const handleWeather = async () => {
         let lat = 26.30519;
         let lon = -98.171924;
@@ -65,11 +85,14 @@ const Control = () => {
         }})
         .then((response) => {
             let data = response.data[0];
+            setCurrWeather(response.data[1].toString() + '/' + data.toString());
+        })
+        .catch((err) => {
+            console.log(`Error: ${err}`);
             setCurrWeather(data.toString());
         })
         .catch((err) => {
             console.log(`Error: ${err}`);
-
         });
     };
 

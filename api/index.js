@@ -844,7 +844,7 @@ app.get("/weather_desc", async (req, res, next) => {
                     .then((response) => {
                         data = response.data;
                         console.log(data["weather"][0]["description"])
-                        res.status(200).json([data["weather"][0]["description"]]);
+                        res.status(200).json([data["weather"][0]["description"], data["weather"][0]["main"]]);
                     });
             } catch (err) {
                 console.log("Error: " + err);

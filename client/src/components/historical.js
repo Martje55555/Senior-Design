@@ -143,10 +143,7 @@ const Historical = () => {
                 borderColor: 'Yellow',
                 backgroundColor: "Yellow"
             }]
-    });
-
-    
-        
+    }); 
 
     const [options, setOptions] = useState({
         responsive: true,
@@ -189,13 +186,10 @@ const Historical = () => {
             ]
     });
 
-    
+    useEffect(() => {
+        getTempData();
+    }, []);
 
-    // useEffect(() => {
-    //     getTempData();
-    // }, []);
-
-    
     return (
         <>
             
